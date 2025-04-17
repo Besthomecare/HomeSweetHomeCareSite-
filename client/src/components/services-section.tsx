@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "wouter";
 import { ArrowRight, Circle } from "lucide-react";
 import { SERVICES } from "@/lib/constants";
@@ -14,7 +15,7 @@ const ServiceCard = ({ service }) => {
       </div>
       <div className="p-6">
         <div className="bg-accent text-white rounded-full w-12 h-12 flex items-center justify-center mb-4">
-          {service.icon}
+          {service.icon && React.createElement(service.icon, { size: 24 })}
         </div>
         <h3 className="font-heading text-xl font-semibold text-primary mb-3">{service.title}</h3>
         <p className="mb-4">{service.description}</p>
