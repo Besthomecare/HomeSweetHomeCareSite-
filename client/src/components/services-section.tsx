@@ -28,9 +28,9 @@ const ServiceCard = ({ service }) => {
           ))}
         </ul>
         <Link href="/contact">
-          <a className="text-accent hover:text-primary transition-colors font-semibold flex items-center">
+          <span className="text-accent hover:text-primary transition-colors font-semibold flex items-center cursor-pointer">
             Learn More <ArrowRight className="ml-2" size={16} />
-          </a>
+          </span>
         </Link>
       </div>
     </div>
@@ -59,9 +59,9 @@ const ServicesSection = () => {
         
         <div className="mt-12 text-center">
           <Link href="/contact">
-            <a className="bg-primary hover:bg-opacity-90 text-white px-8 py-3 rounded-md transition-colors inline-block font-semibold">
+            <div className="bg-primary hover:bg-opacity-90 text-white px-8 py-3 rounded-md transition-colors inline-block font-semibold cursor-pointer">
               Schedule a Free Care Assessment
-            </a>
+            </div>
           </Link>
         </div>
       </div>
