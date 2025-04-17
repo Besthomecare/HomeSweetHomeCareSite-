@@ -33,6 +33,7 @@ export interface CompanyInfoType {
   name: string;
   phone: string;
   email: string;
+  website: string;
   address: {
     street: string;
     city: string;

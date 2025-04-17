@@ -11,7 +11,8 @@ import { ServiceType, TestimonialType, FaqType, CompanyInfoType } from "@/types"
 export const COMPANY_INFO: CompanyInfoType = {
   name: "Home Sweet Home Care",
   phone: "(941) 200-0840",
-  email: "care@homesweethomecare.com",
+  email: "Info@besthomecare.net",
+  website: "https://besthomecare.net",
   address: {
     street: "5265 University Pkwy, STE 101-177",
     city: "Sarasota",
@@ -41,51 +42,52 @@ export const SERVICE_AREAS = [
 
 export const SERVICES: ServiceType[] = [
   {
+    id: "ai-companionship",
+    title: "AI Companionship",
+    description: "24/7 engagement, conversation, memory support, and personalized interaction through voice or tablet-based AI technology. Technology with heart that sets us apart.",
+    icon: Users,
+    image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    benefits: [
+      "Provides memory support, reminders, and light entertainment",
+      "Grows more personalized with every interaction",
+      "Designed to reduce loneliness and promote cognitive activity",
+      "Can be accessed via smart speaker or tablet"
+    ]
+  },
+  {
     id: "companionship",
     title: "Companionship",
     description: "Our caregivers provide meaningful social interaction, conversation, and emotional support to combat loneliness and isolation.",
     icon: Users,
-    image: "https://images.unsplash.com/photo-1516307343297-53e935860ebf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1517292987719-0369a794ec0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     benefits: [
-      "Friendly conversation and emotional support",
-      "Assistance with hobbies and recreational activities",
-      "Accompaniment to appointments and social events"
-    ]
-  },
-  {
-    id: "personal-care",
-    title: "Personal Care",
-    description: "Compassionate assistance with daily living activities to maintain hygiene, comfort, and dignity.",
-    icon: HeartHandshake,
-    image: "https://images.unsplash.com/photo-1576765608866-5b51046452be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-    benefits: [
-      "Bathing, grooming, and dressing assistance",
-      "Mobility assistance and fall prevention",
-      "Toileting and incontinence care"
+      "Friendly conversation and social interaction",
+      "Cognitive stimulation and mental engagement",
+      "Companionship for activities and hobbies"
     ]
   },
   {
     id: "medication-reminders",
     title: "Medication Reminders",
-    description: "Ensure medications are taken correctly and on schedule to maintain health and prevent complications.",
+    description: "Our caregivers provide medication reminders, helping clients stay on track with their health management.",
     icon: Pill,
     image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     benefits: [
-      "Timely medication reminders",
-      "Prescription pickup assistance",
-      "Medication organization assistance"
+      "Gentle reminders to take medications on schedule",
+      "Prescription pickup assistance from pharmacy",
+      "Observe and report medication adherence to family"
     ]
   },
   {
     id: "housekeeping",
-    title: "Housekeeping",
+    title: "Light Housekeeping",
     description: "Light housekeeping services to maintain a clean, safe, and comfortable living environment.",
     icon: Brush,
     image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     benefits: [
       "Dusting, vacuuming, and general tidying",
       "Laundry and linen changing",
-      "Kitchen and bathroom cleaning"
+      "Kitchen cleaning and dish washing"
     ]
   },
   {
@@ -107,22 +109,21 @@ export const SERVICES: ServiceType[] = [
     icon: Car,
     image: "https://images.unsplash.com/photo-1559723944-6913027cf19a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     benefits: [
-      "Medical appointment transportation",
+      "Transportation to doctors' appointments",
       "Shopping and errand assistance",
       "Social outings and community events"
     ]
   },
   {
-    id: "ai-companionship",
-    title: "AI Companionship",
-    description: "24/7 engagement, conversation, memory support, and personalized interaction through voice or tablet-based AI technology.",
-    icon: Users,
-    image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    id: "monitoring",
+    title: "Observation & Reporting",
+    description: "Our caregivers attentively observe health changes and provide regular updates to family and healthcare professionals.",
+    icon: HeartHandshake,
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     benefits: [
-      "Provides memory support, reminders, and light entertainment",
-      "Grows more personalized with every interaction",
-      "Designed to reduce loneliness and promote cognitive activity",
-      "Can be accessed via smart speaker or tablet"
+      "Observe and report changes in condition",
+      "Regular updates to family members",
+      "Coordination with healthcare professionals"
     ]
   }
 ];
