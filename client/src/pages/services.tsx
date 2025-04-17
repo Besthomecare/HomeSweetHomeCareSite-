@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import { Button } from "@/components/ui/button";
 import ServicesSection from "@/components/services-section";
+import ServiceRestrictions from "@/components/service-restrictions";
 import CtaSection from "@/components/cta-section";
 import { Link } from "wouter";
 import { SERVICES } from "@/lib/constants";
@@ -66,6 +67,8 @@ const Services = () => {
       </section>
       
       <ServicesSection />
+      
+      <ServiceRestrictions />
       
       <section className="py-16 bg-[#F8F5F2]">
         <div className="container mx-auto px-4 md:px-6">
