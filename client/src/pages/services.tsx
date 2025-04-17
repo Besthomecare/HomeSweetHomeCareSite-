@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet";
 import { Button } from "@/components/ui/button";
 import ServicesSection from "@/components/services-section";
 import ServiceRestrictions from "@/components/service-restrictions";
-import AIFeatureCard from "@/components/ai-feature-card";
+import AIFeatureSlideshow from "@/components/ai-feature-slideshow";
 import CtaSection from "@/components/cta-section";
 import { Link } from "wouter";
 import { SERVICES } from "@/lib/constants";
@@ -37,23 +37,8 @@ const Services = () => {
         </div>
       </section>
       
-      {/* AI Companionship Feature */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-10">
-            <h2 className="font-heading text-3xl font-bold text-primary mb-3">
-              Our Innovative AI Companionship
-            </h2>
-            <p className="text-lg max-w-3xl mx-auto">
-              The feature that sets us apart - AI technology that provides 24/7 engagement and personalized interaction
-            </p>
-          </div>
-          
-          <div className="max-w-4xl mx-auto">
-            <AIFeatureCard />
-          </div>
-        </div>
-      </section>
+      {/* AI Companionship Feature - Now with Slideshow */}
+      <AIFeatureSlideshow />
       
       <section className="py-12 bg-[#F8F5F2]">
         <div className="container mx-auto px-4 md:px-6">

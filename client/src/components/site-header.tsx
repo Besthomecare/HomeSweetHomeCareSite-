@@ -79,6 +79,11 @@ const SiteHeader = () => {
               Services
             </span>
           </Link>
+          <Link href="/services#ai-companionship">
+            <span className={`font-medium text-accent font-semibold hover:text-accent/80 transition-colors cursor-pointer`}>
+              AI Companionship
+            </span>
+          </Link>
           <Link href="/faq">
             <span className={`font-medium ${isActive('/faq') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer`}>
               FAQs
@@ -121,6 +126,14 @@ const SiteHeader = () => {
                 onClick={closeMobileMenu}
               >
                 Services
+              </span>
+            </Link>
+            <Link href="/services#ai-companionship">
+              <span 
+                className="font-medium text-accent font-semibold hover:text-accent/80 transition-colors py-2 border-b border-gray-100 block cursor-pointer"
+                onClick={closeMobileMenu}
+              >
+                AI Companionship
               </span>
             </Link>
             <Link href="/faq">

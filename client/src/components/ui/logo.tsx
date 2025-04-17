@@ -16,12 +16,12 @@ const Logo: FC<LogoProps> = ({
   return (
     <div className={`flex items-center ${className}`}>
       <svg 
-        width={variant === "full" ? "160" : "48"} 
-        height={variant === "full" ? "160" : "48"} 
+        width={variant === "full" ? "220" : "60"} 
+        height={variant === "full" ? "220" : "60"} 
         viewBox="0 0 480 480" 
         fill="none" 
         xmlns="http://www.w3.org/2000/svg"
-        className={`${variant === "full" ? "h-14 w-auto" : "h-10 w-auto"}`}
+        className={`${variant === "full" ? "h-20 w-auto" : "h-14 w-auto"}`}
       >
         {/* Heart with House and Hand - Based on the official logo */}
         <g>
