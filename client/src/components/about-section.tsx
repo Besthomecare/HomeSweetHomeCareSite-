@@ -1,0 +1,83 @@
+import { Check } from "lucide-react";
+
+const AboutSection = () => {
+  return (
+    <section id="about" className="py-16 bg-[#F8F5F2]">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="mb-12 text-center">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-4">
+            About Home Sweet Home Care
+          </h2>
+          <p className="max-w-3xl mx-auto text-lg">
+            We're dedicated to providing exceptional care that enhances the quality of life 
+            for seniors in Sarasota, Manatee County, and Lakewood Ranch.
+          </p>
+        </div>
+        
+        <div className="flex flex-col md:flex-row items-center mb-16">
+          <div className="md:w-1/2 mb-8 md:mb-0 md:pr-10">
+            <h3 className="font-heading text-2xl font-semibold text-primary mb-4">Our Mission</h3>
+            <p className="mb-4">
+              To provide compassionate, personalized care that enables seniors to maintain their 
+              independence and dignity while remaining in the comfort of their own homes.
+            </p>
+            <p className="mb-6">
+              We believe that everyone deserves to age with dignity, surrounded by comfort, 
+              care, and respect.
+            </p>
+            <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-accent">
+              <p className="italic">
+                "Our approach is built on creating meaningful relationships with each client 
+                and their families to ensure personalized care that truly makes a difference."
+              </p>
+              <p className="font-semibold mt-2">- Jane Smith, Founder</p>
+            </div>
+          </div>
+          <div className="md:w-1/2">
+            <img 
+              src="https://images.unsplash.com/photo-1581579438747-104c53d7fbc4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+              alt="Caring staff member with elderly client" 
+              className="rounded-lg shadow-lg w-full h-auto"
+            />
+          </div>
+        </div>
+        
+        <div className="flex flex-col md:flex-row-reverse items-center">
+          <div className="md:w-1/2 mb-8 md:mb-0 md:pl-10">
+            <h3 className="font-heading text-2xl font-semibold text-primary mb-4">Our Caregivers</h3>
+            <p className="mb-4">
+              Our caregivers are the heart of our service. Each team member undergoes rigorous 
+              screening, including:
+            </p>
+            <ul className="mb-6 space-y-2">
+              {[
+                "Comprehensive background checks",
+                "Professional references verification",
+                "Skills assessment and certification verification",
+                "Ongoing training and professional development"
+              ].map((item, index) => (
+                <li key={index} className="flex items-start">
+                  <Check className="text-accent mt-1 mr-2 flex-shrink-0" size={18} />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p>
+              We carefully match caregivers with clients based on needs, personality, and 
+              preferences to ensure the perfect fit.
+            </p>
+          </div>
+          <div className="md:w-1/2">
+            <img 
+              src="https://images.unsplash.com/photo-1589476993333-f55b84301219?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+              alt="Professional caregiver team" 
+              className="rounded-lg shadow-lg w-full h-auto"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default AboutSection;
