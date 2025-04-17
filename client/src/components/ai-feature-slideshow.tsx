@@ -1,10 +1,34 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Brain, Bot, Clock, Heart, ArrowRight, ChevronRight, ChevronLeft } from "lucide-react";
+import { Brain, Bot, Clock, Heart, ArrowRight, ChevronRight, ChevronLeft, Users } from "lucide-react";
 import { Link } from "wouter";
+import caregiverImage from "@assets/Screenshot 2025-04-17 134718.png";
+import cardGamesImage from "@assets/ChatGPT Image Apr 17, 2025, 01_54_46 PM.png";
 
 // Helper images of caregivers with seniors
 const slides = [
+  {
+    title: "Caring Companionship",
+    description: "Our compassionate caregivers provide meaningful companionship and personal connection.",
+    image: caregiverImage,
+    icon: <Heart className="h-10 w-10 text-white" />,
+    features: [
+      "Genuine human connection and emotional support",
+      "Personalized care from carefully selected caregivers",
+      "Meaningful conversations and shared activities"
+    ]
+  },
+  {
+    title: "Engaging Activities",
+    description: "We keep seniors mentally active and socially engaged with fun, stimulating activities.",
+    image: cardGamesImage,
+    icon: <Users className="h-10 w-10 text-white" />,
+    features: [
+      "Card games and cognitive activities to keep minds sharp",
+      "Personalized activities based on interests and abilities",
+      "Social engagement that creates joy and connection"
+    ]
+  },
   {
     title: "24/7 AI Companionship",
     description: "Our innovative AI technology provides continuous companionship and support for your loved ones.",
