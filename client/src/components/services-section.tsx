@@ -1,11 +1,20 @@
 import React from "react";
 import { Link } from "wouter";
-import { ArrowRight, Circle } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { SERVICES } from "@/lib/constants";
 
 const ServiceCard = ({ service }) => {
   return (
-    <div className="bg-[#F8F5F2] rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105">
+    <div className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 h-full flex flex-col transition-all hover:shadow-xl">
+      {/* Icon and Title Header */}
+      <div className="bg-gradient-to-r from-accent/90 to-accent p-5 flex items-center">
+        <div className="bg-white text-accent rounded-full w-12 h-12 flex items-center justify-center mr-4 shadow-md">
+          {service.icon && React.createElement(service.icon, { size: 22 })}
+        </div>
+        <h3 className="font-heading text-xl font-semibold text-white">{service.title}</h3>
+      </div>
+      
+      {/* Image */}
       <div className="h-48 overflow-hidden">
         <img 
           src={service.image} 
@@ -13,24 +22,27 @@ const ServiceCard = ({ service }) => {
           className="w-full h-full object-cover"
         />
       </div>
-      <div className="p-6">
-        <div className="bg-accent text-white rounded-full w-12 h-12 flex items-center justify-center mb-4">
-          {service.icon && React.createElement(service.icon, { size: 24 })}
+      
+      {/* Content */}
+      <div className="p-6 flex-grow flex flex-col">
+        <p className="mb-5 text-gray-700">{service.description}</p>
+        
+        <div className="flex-grow">
+          <ul className="mb-6 space-y-3">
+            {service.benefits.map((benefit, index) => (
+              <li key={index} className="flex items-start">
+                <Check className="text-accent flex-shrink-0 mt-1 mr-2" size={18} />
+                <span className="text-gray-800">{benefit}</span>
+              </li>
+            ))}
+          </ul>
         </div>
-        <h3 className="font-heading text-xl font-semibold text-primary mb-3">{service.title}</h3>
-        <p className="mb-4">{service.description}</p>
-        <ul className="mb-6 space-y-2">
-          {service.benefits.map((benefit, index) => (
-            <li key={index} className="flex items-start text-sm">
-              <Circle className="text-accent flex-shrink-0 mt-1 mr-2" size={8} />
-              <span>{benefit}</span>
-            </li>
-          ))}
-        </ul>
-        <Link href="/contact">
-          <span className="text-accent hover:text-primary transition-colors font-semibold flex items-center cursor-pointer">
-            Learn More <ArrowRight className="ml-2" size={16} />
-          </span>
+        
+        {/* Button */}
+        <Link href="/contact" className="mt-auto">
+          <div className="w-full bg-accent hover:bg-accent/90 text-white py-3 rounded text-center font-medium transition-colors">
+            Learn More <ArrowRight className="inline ml-1" size={16} />
+          </div>
         </Link>
       </div>
     </div>
@@ -59,7 +71,7 @@ const ServicesSection = () => {
         
         <div className="mt-12 text-center">
           <Link href="/contact">
-            <div className="bg-primary hover:bg-opacity-90 text-white px-8 py-3 rounded-md transition-colors inline-block font-semibold cursor-pointer">
+            <div className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-md transition-colors inline-block font-semibold cursor-pointer">
               Schedule a Free Care Assessment
             </div>
           </Link>
