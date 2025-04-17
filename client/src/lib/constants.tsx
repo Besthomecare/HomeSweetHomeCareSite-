@@ -11,13 +11,14 @@ import React from "react";
 
 export const COMPANY_INFO: CompanyInfoType = {
   name: "Home Sweet Home Care",
-  phone: "(941) 555-1234",
-  email: "care@homesweethomecare.com",
+  phone: "(941) 200-0840",
+  email: "Info@besthomecare.net",
+  website: "https://besthomecare.net",
   address: {
-    street: "123 Care Lane",
+    street: "5265 University Pkwy, STE 101-177",
     city: "Sarasota",
     state: "FL",
-    zip: "34235"
+    zip: "34201"
   },
   hours: {
     weekdays: "8:00 AM - 6:00 PM",

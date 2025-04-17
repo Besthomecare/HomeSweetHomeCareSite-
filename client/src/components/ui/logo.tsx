@@ -11,49 +11,46 @@ const Logo: FC<LogoProps> = ({
   variant = "full", 
   colorMode = "light" 
 }) => {
-  const primaryColor = colorMode === "light" ? "#8B4513" : "#FFFFFF";
-  const accentColor = colorMode === "light" ? "#006B54" : "#E8DED1";
-
+  const accentColor = colorMode === "light" ? "#006B54" : "#FFFFFF";
+  
   return (
     <div className={`flex items-center ${className}`}>
       <svg 
-        width={variant === "full" ? "200" : "40"} 
-        height={variant === "full" ? "60" : "40"} 
-        viewBox="0 0 240 120" 
+        width={variant === "full" ? "200" : "50"} 
+        height={variant === "full" ? "200" : "50"} 
+        viewBox="0 0 600 600" 
         fill="none" 
         xmlns="http://www.w3.org/2000/svg"
-        className="h-10 w-auto"
+        className={`${variant === "full" ? "h-16 w-auto" : "h-12 w-auto"}`}
       >
+        {/* Heart Shape with House and Hand */}
         <g>
           {/* Heart Shape */}
-          <path d="M120 40 C120 40, 170 0, 220 40 C270 80, 220 140, 120 180 C20 140, -30 80, 20 40 C70 0, 120 40, 120 40Z" fill="none" stroke={accentColor} strokeWidth="12" />
+          <path d="M300 140C225 140 165 200 165 275C165 290 167.5 304 172.5 316C175 324 180 333 186 340C192 347 202 344 207 337C210 331 211 326 211 320C211 265 250 220 300 220C350 220 389 265 389 320C389 326 388 332 385 338C380 345 388 352 395 347C401 342 406 334 408 327C413 309 435 290 435 275C435 200 375 140 300 140Z" fill={accentColor}/>
           
           {/* House */}
-          <path d="M160 80 L90 80 L90 140 L160 140 L160 80 Z" fill="none" stroke={accentColor} strokeWidth="8" />
-          <path d="M125 40 L70 90 L180 90 L125 40 Z" fill="none" stroke={accentColor} strokeWidth="8" />
-          <path d="M155 80 L155 60 L140 60 L140 70 Z" fill="none" stroke={accentColor} strokeWidth="6" />
+          <path d="M300 180L180 275V370C180 377 186 384 194 384H254V332C254 325 260 318 269 318H331C340 318 346 325 346 332V384H406C414 384 420 377 420 370V275L300 180Z" fill={accentColor}/>
           
           {/* Windows */}
-          <rect x="105" y="100" width="15" height="15" fill="none" stroke={accentColor} strokeWidth="6" />
-          <rect x="130" y="100" width="15" height="15" fill="none" stroke={accentColor} strokeWidth="6" />
+          <path d="M291 292H309V275H291V292ZM267 292H285V275H267V292Z" fill={accentColor}/>
           
           {/* Hand */}
-          <path d="M60 140 C60 140, 70 100, 120 120 C160 135, 180 130, 180 150 C180 170, 160 180, 120 160 C80 140, 60 140, 60 140 Z" fill="none" stroke={accentColor} strokeWidth="10" />
+          <path d="M405 320C405 375 358 420 300 420C270 420 245 410 225 394C217 388 208 380 201 370C197 365 191 363 185 365C179 367 176 373 180 379C188 390 198 399 209 407C232 424 264 435 300 435C369 435 425 385 425 320H405Z" fill={accentColor}/>
         </g>
         
         {variant === "full" && (
           <g>
-            <text x="120" y="210" fontFamily="EB Garamond, serif" fontSize="24" fontWeight="bold" fill={primaryColor} textAnchor="middle">HOME SWEET</text>
-            <text x="120" y="240" fontFamily="EB Garamond, serif" fontSize="24" fontWeight="bold" fill={primaryColor} textAnchor="middle">HOME</text>
-            <text x="120" y="270" fontFamily="Source Sans Pro, sans-serif" fontSize="18" fill={accentColor} textAnchor="middle">CARE</text>
+            <text x="300" y="500" fontFamily="serif" fontSize="48" fontWeight="bold" fill={accentColor} textAnchor="middle">HOME SWEET</text>
+            <text x="300" y="550" fontFamily="serif" fontSize="48" fontWeight="bold" fill={accentColor} textAnchor="middle">HOME</text>
+            <text x="300" y="590" fontFamily="sans-serif" fontSize="32" fontWeight="normal" fill={accentColor} textAnchor="middle">CARE</text>
           </g>
         )}
       </svg>
       
       {variant === "full" && (
-        <div className="ml-2">
-          <h1 className={`font-heading font-bold text-2xl ${colorMode === "light" ? "text-primary" : "text-white"}`}>HOME SWEET HOME</h1>
-          <p className={`text-lg font-medium ${colorMode === "light" ? "text-accent" : "text-white text-opacity-80"}`}>CARE</p>
+        <div className="ml-4 flex-shrink-0">
+          <h1 className={`font-heading font-bold text-xl leading-tight ${colorMode === "light" ? "text-accent" : "text-white"}`}>HOME SWEET<br />HOME</h1>
+          <p className={`text-base font-medium tracking-wider ${colorMode === "light" ? "text-accent" : "text-white text-opacity-80"}`}>CARE</p>
         </div>
       )}
     </div>
