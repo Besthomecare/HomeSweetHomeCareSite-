@@ -9,11 +9,13 @@ export interface ContactFormData {
   consent: boolean;
 }
 
+import { LucideIcon } from "lucide-react";
+
 export interface ServiceType {
   id: string;
   title: string;
   description: string;
-  icon: React.ReactNode;
+  icon: LucideIcon;
   image: string;
   benefits: string[];
 }

@@ -8,6 +8,15 @@ import {
 } from "lucide-react";
 import { ServiceType, TestimonialType, FaqType, CompanyInfoType } from "@/types";
 
+// Import service images
+import aiCompanionship from "@assets/Screenshot 2025-04-17 130721.png";
+import companionship from "@assets/Screenshot 2025-04-17 130739.png";
+import medicationReminders from "@assets/Screenshot 2025-04-17 130755.png";
+import lightHousekeeping from "@assets/Screenshot 2025-04-17 130846.png";
+import mealPrep from "@assets/Screenshot 2025-04-17 131252.png";
+import transportation from "@assets/Screenshot 2025-04-17 130625.png";
+import logoImage from "@assets/home sweet home care logo.png";
+
 export const COMPANY_INFO: CompanyInfoType = {
   name: "Home Sweet Home Care",
   phone: "(941) 200-0840",
@@ -44,86 +53,92 @@ export const SERVICES: ServiceType[] = [
   {
     id: "ai-companionship",
     title: "AI Companionship",
-    description: "24/7 engagement, conversation, memory support, and personalized interaction through voice or tablet-based AI technology. Technology with heart that sets us apart.",
+    description: "Our innovative AI Companionship provides 24/7 engagement through voice or tablet-based technology. It offers conversation, memory support, and personalized interaction that grows more meaningful over time. This service provides peace of mind for families knowing their loved one has constant companionship.",
     icon: Users,
-    image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    image: "/assets/Screenshot 2025-04-17 130721.png",
     benefits: [
-      "Provides memory support, reminders, and light entertainment",
+      "Provides reliable and trustworthy support at any time of day",
       "Grows more personalized with every interaction",
-      "Designed to reduce loneliness and promote cognitive activity",
-      "Can be accessed via smart speaker or tablet"
+      "Helps maintain dignity and independence in the home",
+      "Offers peace of mind for families with 24/7 companionship"
     ]
   },
   {
     id: "companionship",
-    title: "Companionship",
-    description: "Our caregivers provide meaningful social interaction, conversation, and emotional support to combat loneliness and isolation.",
+    title: "Companionship and Social Support",
+    description: "Our caregivers provide meaningful social interaction and emotional connection that truly makes a difference. Through engaging conversations and shared activities, we help combat loneliness and isolation. Our personalized, compassionate care approach ensures each client receives the attention they deserve.",
     icon: Users,
-    image: "https://images.unsplash.com/photo-1517292987719-0369a794ec0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    image: "/assets/Screenshot 2025-04-17 130739.png",
     benefits: [
-      "Friendly conversation and social interaction",
-      "Cognitive stimulation and mental engagement",
-      "Companionship for activities and hobbies"
+      "Friendly conversation and genuine social interaction",
+      "Cognitive stimulation that maintains mental sharpness",
+      "Reliable and trustworthy support for everyday activities",
+      "Peace of mind for families knowing their loved one isn't alone"
     ]
   },
   {
     id: "medication-reminders",
     title: "Medication Reminders",
-    description: "Our caregivers provide medication reminders, helping clients stay on track with their health management.",
+    description: "Staying on track with medications is crucial for health and wellbeing. Our caregivers provide gentle, timely medication reminders to ensure proper adherence to prescribed regimens. This service helps maintain dignity and independence while offering peace of mind for families.",
     icon: Pill,
-    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    image: "/assets/Screenshot 2025-04-17 130755.png",
     benefits: [
-      "Gentle reminders to take medications on schedule",
-      "Prescription pickup assistance from pharmacy",
-      "Observe and report medication adherence to family"
+      "Consistent reminders to take medications on schedule",
+      "Prescription pickup assistance from local pharmacies",
+      "Personalized, compassionate care during medication times",
+      "Documentation and family updates on medication adherence"
     ]
   },
   {
     id: "housekeeping",
     title: "Light Housekeeping",
-    description: "Light housekeeping services to maintain a clean, safe, and comfortable living environment.",
+    description: "A clean home environment is essential for comfort and safety. Our light housekeeping services help maintain a tidy, organized living space without intruding on personal routines. We provide reliable and trustworthy support that preserves dignity while ensuring a well-maintained home.",
     icon: Brush,
-    image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    image: "/assets/Screenshot 2025-04-17 130846.png",
     benefits: [
-      "Dusting, vacuuming, and general tidying",
-      "Laundry and linen changing",
-      "Kitchen cleaning and dish washing"
+      "Regular dusting, vacuuming, and general tidying",
+      "Laundry assistance and linen changing",
+      "Kitchen cleaning and dish washing",
+      "Personalized, compassionate approach to home maintenance"
     ]
   },
   {
     id: "meal-preparation",
     title: "Meal Preparation",
-    description: "Nutritious meal planning and preparation to ensure proper nutrition and enjoyable dining.",
+    description: "Proper nutrition is fundamental to health and wellness. Our caregivers prepare nutritious, appealing meals that meet dietary needs and personal preferences. This service ensures clients maintain dignity and independence while enjoying wholesome, satisfying food in the comfort of their own home.",
     icon: UtensilsCrossed,
-    image: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    image: "/assets/Screenshot 2025-04-17 131252.png",
     benefits: [
-      "Grocery shopping assistance",
-      "Meal planning with dietary considerations",
-      "Cooking and meal preparation"
+      "Grocery shopping with attention to preferences and needs",
+      "Meal planning with careful dietary considerations",
+      "Preparation of fresh, appealing meals",
+      "Peace of mind for families regarding nutrition and diet"
     ]
   },
   {
     id: "transportation",
     title: "Transportation & Errands",
-    description: "Reliable transportation and assistance with errands to maintain independence and community connection.",
+    description: "Maintaining community connections is vital for wellbeing. Our transportation services provide reliable and trustworthy support for appointments, shopping, and social outings. We help clients maintain dignity and independence while offering peace of mind for families through safe, dependable transportation.",
     icon: Car,
-    image: "https://images.unsplash.com/photo-1559723944-6913027cf19a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    image: "/assets/Screenshot 2025-04-17 130625.png",
     benefits: [
-      "Transportation to doctors' appointments",
-      "Shopping and errand assistance",
-      "Social outings and community events"
+      "Safe, comfortable transportation to medical appointments",
+      "Shopping and errand assistance with personal attention",
+      "Support for social outings and community engagement",
+      "Personalized, compassionate care during all transportation"
     ]
   },
   {
     id: "monitoring",
     title: "Observation & Reporting",
-    description: "Our caregivers attentively observe health changes and provide regular updates to family and healthcare professionals.",
+    description: "Our attentive caregivers provide careful observation of client wellbeing and subtle health changes. We deliver regular, thorough updates to family members and healthcare professionals when appropriate. This proactive approach ensures peace of mind for families through consistent monitoring.",
     icon: HeartHandshake,
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    image: "/assets/home sweet home care logo.png",
     benefits: [
-      "Observe and report changes in condition",
-      "Regular updates to family members",
-      "Coordination with healthcare professionals"
+      "Attentive observation of condition and subtle changes",
+      "Regular, detailed updates to family members",
+      "Coordination with healthcare professionals when needed",
+      "Reliable and trustworthy documentation of observations"
     ]
   }
 ];

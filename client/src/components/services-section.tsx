@@ -2,14 +2,15 @@ import React from "react";
 import { Link } from "wouter";
 import { ArrowRight, Check } from "lucide-react";
 import { SERVICES } from "@/lib/constants";
+import { ServiceType } from "@/types";
 
-const ServiceCard = ({ service }) => {
+const ServiceCard = ({ service }: { service: ServiceType }) => {
   return (
     <div className="bg-[#f7f4ef] rounded-lg shadow-lg overflow-hidden border border-gray-200 h-full flex flex-col transition-all hover:shadow-xl">
       {/* Icon and Title Header */}
       <div className="bg-gradient-to-r from-accent/90 to-accent p-5 flex items-center">
         <div className="bg-white text-accent rounded-full w-12 h-12 flex items-center justify-center mr-4 shadow-md">
-          {service.icon && React.createElement(service.icon, { size: 22 })}
+          {service.icon && <service.icon size={22} />}
         </div>
         <h3 className="font-heading text-xl font-semibold text-white">{service.title}</h3>
       </div>
@@ -28,7 +29,7 @@ const ServiceCard = ({ service }) => {
         <h2 className="font-heading text-2xl font-semibold text-primary mb-4">{service.title}</h2>
         
         <div className="mb-5 text-gray-700 space-y-3">
-          {service.description.split('. ').map((sentence, idx) => (
+          {service.description.split('. ').map((sentence: string, idx: number) => (
             sentence && <p key={idx} className="leading-relaxed">{sentence}{sentence.endsWith('.') ? '' : '.'}</p>
           ))}
         </div>
@@ -36,7 +37,7 @@ const ServiceCard = ({ service }) => {
         <div className="flex-grow">
           <h3 className="font-heading text-lg font-semibold text-primary mb-3">Benefits:</h3>
           <ul className="mb-6 space-y-3">
-            {service.benefits.map((benefit, index) => (
+            {service.benefits.map((benefit: string, index: number) => (
               <li key={index} className="flex items-start">
                 <Check className="text-accent flex-shrink-0 mt-1 mr-2" size={18} />
                 <span className="text-gray-800">{benefit}</span>
