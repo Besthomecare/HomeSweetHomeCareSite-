@@ -21,7 +21,7 @@ const Logo: FC<LogoProps> = ({
         viewBox="0 0 480 480" 
         fill="none" 
         xmlns="http://www.w3.org/2000/svg"
-        className={`${variant === "full" ? "h-20 w-auto" : "h-14 w-auto"}`}
+        className={`${variant === "full" ? "h-24 w-auto" : "h-16 w-auto"}`}
       >
         {/* Heart with House and Hand - Based on the official logo */}
         <g>
@@ -53,8 +53,8 @@ const Logo: FC<LogoProps> = ({
       
       {variant === "full" && (
         <div className="ml-3 flex-shrink-0">
-          <h1 className={`font-heading font-bold text-xl leading-tight ${colorMode === "light" ? "text-accent" : "text-white"}`}>HOME SWEET<br />HOME</h1>
-          <p className={`text-sm font-medium tracking-wider ${colorMode === "light" ? "text-accent" : "text-white text-opacity-80"}`}>CARE</p>
+          <h1 className={`font-heading font-bold text-2xl leading-tight ${colorMode === "light" ? "text-accent" : "text-white"}`}>HOME SWEET<br />HOME</h1>
+          <p className={`text-base font-medium tracking-wider ${colorMode === "light" ? "text-accent" : "text-white text-opacity-80"}`}>CARE</p>
         </div>
       )}
     </div>

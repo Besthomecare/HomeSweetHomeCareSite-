@@ -5,7 +5,7 @@ import { SERVICES } from "@/lib/constants";
 
 const ServiceCard = ({ service }) => {
   return (
-    <div className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 h-full flex flex-col transition-all hover:shadow-xl">
+    <div className="bg-[#f7f4ef] rounded-lg shadow-lg overflow-hidden border border-gray-200 h-full flex flex-col transition-all hover:shadow-xl">
       {/* Icon and Title Header */}
       <div className="bg-gradient-to-r from-accent/90 to-accent p-5 flex items-center">
         <div className="bg-white text-accent rounded-full w-12 h-12 flex items-center justify-center mr-4 shadow-md">
@@ -18,16 +18,23 @@ const ServiceCard = ({ service }) => {
       <div className="h-48 overflow-hidden">
         <img 
           src={service.image} 
-          alt={`${service.title} services`} 
+          alt={`Caregiver providing ${service.title} services to senior client`} 
           className="w-full h-full object-cover"
         />
       </div>
       
       {/* Content */}
-      <div className="p-6 flex-grow flex flex-col">
-        <p className="mb-5 text-gray-700">{service.description}</p>
+      <div className="p-6 pt-8 pb-8 flex-grow flex flex-col">
+        <h2 className="font-heading text-2xl font-semibold text-primary mb-4">{service.title}</h2>
+        
+        <div className="mb-5 text-gray-700 space-y-3">
+          {service.description.split('. ').map((sentence, idx) => (
+            sentence && <p key={idx} className="leading-relaxed">{sentence}{sentence.endsWith('.') ? '' : '.'}</p>
+          ))}
+        </div>
         
         <div className="flex-grow">
+          <h3 className="font-heading text-lg font-semibold text-primary mb-3">Benefits:</h3>
           <ul className="mb-6 space-y-3">
             {service.benefits.map((benefit, index) => (
               <li key={index} className="flex items-start">
@@ -40,8 +47,8 @@ const ServiceCard = ({ service }) => {
         
         {/* Button */}
         <Link href="/contact" className="mt-auto">
-          <div className="w-full bg-accent hover:bg-accent/90 text-white py-3 rounded text-center font-medium transition-colors">
-            Learn More <ArrowRight className="inline ml-1" size={16} />
+          <div className="w-full bg-[#047857] hover:bg-[#03543f] text-white py-3 rounded-lg text-center font-bold transition-colors">
+            Request a Free Care Assessment
           </div>
         </Link>
       </div>

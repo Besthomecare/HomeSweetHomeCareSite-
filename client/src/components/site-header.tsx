@@ -46,7 +46,7 @@ const SiteHeader = () => {
       </div>
       
       {/* Main Navigation */}
-      <nav className="container mx-auto px-4 md:px-6 py-4 flex flex-col md:flex-row justify-between items-center">
+      <nav className="container mx-auto px-4 md:px-6 py-6 flex flex-col md:flex-row justify-between items-center">
         <Link href="/" onClick={closeMobileMenu}>
           <div className="flex items-center mb-4 md:mb-0 cursor-pointer">
             <Logo variant="full" />
