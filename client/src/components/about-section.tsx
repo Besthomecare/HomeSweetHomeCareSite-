@@ -1,4 +1,6 @@
 import { Check } from "lucide-react";
+import caregiverImage from "@assets/Screenshot 2025-04-17 134718.png";
+import cardGamesImage from "@assets/ChatGPT Image Apr 17, 2025, 01_54_46 PM.png";
 
 const AboutSection = () => {
   return (
@@ -35,9 +37,9 @@ const AboutSection = () => {
           </div>
           <div className="md:w-1/2">
             <img 
-              src="https://images.unsplash.com/photo-1581579438747-104c53d7fbc4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
-              alt="Caring staff member with elderly client" 
-              className="rounded-lg shadow-lg w-full h-auto"
+              src={caregiverImage} 
+              alt="Caring staff member with elderly woman client" 
+              className="rounded-lg shadow-lg w-full h-auto object-cover"
             />
           </div>
         </div>
@@ -69,9 +71,9 @@ const AboutSection = () => {
           </div>
           <div className="md:w-1/2">
             <img 
-              src="https://images.unsplash.com/photo-1589476993333-f55b84301219?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
-              alt="Professional caregiver team" 
-              className="rounded-lg shadow-lg w-full h-auto"
+              src={cardGamesImage} 
+              alt="Caregiver playing card games with elderly client" 
+              className="rounded-lg shadow-lg w-full h-auto object-cover"
             />
           </div>
         </div>
