@@ -55,7 +55,7 @@ export const SERVICES: ServiceType[] = [
     title: "AI Companionship",
     description: "Our innovative AI Companionship provides 24/7 engagement through voice or tablet-based technology. It offers conversation, memory support, and personalized interaction that grows more meaningful over time. This service provides peace of mind for families knowing their loved one has constant companionship.",
     icon: Users,
-    image: "/assets/Screenshot 2025-04-17 130721.png",
+    image: aiCompanionship,
     benefits: [
       "Provides reliable and trustworthy support at any time of day",
       "Grows more personalized with every interaction",
@@ -68,7 +68,7 @@ export const SERVICES: ServiceType[] = [
     title: "Companionship and Social Support",
     description: "Our caregivers provide meaningful social interaction and emotional connection that truly makes a difference. Through engaging conversations and shared activities, we help combat loneliness and isolation. Our personalized, compassionate care approach ensures each client receives the attention they deserve.",
     icon: Users,
-    image: "/assets/Screenshot 2025-04-17 130739.png",
+    image: companionship,
     benefits: [
       "Friendly conversation and genuine social interaction",
       "Cognitive stimulation that maintains mental sharpness",
@@ -81,7 +81,7 @@ export const SERVICES: ServiceType[] = [
     title: "Medication Reminders",
     description: "Staying on track with medications is crucial for health and wellbeing. Our caregivers provide gentle, timely medication reminders to ensure proper adherence to prescribed regimens. This service helps maintain dignity and independence while offering peace of mind for families.",
     icon: Pill,
-    image: "/assets/Screenshot 2025-04-17 130755.png",
+    image: medicationReminders,
     benefits: [
       "Consistent reminders to take medications on schedule",
       "Prescription pickup assistance from local pharmacies",
@@ -94,7 +94,7 @@ export const SERVICES: ServiceType[] = [
     title: "Light Housekeeping",
     description: "A clean home environment is essential for comfort and safety. Our light housekeeping services help maintain a tidy, organized living space without intruding on personal routines. We provide reliable and trustworthy support that preserves dignity while ensuring a well-maintained home.",
     icon: Brush,
-    image: "/assets/Screenshot 2025-04-17 130846.png",
+    image: lightHousekeeping,
     benefits: [
       "Regular dusting, vacuuming, and general tidying",
       "Laundry assistance and linen changing",
@@ -107,7 +107,7 @@ export const SERVICES: ServiceType[] = [
     title: "Meal Preparation",
     description: "Proper nutrition is fundamental to health and wellness. Our caregivers prepare nutritious, appealing meals that meet dietary needs and personal preferences. This service ensures clients maintain dignity and independence while enjoying wholesome, satisfying food in the comfort of their own home.",
     icon: UtensilsCrossed,
-    image: "/assets/Screenshot 2025-04-17 131252.png",
+    image: mealPrep,
     benefits: [
       "Grocery shopping with attention to preferences and needs",
       "Meal planning with careful dietary considerations",
@@ -120,7 +120,7 @@ export const SERVICES: ServiceType[] = [
     title: "Transportation & Errands",
     description: "Maintaining community connections is vital for wellbeing. Our transportation services provide reliable and trustworthy support for appointments, shopping, and social outings. We help clients maintain dignity and independence while offering peace of mind for families through safe, dependable transportation.",
     icon: Car,
-    image: "/assets/Screenshot 2025-04-17 130625.png",
+    image: transportation,
     benefits: [
       "Safe, comfortable transportation to medical appointments",
       "Shopping and errand assistance with personal attention",
@@ -133,7 +133,7 @@ export const SERVICES: ServiceType[] = [
     title: "Observation & Reporting",
     description: "Our attentive caregivers provide careful observation of client wellbeing and subtle health changes. We deliver regular, thorough updates to family members and healthcare professionals when appropriate. This proactive approach ensures peace of mind for families through consistent monitoring.",
     icon: HeartHandshake,
-    image: "/assets/home sweet home care logo.png",
+    image: logoImage,
     benefits: [
       "Attentive observation of condition and subtle changes",
       "Regular, detailed updates to family members",
