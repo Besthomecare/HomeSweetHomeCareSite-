@@ -63,39 +63,39 @@ const SiteHeader = () => {
         </button>
         
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden md:flex items-center justify-center space-x-8 w-full">
           <Link href="/">
-            <span className={`font-medium ${isActive('/') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer`}>
+            <span className={`font-medium ${isActive('/') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer text-center`}>
               Home
             </span>
           </Link>
           <Link href="/about">
-            <span className={`font-medium ${isActive('/about') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer`}>
+            <span className={`font-medium ${isActive('/about') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer text-center`}>
               About Us
             </span>
           </Link>
           <Link href="/services">
-            <span className={`font-medium ${isActive('/services') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer`}>
+            <span className={`font-medium ${isActive('/services') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer text-center`}>
               Services
             </span>
           </Link>
           <Link href="/services#ai-companionship">
-            <span className={`font-medium text-accent font-semibold hover:text-accent/80 transition-colors cursor-pointer`}>
+            <span className={`font-medium text-accent font-semibold hover:text-accent/80 transition-colors cursor-pointer text-center`}>
               AI Companionship
             </span>
           </Link>
           <Link href="/faq">
-            <span className={`font-medium ${isActive('/faq') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer`}>
+            <span className={`font-medium ${isActive('/faq') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer text-center`}>
               FAQs
             </span>
           </Link>
           <Link href="/contact">
-            <span className={`font-medium ${isActive('/contact') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer`}>
+            <span className={`font-medium ${isActive('/contact') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer text-center`}>
               Contact
             </span>
           </Link>
           <Link href="/contact">
-            <Button className="bg-accent hover:bg-accent/90 text-white">
+            <Button className="bg-accent hover:bg-accent/90 text-white text-center">
               Get Care Now
             </Button>
           </Link>
@@ -106,7 +106,7 @@ const SiteHeader = () => {
           <div className="flex flex-col space-y-3">
             <Link href="/">
               <span 
-                className={`font-medium ${isActive('/') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors py-2 border-b border-gray-100 block cursor-pointer`}
+                className={`font-medium ${isActive('/') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors py-2 border-b border-gray-100 block cursor-pointer text-center`}
                 onClick={closeMobileMenu}
               >
                 Home
@@ -114,7 +114,7 @@ const SiteHeader = () => {
             </Link>
             <Link href="/about">
               <span 
-                className={`font-medium ${isActive('/about') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors py-2 border-b border-gray-100 block cursor-pointer`}
+                className={`font-medium ${isActive('/about') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors py-2 border-b border-gray-100 block cursor-pointer text-center`}
                 onClick={closeMobileMenu}
               >
                 About Us
@@ -122,7 +122,7 @@ const SiteHeader = () => {
             </Link>
             <Link href="/services">
               <span 
-                className={`font-medium ${isActive('/services') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors py-2 border-b border-gray-100 block cursor-pointer`}
+                className={`font-medium ${isActive('/services') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors py-2 border-b border-gray-100 block cursor-pointer text-center`}
                 onClick={closeMobileMenu}
               >
                 Services
@@ -130,7 +130,7 @@ const SiteHeader = () => {
             </Link>
             <Link href="/services#ai-companionship">
               <span 
-                className="font-medium text-accent font-semibold hover:text-accent/80 transition-colors py-2 border-b border-gray-100 block cursor-pointer"
+                className="font-medium text-accent font-semibold hover:text-accent/80 transition-colors py-2 border-b border-gray-100 block cursor-pointer text-center"
                 onClick={closeMobileMenu}
               >
                 AI Companionship
@@ -138,7 +138,7 @@ const SiteHeader = () => {
             </Link>
             <Link href="/faq">
               <span 
-                className={`font-medium ${isActive('/faq') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors py-2 border-b border-gray-100 block cursor-pointer`}
+                className={`font-medium ${isActive('/faq') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors py-2 border-b border-gray-100 block cursor-pointer text-center`}
                 onClick={closeMobileMenu}
               >
                 FAQs
@@ -146,7 +146,7 @@ const SiteHeader = () => {
             </Link>
             <Link href="/contact">
               <span 
-                className={`font-medium ${isActive('/contact') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors py-2 border-b border-gray-100 block cursor-pointer`}
+                className={`font-medium ${isActive('/contact') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors py-2 border-b border-gray-100 block cursor-pointer text-center`}
                 onClick={closeMobileMenu}
               >
                 Contact
