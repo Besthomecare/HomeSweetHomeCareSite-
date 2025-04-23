@@ -39,7 +39,7 @@ const SiteHeader = () => {
           <div>
             <span className="text-sm flex items-center">
               <MapPin className="inline-block w-4 h-4 mr-2" />
-              Serving Sarasota, Manatee County & Lakewood Ranch
+              Serving Sarasota, Manatee County, & Lakewood Ranch
             </span>
           </div>
         </div>
