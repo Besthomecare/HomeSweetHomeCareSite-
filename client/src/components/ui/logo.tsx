@@ -50,13 +50,6 @@ const Logo: FC<LogoProps> = ({
           </g>
         )}
       </svg>
-      
-      {variant === "full" && (
-        <div className="ml-3 flex-shrink-0">
-          <h1 className={`font-heading font-bold text-2xl leading-tight ${colorMode === "light" ? "text-accent" : "text-white"}`}>HOME SWEET<br />HOME</h1>
-          <p className={`text-base font-medium tracking-wider ${colorMode === "light" ? "text-accent" : "text-white text-opacity-80"}`}>CARE</p>
-        </div>
-      )}
     </div>
   );
 };
