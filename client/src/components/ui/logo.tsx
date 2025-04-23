@@ -16,12 +16,12 @@ const Logo: FC<LogoProps> = ({
   return (
     <div className={`flex items-center ${className}`}>
       <svg 
-        width={variant === "full" ? "220" : "60"} 
-        height={variant === "full" ? "220" : "60"} 
+        width={variant === "full" ? "330" : "90"} 
+        height={variant === "full" ? "330" : "90"} 
         viewBox="0 0 480 480" 
         fill="none" 
         xmlns="http://www.w3.org/2000/svg"
-        className={`${variant === "full" ? "h-24 w-auto" : "h-16 w-auto"}`}
+        className={`${variant === "full" ? "h-36 w-auto" : "h-24 w-auto"}`}
       >
         {/* Heart with House and Hand - Based on the official logo */}
         <g>
@@ -44,9 +44,9 @@ const Logo: FC<LogoProps> = ({
         
         {variant === "full" && (
           <g>
-            <text x="240" y="370" fontFamily="serif" fontSize="36" fontWeight="bold" fill={logoColor} textAnchor="middle">HOME SWEET</text>
-            <text x="240" y="415" fontFamily="serif" fontSize="36" fontWeight="bold" fill={logoColor} textAnchor="middle">HOME</text>
-            <text x="240" y="455" fontFamily="sans-serif" fontSize="24" fontWeight="normal" fill={logoColor} textAnchor="middle">CARE</text>
+            <text x="240" y="370" fontFamily="serif" fontSize="54" fontWeight="bold" fill={logoColor} textAnchor="middle">HOME SWEET</text>
+            <text x="240" y="425" fontFamily="serif" fontSize="54" fontWeight="bold" fill={logoColor} textAnchor="middle">HOME</text>
+            <text x="240" y="475" fontFamily="sans-serif" fontSize="36" fontWeight="normal" fill={logoColor} textAnchor="middle">CARE</text>
           </g>
         )}
       </svg>
