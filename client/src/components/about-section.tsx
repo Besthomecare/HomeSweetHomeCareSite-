@@ -18,16 +18,16 @@ const AboutSection = () => {
         
         <div className="flex flex-col md:flex-row items-center mb-16">
           <div className="md:w-1/2 mb-8 md:mb-0 md:pr-10">
-            <h3 className="font-heading text-2xl font-semibold text-primary mb-4">Our Mission</h3>
-            <p className="mb-4">
+            <h3 className="font-heading text-2xl font-semibold text-primary mb-4 text-center">Our Mission</h3>
+            <p className="mb-4 text-center">
               To provide compassionate, personalized care that enables seniors to maintain their 
               independence and dignity while remaining in the comfort of their own homes.
             </p>
-            <p className="mb-6">
+            <p className="mb-6 text-center">
               We believe that everyone deserves to age with dignity, surrounded by comfort, 
               care, and respect.
             </p>
-            <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-accent">
+            <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-accent text-center">
               <p className="italic">
                 "Our approach is built on creating meaningful relationships with each client 
                 and their families to ensure personalized care that truly makes a difference."
@@ -46,25 +46,25 @@ const AboutSection = () => {
         
         <div className="flex flex-col md:flex-row-reverse items-center">
           <div className="md:w-1/2 mb-8 md:mb-0 md:pl-10">
-            <h3 className="font-heading text-2xl font-semibold text-primary mb-4">Our Caregivers</h3>
-            <p className="mb-4">
+            <h3 className="font-heading text-2xl font-semibold text-primary mb-4 text-center">Our Caregivers</h3>
+            <p className="mb-4 text-center">
               Our caregivers are the heart of our service. Each team member undergoes rigorous 
               screening, including:
             </p>
-            <ul className="mb-6 space-y-2">
+            <ul className="mb-6 space-y-2 mx-auto max-w-md">
               {[
                 "Comprehensive background checks",
                 "Professional references verification",
                 "Skills assessment and certification verification",
                 "Ongoing training and professional development"
               ].map((item, index) => (
-                <li key={index} className="flex items-start">
+                <li key={index} className="flex items-start justify-center">
                   <Check className="text-accent mt-1 mr-2 flex-shrink-0" size={18} />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
-            <p>
+            <p className="text-center">
               We carefully match caregivers with clients based on needs, personality, and 
               preferences to ensure the perfect fit.
             </p>

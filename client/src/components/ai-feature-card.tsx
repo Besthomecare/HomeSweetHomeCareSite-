@@ -7,14 +7,14 @@ const AIFeatureCard = () => {
   return (
     <div className="bg-white rounded-lg shadow-xl overflow-hidden border border-accent">
       <div className="bg-gradient-to-r from-accent to-accent/80 p-6 text-white">
-        <div className="flex items-center">
+        <div className="flex items-center justify-center">
           <Brain className="w-10 h-10 mr-4" />
           <h3 className="font-heading text-2xl font-bold">AI Companionship Technology</h3>
         </div>
       </div>
       
       <div className="p-6">
-        <p className="text-lg mb-4">
+        <p className="text-lg mb-4 text-center">
           Our innovative AI Companionship technology provides 24/7 engagement, conversation, 
           and personalized interaction through voice or tablet-based solutions.
         </p>
