@@ -46,7 +46,7 @@ const Logo: FC<LogoProps> = ({
           <g>
             <text x="240" y="370" fontFamily="serif" fontSize="54" fontWeight="bold" fill={logoColor} textAnchor="middle">HOME SWEET</text>
             <text x="240" y="425" fontFamily="serif" fontSize="54" fontWeight="bold" fill={logoColor} textAnchor="middle">HOME</text>
-            <text x="240" y="475" fontFamily="sans-serif" fontSize="36" fontWeight="normal" fill={logoColor} textAnchor="middle">CARE</text>
+            <text x="240" y="475" fontFamily="sans-serif" fontSize="36" fontWeight="bold" fill={logoColor} textAnchor="middle">CARE</text>
           </g>
         )}
       </svg>
