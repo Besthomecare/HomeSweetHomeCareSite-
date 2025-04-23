@@ -14,14 +14,14 @@ const Logo: FC<LogoProps> = ({
   const logoColor = colorMode === "light" ? "#006B54" : "#FFFFFF";
   
   return (
-    <div className={`flex items-center ${className}`}>
+    <div className={`flex items-center ${className} ml-0 pl-0`}>
       <svg 
         width={variant === "full" ? "330" : "90"} 
         height={variant === "full" ? "330" : "90"} 
         viewBox="0 0 480 480" 
         fill="none" 
         xmlns="http://www.w3.org/2000/svg"
-        className={`${variant === "full" ? "h-36 w-auto" : "h-24 w-auto"}`}
+        className={`${variant === "full" ? "h-36 w-auto" : "h-24 w-auto"} ml-0`}
       >
         {/* Heart with House and Hand - Based on the official logo */}
         <g>
