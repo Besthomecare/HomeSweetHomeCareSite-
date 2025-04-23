@@ -46,16 +46,18 @@ const SiteHeader = () => {
       </div>
       
       {/* Main Navigation */}
-      <nav className="container mx-auto px-4 md:px-6 py-6 flex flex-col md:flex-row justify-between items-center">
-        <Link href="/" onClick={closeMobileMenu}>
-          <div className="flex items-center mb-4 md:mb-0 cursor-pointer">
-            <Logo variant="full" />
-          </div>
-        </Link>
+      <nav className="container mx-auto px-0 md:px-0 py-6 flex flex-col md:flex-row justify-between items-center">
+        <div className="px-4 md:px-6">
+          <Link href="/" onClick={closeMobileMenu}>
+            <div className="flex items-center mb-4 md:mb-0 cursor-pointer">
+              <Logo variant="full" />
+            </div>
+          </Link>
+        </div>
         
         {/* Mobile Menu Toggle */}
         <button 
-          className="md:hidden text-primary text-2xl"
+          className="md:hidden text-primary text-2xl mr-4"
           onClick={toggleMobileMenu}
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
         >
@@ -63,7 +65,7 @@ const SiteHeader = () => {
         </button>
         
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center ml-auto space-x-8">
+        <div className="hidden md:flex items-center ml-auto pr-0 space-x-8">
           <Link href="/">
             <span className={`font-medium text-base ${isActive('/') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer text-center flex flex-col`}>
               <span>Home</span>
@@ -104,7 +106,7 @@ const SiteHeader = () => {
         </div>
         
         {/* Mobile Navigation Menu */}
-        <div className={`md:hidden w-full mt-4 ${mobileMenuOpen ? 'block' : 'hidden'}`}>
+        <div className={`md:hidden w-full mt-4 px-4 ${mobileMenuOpen ? 'block' : 'hidden'}`}>
           <div className="flex flex-col space-y-3">
             <Link href="/">
               <span 
