@@ -125,16 +125,16 @@ const AIFeatureSlideshow = () => {
                 <div className="relative h-full flex items-center z-10">
                   <div className="container mx-auto px-4 md:px-6">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                      <div className="text-white">
-                        <div className="bg-accent p-3 rounded-full inline-flex items-center justify-center mb-6">
+                      <div className="text-white text-center">
+                        <div className="bg-accent p-3 rounded-full inline-flex items-center justify-center mb-6 mx-auto">
                           {slide.icon}
                         </div>
                         <h3 className="text-3xl md:text-4xl font-bold mb-4">{slide.title}</h3>
                         <p className="text-xl mb-6 text-white/90">{slide.description}</p>
-                        <ul className="space-y-3 mb-8">
+                        <ul className="space-y-3 mb-8 mx-auto max-w-md">
                           {slide.features.map((feature, i) => (
-                            <li key={i} className="flex items-start">
-                              <div className="bg-accent/20 p-1 rounded-full mr-3 mt-1">
+                            <li key={i} className="flex items-start justify-center">
+                              <div className="bg-accent/20 p-1 rounded-full mr-3 mt-1 flex-shrink-0">
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                   <path d="M13.3334 4L6.00008 11.3333L2.66675 8" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                                 </svg>

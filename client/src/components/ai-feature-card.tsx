@@ -20,28 +20,28 @@ const AIFeatureCard = () => {
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-          <div className="bg-gray-50 p-4 rounded">
+          <div className="bg-gray-50 p-4 rounded text-center">
             <h4 className="font-semibold text-accent mb-2">Memory Support</h4>
             <p>AI provides gentle reminders and memory assistance throughout the day</p>
           </div>
           
-          <div className="bg-gray-50 p-4 rounded">
+          <div className="bg-gray-50 p-4 rounded text-center">
             <h4 className="font-semibold text-accent mb-2">Personalized Experience</h4>
             <p>Interaction becomes more tailored with each conversation</p>
           </div>
           
-          <div className="bg-gray-50 p-4 rounded">
+          <div className="bg-gray-50 p-4 rounded text-center">
             <h4 className="font-semibold text-accent mb-2">Continuous Presence</h4>
             <p>Available 24/7 to provide companionship and reduce isolation</p>
           </div>
           
-          <div className="bg-gray-50 p-4 rounded">
+          <div className="bg-gray-50 p-4 rounded text-center">
             <h4 className="font-semibold text-accent mb-2">Easy Integration</h4>
             <p>Accessible via smart speakers or tablets for convenience</p>
           </div>
         </div>
         
-        <div className="flex justify-between items-center">
+        <div className="flex flex-col items-center text-center space-y-4">
           <p className="font-medium text-accent">Technology with heart that sets us apart</p>
           <Link href="/contact">
             <Button className="bg-accent hover:bg-accent/90 text-white">
