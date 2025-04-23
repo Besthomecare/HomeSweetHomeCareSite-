@@ -63,7 +63,7 @@ const SiteHeader = () => {
         </button>
         
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center justify-center space-x-8 w-full">
+        <div className="hidden md:flex items-center ml-auto space-x-8">
           <Link href="/">
             <span className={`font-medium text-base ${isActive('/') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer text-center flex flex-col`}>
               <span>Home</span>
