@@ -1,5 +1,5 @@
 import { FC } from "react";
-import logoImage from "@assets/home sweet home care logo.png";
+import logoImage from "@assets/home sweet home care logo-Photoroom.png";
 
 interface LogoProps {
   className?: string;
