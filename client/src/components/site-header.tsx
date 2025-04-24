@@ -22,7 +22,7 @@ const SiteHeader = () => {
   };
 
   return (
-    <header className="bg-white shadow-sm">
+    <header className="bg-[#FEF9E7] shadow-sm">
       {/* Top Bar with Contact Info */}
       <div className="bg-accent text-white py-2">
         <div className="container-fluid px-0 flex flex-col md:flex-row justify-between items-center">
