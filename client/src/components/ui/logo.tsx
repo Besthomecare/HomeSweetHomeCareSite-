@@ -13,11 +13,12 @@ const Logo: FC<LogoProps> = ({
   colorMode = "light" 
 }) => {
   return (
-    <div className={`flex items-center ${className} ml-0 pl-0 bg-white`}>
+    <div className={`flex items-center ${className} ml-0 pl-0`}>
       <img 
         src={logoImage} 
         alt="Home Sweet Home Care Logo" 
-        className={`${variant === "full" ? "h-36 w-auto" : "h-24 w-auto"} ml-0 bg-white p-1 rounded`}
+        className={`${variant === "full" ? "h-36 w-auto" : "h-24 w-auto"} object-contain`}
+        style={{ filter: "brightness(0.95)" }}
       />
     </div>
   );
