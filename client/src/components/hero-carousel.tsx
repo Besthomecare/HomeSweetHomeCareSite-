@@ -2,25 +2,25 @@ import React, { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import inHomeCare1 from "@assets/in-home-care-1.jpg";
-import inHomeCare2 from "@assets/in-home-care-2.jpg";
-import inHomeCare3 from "@assets/in-home-care-3.jpg";
 
 const slides = [
   {
-    image: inHomeCare1,
+    image: "/images/carousel-wheelchair.jpeg",
     title: "In-Home Assistance",
     subtitle: "Professional care services in the comfort of home",
+    alt: "Volunteer cheerfully pushing a senior in a wheelchair on a sunny stroll."
   },
   {
-    image: inHomeCare2,
+    image: "/images/carousel-cooking.jpeg",
     title: "Daily Living Support",
     subtitle: "Help with meals, activities, and household tasks",
+    alt: "Caregiver and senior preparing lunch together in a cozy kitchen."
   },
   {
-    image: inHomeCare3,
+    image: "/images/carousel-hands.jpeg",
     title: "Compassionate Care", 
     subtitle: "Personalized attention with dignity and respect",
+    alt: "Daughter holding her elderly father's hands—warm, reassuring support."
   }
 ];
 
@@ -49,6 +49,8 @@ const HeroCarousel = () => {
           <div 
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url(${slide.image})` }}
+            aria-label={slide.alt}
+            role="img"
           >
             <div className="absolute inset-0 bg-black bg-opacity-40"></div>
           </div>
