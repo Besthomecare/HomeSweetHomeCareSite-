@@ -15,7 +15,7 @@ import medicationReminders from "@assets/medication-reminders.jpg";
 import lightHousekeeping from "@assets/light-housekeeping.jpg";
 import mealPrep from "@assets/meal-preparation.jpg";
 import transportation from "@assets/transportation-errands.jpg";
-import observationReporting from "@assets/observation-reporting.jpg";
+import observationReporting from "@assets/observation-reporting-alt.jpg";
 import logoImage from "@assets/home sweet home care logo.png";
 
 export const COMPANY_INFO: CompanyInfoType = {
