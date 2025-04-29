@@ -1,6 +1,6 @@
 import { Check } from "lucide-react";
 import cardGamesImage from "@assets/ChatGPT Image Apr 17, 2025, 01_54_46 PM.png";
-import caregiverLadyImage from "@assets/caregiver-elderly-lady.jpg";
+import caregiverAssistanceImage from "@assets/caregiver-assistance.jpg";
 
 const AboutSection = () => {
   return (
@@ -37,8 +37,8 @@ const AboutSection = () => {
           </div>
           <div className="md:w-1/2">
             <img 
-              src={caregiverLadyImage} 
-              alt="Caregiver bringing warmth and happiness while assisting an elderly lady, embodying our compassionate care mission." 
+              src={caregiverAssistanceImage} 
+              alt="Caregiver gently assisting an elderly woman, representing our dedicated support and commitment to maintaining dignity and independence." 
               className="rounded-lg shadow-lg w-full h-auto object-cover"
             />
           </div>
