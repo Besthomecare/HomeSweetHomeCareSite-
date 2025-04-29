@@ -36,8 +36,8 @@ const AboutSection = () => {
           </div>
           <div className="md:w-1/2">
             <img 
-              src="/images/our-mission.jpeg" 
-              alt="Volunteer assisting a senior with a walker, reflecting our mission of supportive, person-centered care." 
+              src="/images/our-mission-support.jpg" 
+              alt="Volunteers sharing joyful moments with seniors, reflecting our mission of supportive, person-centered care." 
               className="rounded-lg shadow-lg w-full h-auto object-cover"
             />
           </div>
