@@ -9,7 +9,7 @@ import {
 import { ServiceType, TestimonialType, FaqType, CompanyInfoType } from "@/types";
 
 // Import service images
-import aiCompanionship from "@assets/ChatGPT Image Apr 17, 2025, 01_54_46 PM.png";
+import aiCompanionship from "@assets/ai-companionship-alt.jpg";
 import companionship from "@assets/Screenshot 2025-04-17 130739.png";
 import medicationReminders from "@assets/Screenshot 2025-04-17 130755.png";
 import lightHousekeeping from "@assets/Screenshot 2025-04-17 130846.png";
