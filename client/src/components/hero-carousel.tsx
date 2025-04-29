@@ -2,16 +2,16 @@ import React, { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import carouselWheelchair from "@assets/carousel-wheelchair.jpeg";
+import carouselInHomeAssistance from "@assets/carousel-inhome-assistance.jpeg";
 import carouselCooking from "@assets/carousel-cooking.jpeg";
 import carouselHands from "@assets/carousel-hands.jpeg";
 
 const slides = [
   {
-    image: carouselWheelchair,
+    image: carouselInHomeAssistance,
     title: "In-Home Assistance",
     subtitle: "Professional care services in the comfort of home",
-    alt: "Volunteer cheerfully pushing a senior in a wheelchair on a sunny stroll."
+    alt: "Caregiver supporting a senior woman with a walker—professional in-home assistance in action."
   },
   {
     image: carouselCooking,
