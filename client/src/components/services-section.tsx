@@ -19,7 +19,9 @@ const ServiceCard = ({ service }: { service: ServiceType }) => {
       <div className="h-48 overflow-hidden">
         <img 
           src={service.image} 
-          alt={`Caregiver providing ${service.title} services to senior client`} 
+          alt={service.id === "ai-companionship" 
+            ? "Friendly robot chatting with a senior, representing AI companionship" 
+            : `Caregiver providing ${service.title} services to senior client`} 
           className="w-full h-full object-cover"
         />
       </div>
