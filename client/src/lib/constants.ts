@@ -10,7 +10,7 @@ import { ServiceType, TestimonialType, FaqType, CompanyInfoType } from "@/types"
 
 // Import service images
 import aiCompanionship from "@assets/ai-companionship-alt.jpg";
-import companionship from "@assets/Screenshot 2025-04-17 130739.png";
+import companionship from "@assets/companionship-social-support.jpg";
 import medicationReminders from "@assets/Screenshot 2025-04-17 130755.png";
 import lightHousekeeping from "@assets/Screenshot 2025-04-17 130846.png";
 import mealPrep from "@assets/Screenshot 2025-04-17 131252.png";
