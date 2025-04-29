@@ -2,25 +2,25 @@ import React, { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import seniorCaregiver1 from "@assets/senior-caregiver-1.jpg";
-import seniorCaregiver2 from "@assets/senior-caregiver-2.jpg";
-import seniorCaregiver3 from "@assets/senior-caregiver-3.jpg";
+import inHomeCare1 from "@assets/in-home-care-1.jpg";
+import inHomeCare2 from "@assets/in-home-care-2.jpg";
+import inHomeCare3 from "@assets/in-home-care-3.jpg";
 
 const slides = [
   {
-    image: seniorCaregiver1,
-    title: "Personalized Care",
-    subtitle: "Tailored to your unique needs and preferences",
+    image: inHomeCare1,
+    title: "In-Home Assistance",
+    subtitle: "Professional care services in the comfort of home",
   },
   {
-    image: seniorCaregiver2,
-    title: "Compassionate Caregivers",
-    subtitle: "Professional companion care you can trust",
+    image: inHomeCare2,
+    title: "Daily Living Support",
+    subtitle: "Help with meals, activities, and household tasks",
   },
   {
-    image: seniorCaregiver3,
-    title: "Peace of Mind", 
-    subtitle: "For you and your loved ones",
+    image: inHomeCare3,
+    title: "Compassionate Care", 
+    subtitle: "Personalized attention with dignity and respect",
   }
 ];
 
