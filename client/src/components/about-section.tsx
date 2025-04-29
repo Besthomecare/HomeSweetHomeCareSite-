@@ -30,7 +30,7 @@ const AboutSection = () => {
               "Our approach is built on creating meaningful relationships with each client 
               and their families to ensure personalized care that truly makes a difference."
             </p>
-            <p className="font-semibold mt-2">- Jane Smith, Founder</p>
+            <p className="font-semibold mt-2">- Devin Rexford, Founder</p>
           </div>
         </div>
         
