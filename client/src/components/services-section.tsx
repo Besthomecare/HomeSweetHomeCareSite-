@@ -25,7 +25,9 @@ const ServiceCard = ({ service }: { service: ServiceType }) => {
               ? "Three seniors laughing together, symbolizing companionship and social support."
               : service.id === "medication-reminders"
                 ? "Senior arranging pills in a weekly organizer, symbolizing timely medication reminders."
-                : `Caregiver providing ${service.title} services to senior client`} 
+                : service.id === "housekeeping"
+                  ? "Caregiver sweeping a tidy kitchen floor, illustrating light housekeeping assistance."
+                  : `Caregiver providing ${service.title} services to senior client`} 
           className="w-full h-full object-cover"
         />
       </div>
