@@ -15,6 +15,7 @@ import medicationReminders from "@assets/medication-reminders.jpg";
 import lightHousekeeping from "@assets/light-housekeeping.jpg";
 import mealPrep from "@assets/meal-preparation.jpg";
 import transportation from "@assets/transportation-errands.jpg";
+import observationReporting from "@assets/observation-reporting.jpg";
 import logoImage from "@assets/home sweet home care logo.png";
 
 export const COMPANY_INFO: CompanyInfoType = {
@@ -133,7 +134,7 @@ export const SERVICES: ServiceType[] = [
     title: "Observation & Reporting",
     description: "Our attentive caregivers provide careful observation of client wellbeing and subtle health changes. We deliver regular, thorough updates to family members and healthcare professionals when appropriate. This proactive approach ensures peace of mind for families through consistent monitoring.",
     icon: HeartHandshake,
-    image: logoImage,
+    image: observationReporting,
     benefits: [
       "Attentive observation of condition and subtle changes",
       "Regular, detailed updates to family members",
