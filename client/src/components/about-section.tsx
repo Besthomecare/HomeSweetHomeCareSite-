@@ -1,6 +1,5 @@
 import { Check } from "lucide-react";
 import cardGamesImage from "@assets/ChatGPT Image Apr 17, 2025, 01_54_46 PM.png";
-import caregiverAssistanceImage from "@assets/caregiver-assistance.jpg";
 
 const AboutSection = () => {
   return (
@@ -16,31 +15,22 @@ const AboutSection = () => {
           </p>
         </div>
         
-        <div className="flex flex-col md:flex-row items-center mb-16">
-          <div className="md:w-1/2 mb-8 md:mb-0 md:pr-10">
-            <h3 className="font-heading text-2xl font-semibold text-primary mb-4 text-center">Our Mission</h3>
-            <p className="mb-4 text-center">
-              To provide compassionate, personalized care that enables seniors to maintain their 
-              independence and dignity while remaining in the comfort of their own homes.
+        <div className="mb-16 max-w-3xl mx-auto">
+          <h3 className="font-heading text-2xl font-semibold text-primary mb-4 text-center">Our Mission</h3>
+          <p className="mb-4 text-center">
+            To provide compassionate, personalized care that enables seniors to maintain their 
+            independence and dignity while remaining in the comfort of their own homes.
+          </p>
+          <p className="mb-6 text-center">
+            We believe that everyone deserves to age with dignity, surrounded by comfort, 
+            care, and respect.
+          </p>
+          <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-accent text-center">
+            <p className="italic">
+              "Our approach is built on creating meaningful relationships with each client 
+              and their families to ensure personalized care that truly makes a difference."
             </p>
-            <p className="mb-6 text-center">
-              We believe that everyone deserves to age with dignity, surrounded by comfort, 
-              care, and respect.
-            </p>
-            <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-accent text-center">
-              <p className="italic">
-                "Our approach is built on creating meaningful relationships with each client 
-                and their families to ensure personalized care that truly makes a difference."
-              </p>
-              <p className="font-semibold mt-2">- Jane Smith, Founder</p>
-            </div>
-          </div>
-          <div className="md:w-1/2">
-            <img 
-              src={caregiverAssistanceImage} 
-              alt="Caregiver gently assisting an elderly woman, representing our dedicated support and commitment to maintaining dignity and independence." 
-              className="rounded-lg shadow-lg w-full h-auto object-cover"
-            />
+            <p className="font-semibold mt-2">- Jane Smith, Founder</p>
           </div>
         </div>
         
