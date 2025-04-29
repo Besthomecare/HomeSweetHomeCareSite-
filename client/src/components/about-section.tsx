@@ -1,5 +1,4 @@
 import { Check } from "lucide-react";
-import caregiverImage from "@assets/Screenshot 2025-04-17 134718.png";
 import cardGamesImage from "@assets/ChatGPT Image Apr 17, 2025, 01_54_46 PM.png";
 
 const AboutSection = () => {
@@ -37,8 +36,8 @@ const AboutSection = () => {
           </div>
           <div className="md:w-1/2">
             <img 
-              src={caregiverImage} 
-              alt="Caring staff member with elderly woman client" 
+              src="/images/our-mission.jpg" 
+              alt="Caregiver pushing a smiling senior in a wheelchair on a sunny stroll—reflecting our mission of supportive, person-centered care." 
               className="rounded-lg shadow-lg w-full h-auto object-cover"
             />
           </div>
