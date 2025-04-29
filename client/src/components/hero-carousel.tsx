@@ -2,20 +2,23 @@ import React, { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import seniorCaregiver1 from "@assets/senior-caregiver-1.jpg";
+import seniorCaregiver2 from "@assets/senior-caregiver-2.jpg";
+import seniorCaregiver3 from "@assets/senior-caregiver-3.jpg";
 
 const slides = [
   {
-    image: "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
+    image: seniorCaregiver1,
     title: "Personalized Care",
     subtitle: "Tailored to your unique needs and preferences",
   },
   {
-    image: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
+    image: seniorCaregiver2,
     title: "Compassionate Caregivers",
     subtitle: "Professional companion care you can trust",
   },
   {
-    image: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
+    image: seniorCaregiver3,
     title: "Peace of Mind", 
     subtitle: "For you and your loved ones",
   }
