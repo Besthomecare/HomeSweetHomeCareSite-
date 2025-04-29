@@ -13,7 +13,7 @@ import aiCompanionship from "@assets/ai-companionship-alt.jpg";
 import companionship from "@assets/companionship-social-support.jpg";
 import medicationReminders from "@assets/medication-reminders.jpg";
 import lightHousekeeping from "@assets/light-housekeeping.jpg";
-import mealPrep from "@assets/Screenshot 2025-04-17 131252.png";
+import mealPrep from "@assets/meal-preparation.jpg";
 import transportation from "@assets/Screenshot 2025-04-17 130625.png";
 import logoImage from "@assets/home sweet home care logo.png";
 
