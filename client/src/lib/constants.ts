@@ -30,8 +30,8 @@ export const COMPANY_INFO: CompanyInfoType = {
     zip: "34201"
   },
   hours: {
-    weekdays: "8:00 AM - 6:00 PM",
-    saturday: "9:00 AM - 3:00 PM",
+    weekdays: "9:00 AM - 5:00 PM",
+    saturday: "Closed",
     sunday: "Closed"
   },
   socialMedia: {
