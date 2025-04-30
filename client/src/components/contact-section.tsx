@@ -130,7 +130,6 @@ const ContactSection = () => {
                       {COMPANY_INFO.phone}
                     </a>
                   </p>
-                  <p className="text-sm text-gray-600">Available 24/7 for your care needs</p>
                 </div>
               </div>
               
@@ -163,7 +162,6 @@ const ContactSection = () => {
                     Saturday: {COMPANY_INFO.hours.saturday}<br/>
                     Sunday: {COMPANY_INFO.hours.sunday}
                   </p>
-                  <p className="text-sm text-gray-600">24/7 phone support for clients</p>
                 </div>
               </div>
             </div>
