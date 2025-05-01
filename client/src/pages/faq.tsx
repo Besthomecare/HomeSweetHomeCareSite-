@@ -72,9 +72,9 @@ const Faq = () => {
                 <p className="mb-4">
                   Call us directly to speak with a care advisor who can answer your questions.
                 </p>
-                <a href="tel:(941) 555-1234">
+                <a href="tel:(941) 200-0848">
                   <Button className="bg-accent hover:bg-accent/90 text-white">
-                    Call (941) 555-1234
+                    Call (941) 200-0848
                   </Button>
                 </a>
               </div>
