@@ -27,9 +27,9 @@ const SiteHeader = () => {
       <div className="bg-accent text-white py-2">
         <div className="container-fluid px-0 flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center mb-2 md:mb-0 pl-0 ml-0">
-            <a href="tel:(941) 200-8048" className="mr-6 hover:underline">
+            <a href="tel:(941) 200-0848" className="mr-6 hover:underline">
               <Phone className="inline-block w-4 h-4 mr-2" />
-              (941) 200-8048
+              (941) 200-0848
             </a>
             <a href={`mailto:${COMPANY_INFO.email}`} className="hover:underline">
               <Mail className="inline-block w-4 h-4 mr-2" />

@@ -11,7 +11,7 @@ import React from "react";
 
 export const COMPANY_INFO: CompanyInfoType = {
   name: "Home Sweet Home Care",
-  phone: "(941) 200-8048",
+  phone: "(941) 200-0848",
   email: "Info@besthomecare.net",
   website: "https://besthomecare.net",
   address: {
