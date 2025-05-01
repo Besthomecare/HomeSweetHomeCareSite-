@@ -13,8 +13,8 @@ import {
 
 const TestimonialCard = ({ testimonial }: { testimonial: TestimonialType }) => {
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 h-full">
-      <div className="flex items-center mb-4">
+    <div className="bg-white rounded-lg shadow-md p-8 h-full max-w-3xl mx-auto">
+      <div className="flex items-center justify-center mb-6">
         <div className="text-accent flex">
           {[...Array(5)].map((_, i) => (
             <Star key={i} className="fill-current" size={16} />
@@ -22,15 +22,15 @@ const TestimonialCard = ({ testimonial }: { testimonial: TestimonialType }) => {
         </div>
         <div className="ml-2 text-sm text-gray-500">Google Review</div>
       </div>
-      <p className="italic mb-6">{testimonial.quote}</p>
-      <div className="flex items-center mt-auto">
-        <div className="bg-secondary bg-opacity-50 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+      <p className="italic mb-8 text-center text-lg">&ldquo;{testimonial.quote}&rdquo;</p>
+      <div className="flex items-center justify-center">
+        <div className="bg-secondary bg-opacity-50 w-14 h-14 rounded-full flex items-center justify-center mr-4">
           <span className="font-heading font-bold text-primary text-xl">
             {testimonial.name.charAt(0)}
           </span>
         </div>
         <div>
-          <p className="font-semibold">{testimonial.name}</p>
+          <p className="font-semibold text-lg">{testimonial.name}</p>
           <p className="text-sm text-gray-600">{testimonial.relation}</p>
         </div>
       </div>
@@ -80,7 +80,7 @@ const TestimonialsSection = () => {
         >
           <CarouselContent className="py-4">
             {TESTIMONIALS.map((testimonial, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 pl-4">
+              <CarouselItem key={index} className="basis-full pl-4">
                 <TestimonialCard testimonial={testimonial} />
               </CarouselItem>
             ))}
