@@ -1,10 +1,17 @@
-import { useState, useRef, useEffect } from "react";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import React from "react";
+import { Star, ExternalLink } from "lucide-react";
 import { TESTIMONIALS } from "@/lib/constants";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const TestimonialCard = ({ testimonial }) => {
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 min-w-[300px] md:min-w-[400px] flex-shrink-0">
+    <div className="bg-white rounded-lg shadow-md p-6 h-full">
       <div className="flex items-center mb-4">
         <div className="text-accent flex">
           {[...Array(5)].map((_, i) => (
@@ -14,7 +21,7 @@ const TestimonialCard = ({ testimonial }) => {
         <div className="ml-2 text-sm text-gray-500">Google Review</div>
       </div>
       <p className="italic mb-6">{testimonial.quote}</p>
-      <div className="flex items-center">
+      <div className="flex items-center mt-auto">
         <div className="bg-secondary bg-opacity-50 w-12 h-12 rounded-full flex items-center justify-center mr-4">
           <span className="font-heading font-bold text-primary text-xl">
             {testimonial.name.charAt(0)}
@@ -30,44 +37,6 @@ const TestimonialCard = ({ testimonial }) => {
 };
 
 const TestimonialsSection = () => {
-  const sliderRef = useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
-
-  const checkScrollButtons = () => {
-    if (sliderRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = sliderRef.current;
-      setCanScrollLeft(scrollLeft > 0);
-      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
-    }
-  };
-
-  useEffect(() => {
-    const slider = sliderRef.current;
-    if (slider) {
-      slider.addEventListener('scroll', checkScrollButtons);
-      window.addEventListener('resize', checkScrollButtons);
-      checkScrollButtons();
-      
-      return () => {
-        slider.removeEventListener('scroll', checkScrollButtons);
-        window.removeEventListener('resize', checkScrollButtons);
-      };
-    }
-  }, []);
-
-  const scrollLeft = () => {
-    if (sliderRef.current) {
-      sliderRef.current.scrollBy({ left: -400, behavior: 'smooth' });
-    }
-  };
-
-  const scrollRight = () => {
-    if (sliderRef.current) {
-      sliderRef.current.scrollBy({ left: 400, behavior: 'smooth' });
-    }
-  };
-
   return (
     <section className="py-16 bg-secondary bg-opacity-30">
       <div className="container mx-auto px-4 md:px-6">
@@ -80,36 +49,25 @@ const TestimonialsSection = () => {
           </p>
         </div>
         
-        <div className="relative">
-          <div 
-            ref={sliderRef}
-            className="flex overflow-x-auto scrollbar-hide space-x-6 pb-8 hide-scrollbar"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-          >
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="w-full"
+        >
+          <CarouselContent className="py-4">
             {TESTIMONIALS.map((testimonial, index) => (
-              <TestimonialCard key={index} testimonial={testimonial} />
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 pl-4">
+                <TestimonialCard testimonial={testimonial} />
+              </CarouselItem>
             ))}
+          </CarouselContent>
+          <div className="flex justify-center gap-2 mt-4">
+            <CarouselPrevious className="relative static transform-none mr-2" />
+            <CarouselNext className="relative static transform-none" />
           </div>
-          
-          <button 
-            onClick={scrollLeft}
-            className={`absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-md text-primary hover:text-accent focus:outline-none ${
-              canScrollLeft ? 'opacity-100' : 'opacity-0 pointer-events-none'
-            } transition-opacity`}
-            aria-label="Previous testimonial"
-          >
-            <ChevronLeft size={20} />
-          </button>
-          <button 
-            onClick={scrollRight}
-            className={`absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-md text-primary hover:text-accent focus:outline-none ${
-              canScrollRight ? 'opacity-100' : 'opacity-0 pointer-events-none'
-            } transition-opacity`}
-            aria-label="Next testimonial"
-          >
-            <ChevronRight size={20} />
-          </button>
-        </div>
+        </Carousel>
         
         <div className="mt-10 text-center">
           <a 
@@ -119,20 +77,7 @@ const TestimonialsSection = () => {
             className="text-accent hover:text-primary transition-colors font-semibold flex items-center justify-center"
           >
             Read more Google Reviews 
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              className="ml-2 h-4 w-4" 
-              fill="none" 
-              viewBox="0 0 24 24" 
-              stroke="currentColor"
-            >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" 
-              />
-            </svg>
+            <ExternalLink className="ml-2 h-4 w-4" />
           </a>
         </div>
       </div>
