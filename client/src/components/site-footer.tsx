@@ -139,6 +139,34 @@ const SiteFooter = () => {
         <div className="mt-12 pt-8 border-t border-white border-opacity-20 text-center text-white text-opacity-70">
           <p>&copy; {currentYear} Home Sweet Home Care. All rights reserved.</p>
           <p className="mt-2 text-sm">Licensed and insured in-home care agency serving Sarasota, Manatee County, and Lakewood Ranch.</p>
+          <div className="mt-4 flex justify-center">
+            {/* Start of HubSpot code snippet */}
+            <button
+              type="button"
+              id="hs_show_banner_button"
+              style={{
+                backgroundColor: "#425b76", 
+                border: "1px solid #425b76", 
+                borderRadius: "3px",
+                padding: "10px 16px", 
+                textDecoration: "none", 
+                color: "#fff", 
+                fontFamily: "inherit",
+                fontSize: "inherit", 
+                fontWeight: "normal", 
+                lineHeight: "inherit", 
+                textAlign: "left", 
+                textShadow: "none"
+              }}
+              onClick={() => {
+                const _hsp = window._hsp = window._hsp || [];
+                _hsp.push(['showBanner']);
+              }}
+            >
+              Cookie&nbsp;Settings
+            </button>
+            {/* End of HubSpot code snippet */}
+          </div>
         </div>
       </div>
     </footer>
