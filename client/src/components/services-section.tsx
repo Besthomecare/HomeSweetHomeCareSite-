@@ -1,8 +1,8 @@
 import React from "react";
-import { Link } from "wouter";
 import { ArrowRight, Check } from "lucide-react";
 import { SERVICES } from "@/lib/constants";
 import { ServiceType } from "@/types";
+import Link from "@/components/ui/link";
 
 const ServiceCard = ({ service }: { service: ServiceType }) => {
   return (
