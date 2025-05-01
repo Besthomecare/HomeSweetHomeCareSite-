@@ -20,7 +20,7 @@ import logoImage from "@assets/home sweet home care logo.png";
 
 export const COMPANY_INFO: CompanyInfoType = {
   name: "Home Sweet Home Care",
-  phone: "(941) 200-0848",
+  phone: "(941) 200-8048",
   email: "Info@besthomecare.net",
   website: "https://besthomecare.net",
   address: {
