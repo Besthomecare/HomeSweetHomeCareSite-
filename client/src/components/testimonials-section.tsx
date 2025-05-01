@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Star, ExternalLink } from "lucide-react";
 import { TESTIMONIALS } from "@/lib/constants";
+import { TestimonialType } from "@/types";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  type CarouselApi,
 } from "@/components/ui/carousel";
 
-const TestimonialCard = ({ testimonial }) => {
+const TestimonialCard = ({ testimonial }: { testimonial: TestimonialType }) => {
   return (
     <div className="bg-white rounded-lg shadow-md p-6 h-full">
       <div className="flex items-center mb-4">
@@ -37,6 +39,25 @@ const TestimonialCard = ({ testimonial }) => {
 };
 
 const TestimonialsSection = () => {
+  const [api, setApi] = React.useState<CarouselApi>();
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    if (api) {
+      // Start auto-rotation when api is available
+      intervalRef.current = setInterval(() => {
+        api.scrollNext();
+      }, 5000); // Change slide every 5 seconds
+    }
+    
+    // Clean up the interval when component unmounts
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, [api]);
+
   return (
     <section className="py-16 bg-secondary bg-opacity-30">
       <div className="container mx-auto px-4 md:px-6">
@@ -54,6 +75,7 @@ const TestimonialsSection = () => {
             align: "start",
             loop: true,
           }}
+          setApi={setApi}
           className="w-full"
         >
           <CarouselContent className="py-4">
