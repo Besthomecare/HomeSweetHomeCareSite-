@@ -114,8 +114,8 @@ const SiteFooter = () => {
               </li>
               <li className="flex items-start">
                 <Phone className="mt-1 mr-3 flex-shrink-0" size={18} />
-                <a href={`tel:${COMPANY_INFO.phone}`} className="hover:text-accent transition-colors">
-                  {COMPANY_INFO.phone}
+                <a href="tel:(941) 200-8048" className="hover:text-accent transition-colors">
+                  (941) 200-8048
                 </a>
               </li>
               <li className="flex items-start">

@@ -124,10 +124,10 @@ const ContactSection = () => {
                   <h3 className="font-heading font-semibold text-xl mb-2">Phone</h3>
                   <p>
                     <a 
-                      href={`tel:${COMPANY_INFO.phone}`} 
+                      href="tel:(941) 200-8048" 
                       className="hover:text-accent transition-colors"
                     >
-                      {COMPANY_INFO.phone}
+                      (941) 200-8048
                     </a>
                   </p>
                 </div>
