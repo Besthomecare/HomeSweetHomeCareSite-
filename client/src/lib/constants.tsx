@@ -87,7 +87,7 @@ export const SERVICES: ServiceType[] = [
     benefits: [
       "Dusting, vacuuming, and general tidying",
       "Laundry and linen changing",
-      "Kitchen and bathroom cleaning"
+      "Light bathroom cleaning"
     ]
   },
   {
@@ -99,7 +99,7 @@ export const SERVICES: ServiceType[] = [
     benefits: [
       "Grocery shopping assistance",
       "Meal planning with dietary considerations",
-      "Cooking and meal preparation"
+      "Simple meal preparation"
     ]
   },
   {
