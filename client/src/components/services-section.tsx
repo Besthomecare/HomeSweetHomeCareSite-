@@ -61,11 +61,13 @@ const ServiceCard = ({ service }: { service: ServiceType }) => {
         </div>
         
         {/* Button */}
-        <Link href="/contact" className="mt-auto">
-          <div className="w-full bg-[#047857] hover:bg-[#03543f] text-white py-3 rounded-lg text-center font-bold transition-colors">
-            Request a Free Care Assessment
-          </div>
-        </Link>
+        <div className="mt-auto">
+          <Link href="/contact">
+            <div className="w-full bg-[#047857] hover:bg-[#03543f] text-white py-3 rounded-lg text-center font-bold transition-colors">
+              Request a Free Care Assessment
+            </div>
+          </Link>
+        </div>
       </div>
     </div>
   );
@@ -92,11 +94,13 @@ const ServicesSection = () => {
         </div>
         
         <div className="mt-12 text-center">
-          <Link href="/contact">
-            <div className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-md transition-colors inline-block font-semibold cursor-pointer">
-              Schedule a Free Care Assessment
-            </div>
-          </Link>
+          <div className="inline-block">
+            <Link href="/contact">
+              <div className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-md transition-colors inline-block font-semibold cursor-pointer">
+                Schedule a Free Care Assessment
+              </div>
+            </Link>
+          </div>
         </div>
       </div>
     </section>

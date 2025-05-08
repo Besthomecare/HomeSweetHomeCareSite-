@@ -147,11 +147,13 @@ const AIFeatureSlideshow = () => {
                             </li>
                           ))}
                         </ul>
-                        <Link href="/contact">
-                          <Button className="bg-accent hover:bg-accent/90 text-white mt-2">
-                            Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                          </Button>
-                        </Link>
+                        <div>
+                          <Link href="/contact">
+                            <Button className="bg-accent hover:bg-accent/90 text-white mt-2">
+                              Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                            </Button>
+                          </Link>
+                        </div>
                       </div>
                       <div className="hidden lg:block">
                         {/* Right side - this can be empty to give the text more space */}
@@ -203,11 +205,13 @@ const AIFeatureSlideshow = () => {
             Our AI Companionship technology sets us apart from other care providers.
             Contact us today to learn how this innovative solution can enhance your loved one's care.
           </p>
-          <Link href="/contact">
-            <Button className="bg-primary hover:bg-primary/90 text-white px-8 py-3 h-auto font-semibold">
-              Schedule a Demo
-            </Button>
-          </Link>
+          <div>
+            <Link href="/contact">
+              <Button className="bg-primary hover:bg-primary/90 text-white px-8 py-3 h-auto font-semibold">
+                Schedule a Demo
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
     </section>
