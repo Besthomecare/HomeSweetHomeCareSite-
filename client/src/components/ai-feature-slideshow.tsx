@@ -32,7 +32,7 @@ const slides = [
   {
     title: "24/7 AI Companionship",
     description: "Our innovative AI technology provides continuous companionship and support for your loved ones.",
-    image: "/ai-companion-24-7.jpg",
+    image: "https://images.pexels.com/photos/6414624/pexels-photo-6414624.jpeg?auto=compress&cs=tinysrgb&h=900",
     icon: <Clock className="h-10 w-10 text-white" />,
     features: [
       "Available around the clock when human caregivers aren't present",
@@ -43,7 +43,7 @@ const slides = [
   {
     title: "Personalized Interaction",
     description: "Our AI learns preferences and adapts to provide meaningful, personalized engagement.",
-    image: "/personalized-interaction.jpg",
+    image: "https://images.pexels.com/photos/18429415/pexels-photo-18429415.jpeg?auto=compress&cs=tinysrgb&h=900",
     icon: <Heart className="h-10 w-10 text-white" />,
     features: [
       "Remembers important details about family members",
