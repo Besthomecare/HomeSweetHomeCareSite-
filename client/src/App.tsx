@@ -3,6 +3,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./lib/queryClient";
 import { Toaster } from "@/components/ui/toaster";
 import { HelmetProvider } from "react-helmet-async";
+import { useScrollToTop } from "@/hooks/use-scroll-to-top";
 
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
@@ -15,6 +16,9 @@ import Privacy from "@/pages/privacy";
 import NotFound from "@/pages/not-found";
 
 function Router() {
+  // This hook will automatically scroll to top when route changes
+  useScrollToTop();
+  
   return (
     <Switch>
       <Route path="/" component={Home} />

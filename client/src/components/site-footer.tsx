@@ -97,7 +97,7 @@ const SiteFooter = () => {
             <ul className="space-y-3">
               {SERVICES.map((service) => (
                 <li key={service.id}>
-                  <Link href={`/services#${service.id}`}>
+                  <Link href="/services">
                     <a className="text-white hover:text-accent transition-colors">{service.title}</a>
                   </Link>
                 </li>
