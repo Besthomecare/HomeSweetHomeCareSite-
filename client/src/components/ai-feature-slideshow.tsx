@@ -32,7 +32,7 @@ const slides = [
   {
     title: "24/7 AI Companionship",
     description: "Our innovative AI technology provides continuous companionship and support for your loved ones.",
-    image: "/images/ai-companion-24-7.jpeg",
+    image: "/ai-companion-24-7.jpg",
     icon: <Clock className="h-10 w-10 text-white" />,
     features: [
       "Available around the clock when human caregivers aren't present",
@@ -43,7 +43,7 @@ const slides = [
   {
     title: "Personalized Interaction",
     description: "Our AI learns preferences and adapts to provide meaningful, personalized engagement.",
-    image: "/images/personalized-interaction.jpeg",
+    image: "/personalized-interaction.jpg",
     icon: <Heart className="h-10 w-10 text-white" />,
     features: [
       "Remembers important details about family members",
@@ -117,9 +117,9 @@ const AIFeatureSlideshow = () => {
                   <img 
                     src={slide.image} 
                     alt={slide.title === "24/7 AI Companionship" 
-                      ? "Senior woman enjoying a late-night video chat on her tablet—24/7 AI companionship."
+                      ? "Senior woman video chatting late at night—24/7 AI companionship."
                       : slide.title === "Personalized Interaction"
-                      ? "Caregiver chatting one-on-one with a senior in a hallway—personalized interaction."
+                      ? "Caregiver chatting one-on-one with a senior—personalized interaction."
                       : slide.title} 
                     className="w-full h-full object-cover mix-blend-overlay"
                   />
