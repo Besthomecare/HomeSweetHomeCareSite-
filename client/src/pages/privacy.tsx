@@ -110,20 +110,22 @@ const Privacy = () => {
             </p>
             <p>
               Home Sweet Home Care<br />
-              123 Care Lane<br />
-              Sarasota, FL 34235<br />
-              Email: care@homesweethomecare.com<br />
-              Phone: (941) 555-1234
+              5265 University Pkwy, STE 101-177<br />
+              Sarasota, FL 34201<br />
+              Email: Info@besthomecare.net<br />
+              Phone: (941) 200-0848
             </p>
             
             <p className="text-sm text-gray-500">Last Updated: May 15, 2023</p>
             
             <div className="mt-8 text-center">
-              <Link href="/contact">
-                <a className="bg-accent hover:bg-accent/90 text-white px-6 py-2 rounded-md transition-colors inline-block font-semibold">
-                  Contact Us With Questions
-                </a>
-              </Link>
+              <div className="inline-block">
+                <Link href="/contact">
+                  <div className="bg-accent hover:bg-accent/90 text-white px-6 py-2 rounded-md transition-colors inline-block font-semibold cursor-pointer">
+                    Contact Us With Questions
+                  </div>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
