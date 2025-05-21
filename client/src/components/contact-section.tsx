@@ -100,7 +100,7 @@ const ContactSection = () => {
             </h2>
             
             {/* HubSpot form embed */}
-            <div id="hs-contact-form" style={{maxWidth: "600px", margin: "2rem auto"}}></div>
+            <div id="hs-contact-form" className="hubspot-form" style={{maxWidth: "600px", margin: "2rem auto"}}></div>
           </div>
         </div>
       </div>
