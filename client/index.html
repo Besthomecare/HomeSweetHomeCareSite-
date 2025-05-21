@@ -17,21 +17,37 @@
     <!-- HubSpot form: Home Sweet Home Care lead capture -->
     <script charset="utf-8" src="https://js.hsforms.net/forms/embed/v2.js" defer></script>
     <script defer>
-      window.addEventListener('load', function () {
-        // Find all HubSpot form containers on the page
-        const formContainers = document.querySelectorAll('.hubspot-form');
-        
-        // Create a form instance for each container found
-        formContainers.forEach(function(container, index) {
-          hbspt.forms.create({
-            region: "na2",
-            portalId: "242622260",
-            formId: "f3bb81d3-4f99-476d-9873-bb0821428b9d",
-            target: "#" + container.id,
-            formInstanceId: "form-" + index // Ensure unique instance IDs
+      // Function to initialize HubSpot forms
+      function initHubSpotForms() {
+        // Check if HubSpot is loaded
+        if (window.hbspt) {
+          // Find all HubSpot form containers on the page
+          const formContainers = document.querySelectorAll('.hubspot-form');
+          
+          // Create a form instance for each container found
+          formContainers.forEach(function(container, index) {
+            // Only create a form if the container is empty (no previous form)
+            if (container.children.length === 0) {
+              hbspt.forms.create({
+                region: "na2",
+                portalId: "242622260",
+                formId: "f3bb81d3-4f99-476d-9873-bb0821428b9d",
+                target: "#" + container.id,
+                formInstanceId: "form-" + index // Ensure unique instance IDs
+              });
+            }
           });
-        });
-      });
+        }
+      }
+
+      // Run on initial page load
+      window.addEventListener('load', initHubSpotForms);
+      
+      // Create a global function that can be called from React components
+      window.reinitHubSpotForms = initHubSpotForms;
+      
+      // Also check periodically for form containers that might have been added by SPA navigation
+      setInterval(initHubSpotForms, 1000);
     </script>
     <!-- Start of HubSpot Embed Code -->
     <script
