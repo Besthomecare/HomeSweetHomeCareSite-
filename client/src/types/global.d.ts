@@ -9,7 +9,9 @@ interface Window {
         portalId: string;
         formId: string;
         target: string;
+        formInstanceId?: string;
       }) => void;
     }
   };
+  reinitHubSpotForms?: () => void;
 }

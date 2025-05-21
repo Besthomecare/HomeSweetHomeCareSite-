@@ -1,7 +1,17 @@
 import { Helmet } from "react-helmet";
 import ContactSection from "@/components/contact-section";
+import { useEffect } from "react";
 
 const Contact = () => {
+  // Initialize HubSpot form when this component mounts
+  useEffect(() => {
+    // Wait a short time to ensure DOM is ready
+    setTimeout(() => {
+      if (window.reinitHubSpotForms) {
+        window.reinitHubSpotForms();
+      }
+    }, 100);
+  }, []);
   return (
     <>
       <Helmet>
