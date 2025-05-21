@@ -1,22 +1,7 @@
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { COMPANY_INFO, SERVICE_AREAS } from "@/lib/constants";
-import { useEffect } from "react";
 
 const ContactSection = () => {
-  // Initialize HubSpot form when the component mounts
-  useEffect(() => {
-    // Check if HubSpot script is loaded
-    if ((window as any).hbspt) {
-      (window as any).hbspt.forms.create({
-        region: "na2",
-        portalId: "242622260",
-        formId: "f3bb81d3-4f99-476d-9873-bb0821428b9d",
-        target: "#hs-contact-form"
-      });
-    } else {
-      console.warn("HubSpot script not loaded yet. Form may not appear.");
-    }
-  }, []);
 
   return (
     <section id="contact" className="py-16 bg-white">
