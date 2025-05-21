@@ -35,7 +35,7 @@ export const COMPANY_INFO: CompanyInfoType = {
     sunday: "Closed"
   },
   socialMedia: {
-    facebook: "https://www.facebook.com/",
+    facebook: "https://www.facebook.com/profile.php?id=61575569594076",
     instagram: "https://www.instagram.com/",
     linkedin: "https://www.linkedin.com/"
   }
