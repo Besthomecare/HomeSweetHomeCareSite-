@@ -91,17 +91,7 @@ const TestimonialsSection = () => {
           </div>
         </Carousel>
         
-        <div className="mt-10 text-center">
-          <a 
-            href="https://www.google.com/business" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-accent hover:text-primary transition-colors font-semibold flex items-center justify-center"
-          >
-            Read more Google Reviews 
-            <ExternalLink className="ml-2 h-4 w-4" />
-          </a>
-        </div>
+
       </div>
     </section>
   );
