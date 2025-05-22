@@ -48,7 +48,7 @@ const AboutSection = () => {
                 "Skills assessment and certification verification",
                 "Ongoing training and professional development"
               ].map((item, index) => (
-                <li key={index} className="flex items-start justify-center">
+                <li key={index} className="flex items-start">
                   <Check className="text-accent mt-1 mr-2 flex-shrink-0" size={18} />
                   <span>{item}</span>
                 </li>
