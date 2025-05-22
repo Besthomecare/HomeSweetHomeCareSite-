@@ -1,0 +1,87 @@
+🔧 TASK: Add an always-visible, tap-to-call button that works on both mobile and desktop.
+
+1. Phone number
+   - tel link: 941-200-0848  ➜  href="tel:+19412000848"
+
+2. Desktop behaviour
+   - Show as a small fixed badge in the lower-right corner (48 px tall).
+   - Visible only after the user scrolls 120 px.
+   - Smooth fade-in animation.
+
+3. Mobile behaviour
+   - Full-width sticky bar at bottom (height 56 px, large thumb area).
+   - Contains phone icon + “Call Now”.
+   - Uses CSS `@media (max-width: 767px)` to switch from badge to bar.
+
+4. Style guide
+   - Colours: use existing green (#0F6D57) background, white text.
+   - Font: inherit site font.
+   - Rounded corners: 8 px (badge), none (bar).
+   - Box-shadow: subtle `0 2px 4px rgba(0,0,0,.2)`.
+
+5. Accessibility
+   - `aria-label="Call Home Sweet Home Care"`
+   - `role="button"`
+
+6. Implementation steps
+   a. Add HTML just before the closing `</body>`:
+      ```html
+      <a href="tel:+19412000848" class="call-btn" aria-label="Call Home Sweet Home Care" role="button">
+        <span class="call-icon">📞</span><span class="call-text">Call Now</span>
+      </a>
+      ```
+
+   b. Inject CSS (into styles.css or a <style> block):
+      ```css
+      .call-btn {
+        position: fixed;
+        right: 16px;
+        bottom: 16px;
+        background: #0F6D57;
+        color: #fff;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        padding: 8px 14px;
+        border-radius: 8px;
+        text-decoration: none;
+        box-shadow: 0 2px 4px rgba(0,0,0,.2);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .3s ease;
+        z-index: 999;
+      }
+      .call-btn.show { opacity: 1; pointer-events: auto; }
+
+      .call-icon { margin-right: 6px; }
+
+      /* Mobile bar */
+      @media (max-width: 767px) {
+        .call-btn {
+          left: 0;
+          right: 0;
+          bottom: 0;
+          border-radius: 0;
+          justify-content: center;
+          padding: 14px 0;
+        }
+        .call-icon { margin-right: 10px; }
+      }
+      ```
+
+   c. Add JS to toggle visibility after scroll:
+      ```js
+      window.addEventListener('scroll', () => {
+        const btn = document.querySelector('.call-btn');
+        if (window.scrollY > 120) {
+          btn.classList.add('show');
+        } else {
+          btn.classList.remove('show');
+        }
+      });
+      ```
+
+7. Ensure the code passes prettier / linter.
+
+8. Commit with message: “Add sticky tap-to-call button (mobile + desktop)”.
+

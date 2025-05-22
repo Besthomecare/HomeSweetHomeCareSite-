@@ -11,6 +11,12 @@
   </head>
   <body>
     <div id="root"></div>
+    
+    <!-- Always-visible tap-to-call button -->
+    <a href="tel:+19412000848" class="call-btn" aria-label="Call Home Sweet Home Care" role="button">
+      <span class="call-icon">📞</span><span class="call-text">Call Now</span>
+    </a>
+    
     <script type="module" src="/src/main.tsx"></script>
     <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
     <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>
@@ -48,6 +54,16 @@
       
       // Also check periodically for form containers that might have been added by SPA navigation
       setInterval(initHubSpotForms, 1000);
+      
+      // Tap-to-call button scroll behavior
+      window.addEventListener('scroll', () => {
+        const btn = document.querySelector('.call-btn');
+        if (window.scrollY > 120) {
+          btn.classList.add('show');
+        } else {
+          btn.classList.remove('show');
+        }
+      });
     </script>
     <!-- Start of HubSpot Embed Code -->
     <script
