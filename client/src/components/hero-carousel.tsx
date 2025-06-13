@@ -74,7 +74,7 @@ const HeroCarousel = () => {
       ))}
       
       {/* AI Companionship Feature Box */}
-      <div className="absolute bottom-10 right-10 max-w-md bg-white rounded-lg shadow-xl p-6 border-l-4 border-accent">
+      <div className="absolute bottom-10 right-10 max-w-md bg-white rounded-lg shadow-xl p-6 border-l-4 border-accent hidden md:block">
         <h3 className="font-heading text-xl font-bold text-primary mb-2">
           AI Companionship Technology
         </h3>
