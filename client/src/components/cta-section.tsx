@@ -14,18 +14,18 @@ const CtaSection = () => {
           Contact us today for a free, no-obligation care assessment. Our team is here to answer 
           your questions and help you find the perfect care solution for your loved one.
         </p>
-        <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+        <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
           <Link href="/contact">
             <Button 
               variant="secondary" 
-              className="bg-white hover:bg-opacity-90 text-primary px-8 py-3 h-auto font-semibold"
+              className="bg-white hover:bg-opacity-90 text-primary px-6 md:px-8 py-3 h-auto font-semibold w-full sm:w-auto text-center"
             >
               Schedule an Assessment
             </Button>
           </Link>
-          <a href={`tel:${COMPANY_INFO.phone}`}>
+          <a href={`tel:${COMPANY_INFO.phone}`} className="w-full sm:w-auto">
             <Button 
-              className="bg-accent hover:bg-opacity-90 text-white px-8 py-3 h-auto flex items-center justify-center font-semibold"
+              className="bg-accent hover:bg-opacity-90 text-white px-6 md:px-8 py-3 h-auto flex items-center justify-center font-semibold w-full"
             >
               <Phone className="mr-2" size={18} /> Call {COMPANY_INFO.phone}
             </Button>
