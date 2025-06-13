@@ -40,7 +40,7 @@ const HeroCarousel = () => {
   }, []);
 
   return (
-    <div className="relative h-[500px] md:h-[600px] overflow-hidden">
+    <div className="relative h-[400px] sm:h-[450px] md:h-[500px] lg:h-[600px] overflow-hidden">
       {/* Carousel Slides */}
       {slides.map((slide, index) => (
         <div 

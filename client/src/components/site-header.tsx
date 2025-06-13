@@ -24,14 +24,14 @@ const SiteHeader = () => {
   return (
     <header className="bg-white shadow-sm">
       {/* Top Bar with Contact Info */}
-      <div className="bg-accent text-white py-2">
-        <div className="container-fluid px-0 flex flex-col md:flex-row justify-between items-center">
-          <div className="flex items-center mb-2 md:mb-0 pl-0 ml-0">
-            <a href="tel:(941) 200-0848" className="mr-6 hover:underline">
+      <div className="bg-accent text-white py-2 hidden md:block">
+        <div className="container-fluid px-4 flex flex-col md:flex-row justify-between items-center">
+          <div className="flex items-center mb-2 md:mb-0">
+            <a href="tel:(941) 200-0848" className="mr-6 hover:underline text-sm">
               <Phone className="inline-block w-4 h-4 mr-2" />
               (941) 200-0848
             </a>
-            <a href={`mailto:${COMPANY_INFO.email}`} className="hover:underline">
+            <a href={`mailto:${COMPANY_INFO.email}`} className="hover:underline text-sm">
               <Mail className="inline-block w-4 h-4 mr-2" />
               {COMPANY_INFO.email}
             </a>
@@ -46,10 +46,10 @@ const SiteHeader = () => {
       </div>
       
       {/* Main Navigation */}
-      <nav className="container-fluid px-0 py-6 flex flex-col md:flex-row items-center">
-        <div className="flex justify-between w-full pl-2 pr-2 md:pl-0 md:pr-0 md:w-auto md:mr-10">
+      <nav className="container-fluid px-4 py-4 md:py-6 flex flex-col md:flex-row items-center">
+        <div className="flex justify-between w-full md:w-auto md:mr-10">
           <Link href="/" onClick={closeMobileMenu}>
-            <div className="flex items-center mb-4 md:mb-0 cursor-pointer ml-0 pl-0">
+            <div className="flex items-center mb-0 md:mb-0 cursor-pointer">
               <Logo variant="full" />
             </div>
           </Link>
