@@ -93,6 +93,11 @@ const SiteHeader = () => {
               <span>FAQs</span>
             </span>
           </Link>
+          <Link href="/careers">
+            <span className={`font-medium text-base ${isActive('/careers') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer text-center flex flex-col`}>
+              <span>Careers</span>
+            </span>
+          </Link>
           <Link href="/contact">
             <span className={`font-medium text-base ${isActive('/contact') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer text-center flex flex-col`}>
               <span>Contact</span>
@@ -148,6 +153,14 @@ const SiteHeader = () => {
                 onClick={closeMobileMenu}
               >
                 <span>FAQs</span>
+              </span>
+            </Link>
+            <Link href="/careers">
+              <span 
+                className={`font-medium text-base ${isActive('/careers') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors py-2 border-b border-gray-100 block cursor-pointer text-center flex flex-col`}
+                onClick={closeMobileMenu}
+              >
+                <span>Careers</span>
               </span>
             </Link>
             <Link href="/contact">

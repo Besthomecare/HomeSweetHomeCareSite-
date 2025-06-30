@@ -85,6 +85,11 @@ const SiteFooter = () => {
                 </Link>
               </li>
               <li>
+                <Link href="/careers">
+                  <a className="text-white hover:text-accent transition-colors">Careers</a>
+                </Link>
+              </li>
+              <li>
                 <Link href="/privacy">
                   <a className="text-white hover:text-accent transition-colors">Privacy Policy</a>
                 </Link>
