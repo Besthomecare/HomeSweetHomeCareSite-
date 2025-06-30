@@ -71,58 +71,28 @@ const Careers = () => {
               </ul>
             </div>
 
-            {/* Schedule and Pay */}
+            {/* Why Work With Us */}
             <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
               <div className="flex items-center mb-6">
-                <DollarSign className="text-accent mr-3" size={28} />
-                <h2 className="font-heading text-2xl font-semibold text-primary">Schedule and Pay</h2>
+                <Heart className="text-accent mr-3" size={28} />
+                <h2 className="font-heading text-2xl font-semibold text-primary">Why Work With Us</h2>
               </div>
-              <ul className="space-y-3">
-                <li className="flex items-start">
-                  <Clock className="text-accent mt-1 mr-3 flex-shrink-0" size={18} />
-                  <span>Create your own weekly availability, pick up open visits as you like</span>
-                </li>
-                <li className="flex items-start">
-                  <Clock className="text-accent mt-1 mr-3 flex-shrink-0" size={18} />
-                  <span>Most visits last two to four hours, live-in options available</span>
-                </li>
-                <li className="flex items-start">
-                  <DollarSign className="text-accent mt-1 mr-3 flex-shrink-0" size={18} />
-                  <div>
-                    <span className="block">Pay is competitive and depends on your experience and credentials</span>
-                    <span className="block text-sm text-gray-600 ml-2 mt-1">• Entry-level caregivers typically start around $17 per hour</span>
-                    <span className="block text-sm text-gray-600 ml-2">• Higher pay for CNAs, HHAs, and those with specialized skills or several years of experience</span>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <DollarSign className="text-accent mt-1 mr-3 flex-shrink-0" size={18} />
-                  <span>Direct deposit every Friday</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Benefits */}
-            <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
-              <div className="flex items-center mb-6">
-                <Shield className="text-accent mr-3" size={28} />
-                <h2 className="font-heading text-2xl font-semibold text-primary">Benefits</h2>
-              </div>
-              <ul className="space-y-3">
+              <ul className="space-y-4">
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-accent rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  <span>Paid orientation and ongoing micro-learning on your phone</span>
+                  <span className="text-gray-700">Pick your own hourly or live-in shifts</span>
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-accent rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  <span>24/7 support from schedulers and an AI chat assistant</span>
+                  <span className="text-gray-700">Weekly direct deposit at $17–$20 depending on experience</span>
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-accent rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  <span>Holiday premiums, referral bonuses, mileage reimbursement when you drive your own car</span>
+                  <span className="text-gray-700">W-2 employment with taxes handled</span>
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-accent rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  <span>W-2 employment so payroll taxes and workers' compensation are handled for you</span>
+                  <span className="text-gray-700">Locally owned Sarasota care team</span>
                 </li>
               </ul>
             </div>
@@ -186,7 +156,7 @@ const Careers = () => {
                 <a href="mailto:careers@besthomecare.net?subject=Caregiver Application">
                   <Button className="bg-white text-accent hover:bg-gray-100 px-6 py-3 h-auto font-semibold">
                     <Mail className="mr-2" size={18} />
-                    Email Your Resume
+                    Apply by Email
                   </Button>
                 </a>
               </div>
