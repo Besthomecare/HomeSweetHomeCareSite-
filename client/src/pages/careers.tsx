@@ -16,11 +16,10 @@ const Careers = () => {
         <section className="bg-primary text-white py-16">
           <div className="container mx-auto px-4 md:px-6 text-center">
             <h1 className="font-heading text-3xl md:text-4xl font-bold mb-4">
-              Join Our Caregiving Team
+              Caregiver Jobs in Sarasota & Manatee Counties
             </h1>
             <p className="text-lg md:text-xl max-w-3xl mx-auto">
-              Help us keep "home sweet home" a reality for Sarasota and Manatee families. 
-              Make a difference in seniors' lives while enjoying flexible schedules and competitive pay.
+              Choose Your Schedule, Change a Life
             </p>
           </div>
         </section>
