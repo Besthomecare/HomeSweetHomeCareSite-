@@ -183,20 +183,11 @@ const Careers = () => {
               <p className="mb-6">
                 We review applications daily and can usually schedule a video interview within 48 hours.
               </p>
-              <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+              <div className="flex justify-center">
                 <a href="mailto:careers@besthomecare.net?subject=Caregiver Application">
-                  <Button className="bg-white text-accent hover:bg-gray-100 px-6 py-3 h-auto font-semibold w-full sm:w-auto">
+                  <Button className="bg-white text-accent hover:bg-gray-100 px-6 py-3 h-auto font-semibold">
                     <Mail className="mr-2" size={18} />
                     Email Your Resume
-                  </Button>
-                </a>
-                <a href={`tel:${COMPANY_INFO.phone}`} className="cursor-pointer">
-                  <Button 
-                    variant="outline"
-                    className="border-white text-white hover:bg-white hover:text-accent px-6 py-3 h-auto font-semibold w-full sm:w-auto border-2 transition-all duration-200 hover:shadow-lg"
-                  >
-                    <Phone className="mr-2" size={18} />
-                    Call {COMPANY_INFO.phone}
                   </Button>
                 </a>
               </div>
