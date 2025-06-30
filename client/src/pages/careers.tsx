@@ -190,13 +190,13 @@ const Careers = () => {
                     Email Your Resume
                   </Button>
                 </a>
-                <a href={`tel:${COMPANY_INFO.phone}`}>
+                <a href={`tel:${COMPANY_INFO.phone}`} className="cursor-pointer">
                   <Button 
                     variant="outline"
-                    className="border-white text-white hover:bg-white hover:text-accent px-6 py-3 h-auto font-semibold w-full sm:w-auto"
+                    className="border-white text-white hover:bg-white hover:text-accent px-6 py-3 h-auto font-semibold w-full sm:w-auto border-2 transition-all duration-200 hover:shadow-lg"
                   >
                     <Phone className="mr-2" size={18} />
-                    Call Us Today
+                    Call {COMPANY_INFO.phone}
                   </Button>
                 </a>
               </div>
