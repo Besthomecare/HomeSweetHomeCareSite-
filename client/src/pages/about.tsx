@@ -32,11 +32,15 @@ const About = () => {
                 that feels most like them.
               </p>
               
-              <p className="text-lg leading-relaxed">
+              <p className="text-lg leading-relaxed mb-6">
                 I was born and raised in Sarasota, and this is where I am raising my own family. I know the 
                 streets, the churches, the parks, and the people. Home Sweet Home Care exists to give local 
                 families a trusted option that keeps loved ones where memories live, while easing the worry that 
                 so often falls on adult children.
+              </p>
+              
+              <p className="text-right text-gray-600 font-medium">
+                -Devin Rexford, CEO
               </p>
             </div>
           </div>
