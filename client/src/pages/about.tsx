@@ -17,17 +17,28 @@ const About = () => {
       
       <section className="bg-secondary bg-opacity-30 py-16">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center max-w-3xl mx-auto">
-            <h1 className="font-heading text-4xl md:text-5xl font-bold text-primary mb-6">About Us</h1>
-            <p className="text-lg mb-4">
-              Home Sweet Home Care is dedicated to providing exceptional in-home care services 
-              that enable seniors to maintain their independence, dignity, and quality of life
-              in the comfort of their own homes.
-            </p>
-            <p className="text-lg">
-              Our team of compassionate, professional caregivers is committed to delivering 
-              personalized care that meets the unique needs of each client we serve.
-            </p>
+          <div className="text-center max-w-4xl mx-auto">
+            <h1 className="font-heading text-4xl md:text-5xl font-bold text-primary mb-8">About Us</h1>
+            
+            <div className="text-left bg-white p-8 rounded-lg shadow-lg mb-8">
+              <h2 className="font-heading text-2xl font-semibold text-primary mb-6 text-center">Our Story</h2>
+              
+              <p className="text-lg mb-6 leading-relaxed">
+                Home Sweet Home Care began with a promise I made after watching my grandmother fade 
+                when she had to leave the house she shared with my grandfather for 65 years. The assisted 
+                living community tried its best, but the sudden change of place and routine was simply too much 
+                for her. Six months after moving, she was gone. I realized some seniors thrive in residential 
+                communities, yet many—like my grandmother—simply need the right help to stay in the place 
+                that feels most like them.
+              </p>
+              
+              <p className="text-lg leading-relaxed">
+                I was born and raised in Sarasota, and this is where I am raising my own family. I know the 
+                streets, the churches, the parks, and the people. Home Sweet Home Care exists to give local 
+                families a trusted option that keeps loved ones where memories live, while easing the worry that 
+                so often falls on adult children.
+              </p>
+            </div>
           </div>
         </div>
       </section>
