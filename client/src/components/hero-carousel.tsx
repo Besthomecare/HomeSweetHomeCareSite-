@@ -83,9 +83,6 @@ const HeroCarousel = () => {
           The perfect complement to our in-person companion care services.
         </p>
         <Link href="/services">
-          <div className="flex items-center text-accent font-semibold cursor-pointer hover:underline">
-            Learn more about our AI solution <ArrowRight className="ml-1" size={16} />
-          </div>
         </Link>
       </div>
       
