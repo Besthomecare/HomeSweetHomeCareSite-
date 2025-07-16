@@ -73,18 +73,7 @@ const HeroCarousel = () => {
         </div>
       ))}
       
-      {/* AI Companionship Feature Box */}
-      <div className="absolute bottom-10 right-10 max-w-md bg-white rounded-lg shadow-xl p-6 border-l-4 border-accent hidden md:block">
-        <h3 className="font-heading text-xl font-bold text-primary mb-2">
-          AI Companionship Technology
-        </h3>
-        <p className="text-gray-700 mb-4">
-          24/7 engagement and personalized interaction through our innovative AI technology. 
-          The perfect complement to our in-person companion care services.
-        </p>
-        <Link href="/services">
-        </Link>
-      </div>
+
       
       {/* Carousel Indicators */}
       <div className="absolute bottom-5 left-0 right-0 flex justify-center space-x-3">
