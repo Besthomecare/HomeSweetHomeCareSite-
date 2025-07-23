@@ -1,0 +1,74 @@
+import React from "react";
+import { Link } from "wouter";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Play } from "lucide-react";
+
+const HeroVideo = () => {
+  return (
+    <div className="relative h-[400px] sm:h-[450px] md:h-[500px] lg:h-[600px] overflow-hidden">
+      {/* Video Background */}
+      <video 
+        className="absolute inset-0 w-full h-full object-cover"
+        autoPlay 
+        muted 
+        loop
+        playsInline
+        poster="/api/placeholder/1920/1080"
+        aria-label="Home Sweet Home Care introduction video"
+      >
+        <source src="/hshc-video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-black bg-opacity-30"></div>
+      
+      {/* Content Overlay */}
+      <div className="relative h-full flex items-center">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-3xl">
+            <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-4">
+              Home Sweet Home Care
+            </h1>
+            <p className="text-white text-xl md:text-2xl mb-6 leading-relaxed">
+              Compassionate in-home care services for seniors in Sarasota, Manatee County, and Lakewood Ranch
+            </p>
+            <p className="text-white text-lg md:text-xl mb-8 opacity-90">
+              Helping your loved ones maintain independence and dignity in the comfort of their own home
+            </p>
+            
+            {/* Call to Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link to="/contact">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 py-3 text-lg">
+                  Get Started Today
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+              
+              <Link to="/services">
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-white text-white hover:bg-white hover:text-primary px-8 py-3 text-lg"
+                >
+                  Our Services
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      {/* Video Controls Hint */}
+      <div className="absolute bottom-4 right-4 text-white opacity-60">
+        <div className="flex items-center space-x-2 text-sm">
+          <Play className="h-4 w-4" />
+          <span>Auto-playing video</span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default HeroVideo;
