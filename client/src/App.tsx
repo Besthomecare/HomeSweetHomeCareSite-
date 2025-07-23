@@ -4,9 +4,6 @@ import { queryClient } from "./lib/queryClient";
 import { Toaster } from "@/components/ui/toaster";
 import { HelmetProvider } from "react-helmet-async";
 import { useScrollToTop } from "@/hooks/use-scroll-to-top";
-import { useEffect } from "react";
-import { initGA } from "./lib/analytics";
-import { useAnalytics } from "./hooks/use-analytics";
 
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
@@ -23,9 +20,6 @@ function Router() {
   // This hook will automatically scroll to top when route changes
   useScrollToTop();
   
-  // Track page views when routes change
-  useAnalytics();
-  
   return (
     <Switch>
       <Route path="/" component={Home} />
@@ -41,16 +35,6 @@ function Router() {
 }
 
 function App() {
-  // Initialize Google Analytics when app loads
-  useEffect(() => {
-    // Verify required environment variable is present
-    if (!import.meta.env.VITE_GA_MEASUREMENT_ID) {
-      console.warn('Missing required Google Analytics key: VITE_GA_MEASUREMENT_ID');
-    } else {
-      initGA();
-    }
-  }, []);
-
   return (
     <QueryClientProvider client={queryClient}>
       <HelmetProvider>
