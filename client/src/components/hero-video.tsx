@@ -14,26 +14,27 @@ const HeroVideo = () => {
         loop
         playsInline
         poster="/api/placeholder/1920/1080"
-        aria-label="Home Sweet Home Care introduction video"
+        aria-label="Home Sweet Home Care B-roll video"
       >
-        <source src="/hshc-video.mp4" type="video/mp4" />
+        <source src="/website-broll.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       
-      {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-black bg-opacity-30"></div>
+      {/* Multi-layer overlay for better text readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50"></div>
       
       {/* Content Overlay */}
       <div className="relative h-full flex items-center">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl">
-            <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-4">
+            <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-4 drop-shadow-2xl">
               Home Sweet Home Care
             </h1>
-            <p className="text-white text-xl md:text-2xl mb-6 leading-relaxed">
+            <p className="text-white text-xl md:text-2xl mb-6 leading-relaxed drop-shadow-lg">
               Compassionate in-home care services for seniors in Sarasota, Manatee County, and Lakewood Ranch
             </p>
-            <p className="text-white text-lg md:text-xl mb-8 opacity-90">
+            <p className="text-white text-lg md:text-xl mb-8 drop-shadow-lg">
               Helping your loved ones maintain independence and dignity in the comfort of their own home
             </p>
             
