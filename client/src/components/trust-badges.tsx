@@ -8,11 +8,11 @@ interface TrustBadgeProps {
 
 const TrustBadge = ({ icon, title, description }: TrustBadgeProps) => {
   return (
-    <div className="flex flex-col items-center text-center">
+    <div className="flex flex-col items-center text-center h-full">
       <div className="bg-secondary bg-opacity-30 p-4 rounded-full mb-3">
         {icon}
       </div>
-      <h3 className="font-heading font-semibold text-lg mb-2">{title}</h3>
+      <h3 className="font-heading font-semibold text-lg mb-2 min-h-[3.5rem] flex items-center">{title}</h3>
       <p className="text-sm">{description}</p>
     </div>
   );
@@ -27,7 +27,7 @@ const TrustBadges = () => {
     },
     {
       icon: <Clock className="text-3xl text-accent" size={24} />,
-      title: "Flexible Hours & 24/7 Care",
+      title: "Flexible Hours",
       description: "Care when you need it, tailored to your schedule"
     },
     {
@@ -45,7 +45,7 @@ const TrustBadges = () => {
   return (
     <section className="py-10 bg-white">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-stretch">
           {badges.map((badge, index) => (
             <TrustBadge
               key={index}
