@@ -27,7 +27,7 @@ const TrustBadges = () => {
     },
     {
       icon: <Clock className="text-3xl text-accent" size={24} />,
-      title: "Flexible Hours",
+      title: "Flexible Hours & 24/7 Care",
       description: "Care when you need it, tailored to your schedule"
     },
     {

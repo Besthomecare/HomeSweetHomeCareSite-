@@ -52,19 +52,6 @@ export const SERVICE_AREAS = [
 
 export const SERVICES: ServiceType[] = [
   {
-    id: "transportation",
-    title: "Transportation & Errands",
-    description: "Maintaining community connections is vital for wellbeing. Our transportation services provide reliable and trustworthy support for appointments, shopping, and social outings. We help clients maintain dignity and independence while offering peace of mind for families through safe, dependable transportation.",
-    icon: Car,
-    image: transportation,
-    benefits: [
-      "Safe, comfortable transportation to medical appointments",
-      "Shopping and errand assistance with personal attention",
-      "Support for social outings and community engagement",
-      "Personalized, compassionate care during all transportation"
-    ]
-  },
-  {
     id: "companionship",
     title: "Companionship and Social Support",
     description: "Our caregivers provide meaningful social interaction and emotional connection that truly makes a difference. Through engaging conversations and shared activities, we help combat loneliness and isolation. Our personalized, compassionate care approach ensures each client receives the attention they deserve.",
@@ -75,6 +62,19 @@ export const SERVICES: ServiceType[] = [
       "Cognitive stimulation that maintains mental sharpness",
       "Reliable and trustworthy support for everyday activities",
       "Peace of mind for families knowing their loved one isn't alone"
+    ]
+  },
+  {
+    id: "transportation",
+    title: "Transportation & Errands",
+    description: "Maintaining community connections is vital for wellbeing. Our transportation services provide reliable and trustworthy support for appointments, shopping, and social outings. We help clients maintain dignity and independence while offering peace of mind for families through safe, dependable transportation.",
+    icon: Car,
+    image: transportation,
+    benefits: [
+      "Safe, comfortable transportation to medical appointments",
+      "Shopping and errand assistance with personal attention",
+      "Support for social outings and community engagement",
+      "Personalized, compassionate care during all transportation"
     ]
   },
   {

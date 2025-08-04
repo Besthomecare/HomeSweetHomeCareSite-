@@ -82,12 +82,7 @@ const SiteHeader = () => {
               <span>Services</span>
             </span>
           </Link>
-          <Link href="/services#ai-companionship">
-            <span className={`font-medium text-base ${isActive('/services#ai-companionship') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer text-center flex flex-col`}>
-              <span>AI</span>
-              <span>Companionship</span>
-            </span>
-          </Link>
+
           <Link href="/faq">
             <span className={`font-medium text-base ${isActive('/faq') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer text-center flex flex-col`}>
               <span>FAQs</span>
@@ -138,15 +133,7 @@ const SiteHeader = () => {
                 <span>Services</span>
               </span>
             </Link>
-            <Link href="/services#ai-companionship">
-              <span 
-                className={`font-medium text-base ${isActive('/services#ai-companionship') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors py-2 border-b border-gray-100 block cursor-pointer text-center flex flex-col`}
-                onClick={closeMobileMenu}
-              >
-                <span>AI</span>
-                <span>Companionship</span>
-              </span>
-            </Link>
+
             <Link href="/faq">
               <span 
                 className={`font-medium text-base ${isActive('/faq') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors py-2 border-b border-gray-100 block cursor-pointer text-center flex flex-col`}
