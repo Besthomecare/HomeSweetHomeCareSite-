@@ -52,16 +52,16 @@ export const SERVICE_AREAS = [
 
 export const SERVICES: ServiceType[] = [
   {
-    id: "ai-companionship",
-    title: "AI Companionship",
-    description: "Our innovative AI Companionship provides 24/7 engagement through voice or tablet-based technology. It offers conversation, memory support, and personalized interaction that grows more meaningful over time. This service provides peace of mind for families knowing their loved one has constant companionship.",
-    icon: Users,
-    image: aiCompanionship,
+    id: "transportation",
+    title: "Transportation & Errands",
+    description: "Maintaining community connections is vital for wellbeing. Our transportation services provide reliable and trustworthy support for appointments, shopping, and social outings. We help clients maintain dignity and independence while offering peace of mind for families through safe, dependable transportation.",
+    icon: Car,
+    image: transportation,
     benefits: [
-      "Provides reliable and trustworthy support at any time of day",
-      "Grows more personalized with every interaction",
-      "Helps maintain dignity and independence in the home",
-      "Offers peace of mind for families with 24/7 companionship"
+      "Safe, comfortable transportation to medical appointments",
+      "Shopping and errand assistance with personal attention",
+      "Support for social outings and community engagement",
+      "Personalized, compassionate care during all transportation"
     ]
   },
   {
@@ -117,16 +117,16 @@ export const SERVICES: ServiceType[] = [
     ]
   },
   {
-    id: "transportation",
-    title: "Transportation & Errands",
-    description: "Maintaining community connections is vital for wellbeing. Our transportation services provide reliable and trustworthy support for appointments, shopping, and social outings. We help clients maintain dignity and independence while offering peace of mind for families through safe, dependable transportation.",
-    icon: Car,
-    image: transportation,
+    id: "ai-companionship",
+    title: "AI Companionship",
+    description: "Our innovative AI Companionship provides 24/7 engagement through voice or tablet-based technology. It offers conversation, memory support, and personalized interaction that grows more meaningful over time. This service provides peace of mind for families knowing their loved one has constant companionship.",
+    icon: Users,
+    image: aiCompanionship,
     benefits: [
-      "Safe, comfortable transportation to medical appointments",
-      "Shopping and errand assistance with personal attention",
-      "Support for social outings and community engagement",
-      "Personalized, compassionate care during all transportation"
+      "Provides reliable and trustworthy support at any time of day",
+      "Grows more personalized with every interaction",
+      "Helps maintain dignity and independence in the home",
+      "Offers peace of mind for families with 24/7 companionship"
     ]
   },
   {
