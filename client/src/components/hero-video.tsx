@@ -51,7 +51,7 @@ const HeroVideo = () => {
                 <Button 
                   size="lg" 
                   variant="outline" 
-                  className="border-white text-white hover:bg-white hover:text-primary px-8 py-3 text-lg"
+                  className="border-2 border-white text-white bg-black/20 hover:bg-white hover:text-primary px-8 py-3 text-lg backdrop-blur-sm"
                 >
                   Our Services
                 </Button>
