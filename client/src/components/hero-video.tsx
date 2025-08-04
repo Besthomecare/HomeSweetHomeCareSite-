@@ -35,7 +35,7 @@ const HeroVideo = () => {
               Compassionate in-home care services for seniors in Sarasota, Manatee County, and Lakewood Ranch
             </p>
             <p className="text-white text-lg md:text-xl mb-8 drop-shadow-lg">
-              Helping your loved ones maintain independence and dignity in the comfort of their own home
+              Helping your loved ones maintain independence in the comfort of their own home
             </p>
             
             {/* Call to Action Buttons */}
