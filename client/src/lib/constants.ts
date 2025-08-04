@@ -119,14 +119,14 @@ export const SERVICES: ServiceType[] = [
   {
     id: "ai-companionship",
     title: "AI Companionship",
-    description: "Our innovative AI Companionship provides 24/7 engagement through voice or tablet-based technology. It offers conversation, memory support, and personalized interaction that grows more meaningful over time. This service provides peace of mind for families knowing their loved one has constant companionship.",
+    description: "Our innovative AI Companionship provides flexible engagement through voice or tablet-based technology. It offers conversation, memory support, and personalized interaction that grows more meaningful over time. This service provides peace of mind for families knowing their loved one has reliable companionship.",
     icon: Users,
     image: aiCompanionship,
     benefits: [
       "Provides reliable and trustworthy support at any time of day",
       "Grows more personalized with every interaction",
       "Helps maintain dignity and independence in the home",
-      "Offers peace of mind for families with 24/7 companionship"
+      "Offers peace of mind for families with flexible companionship"
     ]
   },
   {
