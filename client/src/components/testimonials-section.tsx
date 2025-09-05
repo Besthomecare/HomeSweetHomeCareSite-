@@ -20,7 +20,6 @@ const TestimonialCard = ({ testimonial }: { testimonial: TestimonialType }) => {
             <Star key={i} className="fill-current" size={16} />
           ))}
         </div>
-        <div className="ml-2 text-sm text-gray-500">Google Review</div>
       </div>
       <p className="italic mb-8 text-center text-lg">&ldquo;{testimonial.quote}&rdquo;</p>
       <div className="flex items-center justify-center">
