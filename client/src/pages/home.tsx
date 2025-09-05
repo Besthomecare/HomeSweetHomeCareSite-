@@ -2,7 +2,6 @@ import HeroVideo from "@/components/hero-video";
 import TrustBadges from "@/components/trust-badges";
 import AboutSection from "@/components/about-section";
 import ServicesSection from "@/components/services-section";
-import TestimonialsSection from "@/components/testimonials-section";
 import FaqSection from "@/components/faq-section";
 import CtaSection from "@/components/cta-section";
 import ContactSection from "@/components/contact-section";
@@ -22,7 +21,6 @@ const Home = () => {
       <TrustBadges />
       <AboutSection />
       <ServicesSection />
-      <TestimonialsSection />
       <FaqSection />
       <CtaSection />
       <ContactSection />

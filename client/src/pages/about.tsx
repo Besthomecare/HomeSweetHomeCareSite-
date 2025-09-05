@@ -1,7 +1,6 @@
 import { Helmet } from "react-helmet";
 import AboutSection from "@/components/about-section";
 import TrustBadges from "@/components/trust-badges";
-import TestimonialsSection from "@/components/testimonials-section";
 import CtaSection from "@/components/cta-section";
 
 const About = () => {
@@ -94,7 +93,6 @@ const About = () => {
         </div>
       </section>
       
-      <TestimonialsSection />
       <CtaSection />
     </>
   );
