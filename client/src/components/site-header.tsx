@@ -65,49 +65,69 @@ const SiteHeader = () => {
         </div>
         
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center justify-center mx-auto space-x-6 px-4">
-          <Link href="/">
-            <span className={`font-medium text-base ${isActive('/') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer text-center flex flex-col`}>
-              <span>Home</span>
-            </span>
-          </Link>
-          <Link href="/about">
-            <span className={`font-medium text-base ${isActive('/about') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer text-center flex flex-col`}>
-              <span>About</span>
-              <span>Us</span>
-            </span>
-          </Link>
-          <Link href="/services">
-            <span className={`font-medium text-base ${isActive('/services') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer text-center flex flex-col`}>
-              <span>Services</span>
-            </span>
-          </Link>
+        <div className="hidden md:flex items-center justify-between flex-1 space-x-6 px-4">
+          <div className="flex items-center space-x-6">
+            <Link href="/">
+              <span className={`font-medium text-base ${isActive('/') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer text-center flex flex-col`}>
+                <span>Home</span>
+              </span>
+            </Link>
+            <Link href="/about">
+              <span className={`font-medium text-base ${isActive('/about') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer text-center flex flex-col`}>
+                <span>About</span>
+                <span>Us</span>
+              </span>
+            </Link>
+            <Link href="/services">
+              <span className={`font-medium text-base ${isActive('/services') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer text-center flex flex-col`}>
+                <span>Services</span>
+              </span>
+            </Link>
 
-          <Link href="/faq">
-            <span className={`font-medium text-base ${isActive('/faq') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer text-center flex flex-col`}>
-              <span>FAQs</span>
-            </span>
-          </Link>
-          <Link href="/careers">
-            <span className={`font-medium text-base ${isActive('/careers') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer text-center flex flex-col`}>
-              <span>Careers</span>
-            </span>
-          </Link>
-          <Link href="/contact">
-            <span className={`font-medium text-base ${isActive('/contact') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer text-center flex flex-col`}>
-              <span>Contact</span>
-            </span>
-          </Link>
-          <Link href="/contact">
-            <Button className="bg-accent hover:bg-accent/90 text-white text-center font-medium text-base">
-              Get Care Now
-            </Button>
-          </Link>
+            <Link href="/faq">
+              <span className={`font-medium text-base ${isActive('/faq') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer text-center flex flex-col`}>
+                <span>FAQs</span>
+              </span>
+            </Link>
+            <Link href="/careers">
+              <span className={`font-medium text-base ${isActive('/careers') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer text-center flex flex-col`}>
+                <span>Careers</span>
+              </span>
+            </Link>
+            <Link href="/contact">
+              <span className={`font-medium text-base ${isActive('/contact') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer text-center flex flex-col`}>
+                <span>Contact</span>
+              </span>
+            </Link>
+          </div>
+          <a 
+            href="https://calendar.google.com/appointments/schedules/AcZssZ1HmfJNob7zkiWgHb1185gbsl_v8EOAfqEP5Lili91nLoHV5brvq7oFCxGoVdsFDXoKjhaRsPYY"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-base text-white px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg whitespace-nowrap"
+            style={{ backgroundColor: '#E7B77E' }}
+            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#D6A76D'}
+            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#E7B77E'}
+            data-testid="button-book-consultation"
+          >
+            Book Your Free In-Home Consultation
+          </a>
         </div>
         
         {/* Mobile Navigation Menu */}
         <div className={`md:hidden w-full mt-4 px-4 ${mobileMenuOpen ? 'block' : 'hidden'}`}>
           <div className="flex flex-col space-y-1">
+            <a 
+              href="https://calendar.google.com/appointments/schedules/AcZssZ1HmfJNob7zkiWgHb1185gbsl_v8EOAfqEP5Lili91nLoHV5brvq7oFCxGoVdsFDXoKjhaRsPYY"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-base text-white px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg text-center mb-4"
+              style={{ backgroundColor: '#E7B77E' }}
+              onClick={closeMobileMenu}
+              data-testid="button-book-consultation-mobile"
+            >
+              Book Your Free In-Home Consultation
+            </a>
             <Link href="/">
               <span 
                 className={`font-medium text-base ${isActive('/') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors py-2 border-b border-gray-100 block cursor-pointer text-center flex flex-col`}
@@ -157,14 +177,6 @@ const SiteHeader = () => {
               >
                 <span>Contact</span>
               </span>
-            </Link>
-            <Link href="/contact">
-              <div
-                className="bg-accent hover:bg-accent/90 text-white px-5 py-2 rounded-md transition-colors text-center mt-2 cursor-pointer font-medium text-base"
-                onClick={closeMobileMenu}
-              >
-                Get Care Now
-              </div>
             </Link>
           </div>
         </div>
