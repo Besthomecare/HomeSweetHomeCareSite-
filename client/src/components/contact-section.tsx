@@ -9,7 +9,7 @@ const ContactSection = () => {
         <div className="flex flex-col lg:flex-row">
           <div className="lg:w-1/2 lg:pr-12 mb-10 lg:mb-0">
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-6">
-              Contact Us
+              Get In Touch
             </h2>
             <p className="mb-8 text-lg">
               We're here to answer your questions and discuss how we can help your loved one 
