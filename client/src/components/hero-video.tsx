@@ -42,7 +42,7 @@ const HeroVideo = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <a 
                 href="tel:+19412000848"
-                className="inline-flex items-center justify-center font-medium text-lg text-white px-8 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg bg-primary hover:bg-primary/90"
+                className="inline-flex items-center justify-center font-medium text-base sm:text-lg text-white px-6 sm:px-8 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg bg-primary hover:bg-primary/90"
                 data-testid="button-call-now-hero"
               >
                 Call Now
@@ -52,11 +52,12 @@ const HeroVideo = () => {
                 href="https://calendar.google.com/appointments/schedules/AcZssZ1HmfJNob7zkiWgHb1185gbsl_v8EOAfqEP5Lili91nLoHV5brvq7oFCxGoVdsFDXoKjhaRsPYY"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center font-medium text-lg text-white px-8 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg bg-accent hover:bg-accent/90"
+                className="inline-flex items-center justify-center font-medium text-base sm:text-lg text-white px-6 sm:px-8 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg bg-accent hover:bg-accent/90"
                 data-testid="button-book-consultation-hero"
               >
-                Book Your Free In-Home Consultation
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <span className="hidden sm:inline">Book Your Free In-Home Consultation</span>
+                <span className="sm:hidden">Book Free Consultation</span>
+                <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5" />
               </a>
             </div>
           </div>

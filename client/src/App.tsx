@@ -41,7 +41,7 @@ function App() {
       <HelmetProvider>
         <div className="flex flex-col min-h-screen">
           <SiteHeader />
-          <main className="flex-grow pb-20 md:pb-0">
+          <main className="flex-grow pb-16 md:pb-0">
             <Router />
           </main>
           <SiteFooter />

@@ -100,10 +100,10 @@ const SiteHeader = () => {
               </span>
             </Link>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             <a 
               href="tel:+19412000848"
-              className="font-medium text-base text-white px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg whitespace-nowrap bg-primary hover:bg-primary/90"
+              className="font-medium text-sm lg:text-base text-white px-4 lg:px-6 py-2.5 lg:py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg whitespace-nowrap bg-primary hover:bg-primary/90"
               data-testid="button-call-now-desktop"
             >
               Call Now
@@ -112,10 +112,11 @@ const SiteHeader = () => {
               href="https://calendar.google.com/appointments/schedules/AcZssZ1HmfJNob7zkiWgHb1185gbsl_v8EOAfqEP5Lili91nLoHV5brvq7oFCxGoVdsFDXoKjhaRsPYY"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium text-base text-white px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg whitespace-nowrap bg-accent hover:bg-accent/90"
+              className="font-medium text-sm lg:text-base text-white px-4 lg:px-6 py-2.5 lg:py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg whitespace-nowrap bg-accent hover:bg-accent/90"
               data-testid="button-book-consultation"
             >
-              Book Your Free In-Home Consultation
+              <span className="hidden xl:inline">Book Your Free In-Home Consultation</span>
+              <span className="xl:hidden">Book Free Consultation</span>
             </a>
           </div>
         </div>
