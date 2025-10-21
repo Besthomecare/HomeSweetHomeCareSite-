@@ -63,14 +63,6 @@ const HeroVideo = () => {
           </div>
         </div>
       </div>
-      
-      {/* Video Controls Hint */}
-      <div className="absolute bottom-4 right-4 text-white opacity-60">
-        <div className="flex items-center space-x-2 text-sm">
-          <Play className="h-4 w-4" />
-          <span>Auto-playing video</span>
-        </div>
-      </div>
     </div>
   );
 };
