@@ -1,0 +1,84 @@
+Where to place it
+
+Navbar, right side, next to “Call Now”
+Make this the primary or co-primary CTA. On large screens, show both “Call Now” and “Book Your Free In-Home Consultation.”
+
+Hero section, above the fold
+Mirror the same booking button in the hero so visitors see it immediately, even if your navbar collapses on some devices.
+
+Mobile, sticky bottom bar
+On small screens, convert to a 2-button sticky bar: “Call Now” and “Book Free Consult,” so users always have a thumb-reachable action.
+
+Copy and link
+
+Text: Book Your Free In-Home Consultation
+URL:
+https://calendar.google.com/appointments/schedules/AcZssZ1HmfJNob7zkiWgHb1185gbsl_v8EOAfqEP5Lili91nLoHV5brvq7oFCxGoVdsFDXoKjhaRsPYY
+
+Code snippets (drop-in)
+Navbar button (HTML)
+<a
+  href="https://calendar.google.com/appointments/schedules/AcZssZ1HmfJNob7zkiWgHb1185gbsl_v8EOAfqEP5Lili91nLoHV5brvq7oFCxGoVdsFDXoKjhaRsPYY"
+  class="btn btn-book"
+  target="_blank" rel="noopener"
+>
+  Book Your Free In-Home Consultation
+</a>
+
+Quick CSS (match your brand, clean and readable)
+.btn-book{
+  background:#E7B77E; /* warm gold brand vibe */
+  color:#fff;
+  padding:12px 20px;
+  border-radius:12px;
+  font-weight:600;
+  text-decoration:none;
+  display:inline-flex; align-items:center; gap:.5rem;
+  transition:transform .15s ease, background-color .2s ease;
+  box-shadow:0 6px 14px rgba(0,0,0,.08);
+}
+.btn-book:hover{ background:#D6A76D; transform:translateY(-1px); }
+.btn-book:active{ transform:translateY(0); }
+
+Hero duplicate (HTML)
+
+Place this near your main headline:
+
+<div class="hero-ctas">
+  <a href="tel:+19412000848" class="btn btn-outline">Call Now</a>
+  <a href="https://calendar.google.com/appointments/schedules/AcZssZ1HmfJNob7zkiWgHb1185gbsl_v8EOAfqEP5Lili91nLoHV5brvq7oFCxGoVdsFDXoKjhaRsPYY" class="btn btn-book" target="_blank" rel="noopener">
+    Book Your Free In-Home Consultation
+  </a>
+</div>
+
+Mobile sticky bar (HTML + CSS)
+<div class="sticky-cta">
+  <a href="tel:+19412000848">Call Now</a>
+  <a href="https://calendar.google.com/appointments/schedules/AcZssZ1HmfJNob7zkiWgHb1185gbsl_v8EOAfqEP5Lili91nLoHV5brvq7oFCxGoVdsFDXoKjhaRsPYY" target="_blank" rel="noopener">
+    Book Free Consult
+  </a>
+</div>
+
+@media (max-width: 768px){
+  .sticky-cta{
+    position:fixed; left:0; right:0; bottom:0;
+    display:grid; grid-template-columns:1fr 1fr; gap:8px;
+    padding:10px; background:#fff; border-top:1px solid #eee;
+    z-index:9999;
+  }
+  .sticky-cta a{
+    text-align:center; padding:12px 10px; border-radius:10px; font-weight:700;
+    text-decoration:none;
+  }
+  .sticky-cta a:first-child{ background:#111; color:#fff; }
+  .sticky-cta a:last-child{ background:#E7B77E; color:#fff; }
+}
+
+Small but high-impact tweaks
+
+Open the calendar link in a new tab and add rel="noopener" for performance and security.
+
+Track clicks by appending UTM tags if you’re running ads:
+?...utm_source=site&utm_medium=nav&utm_campaign=consults
+
+Keep “Call Now” dark or neutral, and make “Book Free Consult” the warm gold to visually anchor the online option.

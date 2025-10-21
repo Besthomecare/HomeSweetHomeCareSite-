@@ -40,22 +40,27 @@ const HeroVideo = () => {
             
             {/* Call to Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/contact">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 py-3 text-lg">
-                  Get Started Today
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
+              <a 
+                href="tel:+19412000848"
+                className="inline-flex items-center justify-center font-medium text-lg text-white px-8 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg bg-gray-900 hover:bg-gray-800"
+                data-testid="button-call-now-hero"
+              >
+                Call Now
+              </a>
               
-              <Link to="/services">
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="border-2 border-white text-white bg-black/20 hover:bg-white hover:text-primary px-8 py-3 text-lg backdrop-blur-sm"
-                >
-                  Our Services
-                </Button>
-              </Link>
+              <a 
+                href="https://calendar.google.com/appointments/schedules/AcZssZ1HmfJNob7zkiWgHb1185gbsl_v8EOAfqEP5Lili91nLoHV5brvq7oFCxGoVdsFDXoKjhaRsPYY"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center font-medium text-lg text-white px-8 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                style={{ backgroundColor: '#E7B77E' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#D6A76D'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#E7B77E'}
+                data-testid="button-book-consultation-hero"
+              >
+                Book Your Free In-Home Consultation
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
             </div>
           </div>
         </div>

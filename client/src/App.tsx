@@ -7,6 +7,7 @@ import { useScrollToTop } from "@/hooks/use-scroll-to-top";
 
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
+import MobileStickyCta from "@/components/mobile-sticky-cta";
 import Home from "@/pages/home";
 import About from "@/pages/about";
 import Services from "@/pages/services";
@@ -40,10 +41,11 @@ function App() {
       <HelmetProvider>
         <div className="flex flex-col min-h-screen">
           <SiteHeader />
-          <main className="flex-grow">
+          <main className="flex-grow pb-20 md:pb-0">
             <Router />
           </main>
           <SiteFooter />
+          <MobileStickyCta />
         </div>
         <Toaster />
       </HelmetProvider>

@@ -100,34 +100,32 @@ const SiteHeader = () => {
               </span>
             </Link>
           </div>
-          <a 
-            href="https://calendar.google.com/appointments/schedules/AcZssZ1HmfJNob7zkiWgHb1185gbsl_v8EOAfqEP5Lili91nLoHV5brvq7oFCxGoVdsFDXoKjhaRsPYY"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-medium text-base text-white px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg whitespace-nowrap"
-            style={{ backgroundColor: '#E7B77E' }}
-            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#D6A76D'}
-            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#E7B77E'}
-            data-testid="button-book-consultation"
-          >
-            Book Your Free In-Home Consultation
-          </a>
+          <div className="flex items-center gap-3">
+            <a 
+              href="tel:+19412000848"
+              className="font-medium text-base text-white px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg whitespace-nowrap bg-gray-900 hover:bg-gray-800"
+              data-testid="button-call-now-desktop"
+            >
+              Call Now
+            </a>
+            <a 
+              href="https://calendar.google.com/appointments/schedules/AcZssZ1HmfJNob7zkiWgHb1185gbsl_v8EOAfqEP5Lili91nLoHV5brvq7oFCxGoVdsFDXoKjhaRsPYY"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-base text-white px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg whitespace-nowrap"
+              style={{ backgroundColor: '#E7B77E' }}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#D6A76D'}
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#E7B77E'}
+              data-testid="button-book-consultation"
+            >
+              Book Your Free In-Home Consultation
+            </a>
+          </div>
         </div>
         
         {/* Mobile Navigation Menu */}
         <div className={`md:hidden w-full mt-4 px-4 ${mobileMenuOpen ? 'block' : 'hidden'}`}>
           <div className="flex flex-col space-y-1">
-            <a 
-              href="https://calendar.google.com/appointments/schedules/AcZssZ1HmfJNob7zkiWgHb1185gbsl_v8EOAfqEP5Lili91nLoHV5brvq7oFCxGoVdsFDXoKjhaRsPYY"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-base text-white px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg text-center mb-4"
-              style={{ backgroundColor: '#E7B77E' }}
-              onClick={closeMobileMenu}
-              data-testid="button-book-consultation-mobile"
-            >
-              Book Your Free In-Home Consultation
-            </a>
             <Link href="/">
               <span 
                 className={`font-medium text-base ${isActive('/') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors py-2 border-b border-gray-100 block cursor-pointer text-center flex flex-col`}
