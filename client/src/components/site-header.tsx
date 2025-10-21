@@ -103,7 +103,7 @@ const SiteHeader = () => {
           <div className="flex items-center gap-3">
             <a 
               href="tel:+19412000848"
-              className="font-medium text-base text-white px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg whitespace-nowrap bg-gray-900 hover:bg-gray-800"
+              className="font-medium text-base text-white px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg whitespace-nowrap bg-primary hover:bg-primary/90"
               data-testid="button-call-now-desktop"
             >
               Call Now
@@ -112,10 +112,7 @@ const SiteHeader = () => {
               href="https://calendar.google.com/appointments/schedules/AcZssZ1HmfJNob7zkiWgHb1185gbsl_v8EOAfqEP5Lili91nLoHV5brvq7oFCxGoVdsFDXoKjhaRsPYY"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium text-base text-white px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg whitespace-nowrap"
-              style={{ backgroundColor: '#E7B77E' }}
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#D6A76D'}
-              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#E7B77E'}
+              className="font-medium text-base text-white px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg whitespace-nowrap bg-accent hover:bg-accent/90"
               data-testid="button-book-consultation"
             >
               Book Your Free In-Home Consultation
