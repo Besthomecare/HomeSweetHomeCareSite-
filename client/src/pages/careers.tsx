@@ -84,10 +84,6 @@ const Careers = () => {
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-accent rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  <span className="text-gray-700">Weekly direct deposit at $17–$20 depending on experience</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="w-2 h-2 bg-accent rounded-full mt-2 mr-3 flex-shrink-0"></span>
                   <span className="text-gray-700">W-2 employment with taxes handled</span>
                 </li>
                 <li className="flex items-start">
