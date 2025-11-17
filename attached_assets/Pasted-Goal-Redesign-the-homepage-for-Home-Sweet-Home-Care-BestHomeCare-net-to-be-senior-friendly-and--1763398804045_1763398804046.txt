@@ -1,0 +1,132 @@
+Goal: Redesign the homepage for “Home Sweet Home Care” (BestHomeCare.net) to be senior-friendly and family-friendly with an above-the-fold sign-up form, minimal text, and clear calls to action.
+
+Audience: Adult children and spouses in Sarasota/Manatee/Lakewood Ranch who need non-medical in-home support.
+
+Design requirements
+
+Keep brand name/logo and phone number visible at all times (sticky header).
+
+Calm, high-contrast design; large type (base 18–19px), generous spacing, big buttons.
+
+Gentle colors, plenty of white space, no stock-photo clutter.
+
+Mobile-first, WCAG AA contrast, accessible labels and error messaging.
+
+Header
+
+Left: Logo + “Home Sweet Home Care”
+
+Right: (941) 200-0848 as a click-to-call button, “Book Free Consult” button (primary).
+
+Hero (above the fold)
+
+H1: “Compassionate In-Home Care, Close to Home”
+
+Subhead (≤ 30 words): “Trusted non-medical help for seniors in Sarasota, Bradenton, and Lakewood Ranch—on your schedule, in the comfort of home.”
+
+Left column: trust badges (Screened Caregivers • Flexible Hours • In-Home Service • Licensed & Insured).
+
+Right column: simple lead form (prominent card).
+
+Lead form (required)
+Fields (all accessible, labeled):
+
+Full Name (required)
+
+Phone (required)
+
+Preferred Contact Time (dropdown: Morning / Afternoon / Evening)
+
+City/Area (dropdown: Sarasota, Bradenton, Lakewood Ranch, Siesta Key, Longboat Key, Venice)
+
+Help Needed (checkboxes: Companionship, Transportation, Medication Reminders, Light Housekeeping, Meal Prep, “Other” text)
+
+Submit button: “Request My Free Care Assessment”
+
+Small note under button: “We respond within 24 hours. No obligation.”
+
+Core value section (3 quick tiles)
+
+“Screened Caregivers” – Background-checked, trained, and matched to your family.
+
+“Flexible, When You Need Us” – From a few hours to full days.
+
+“Care at Home” – Comfort, dignity, and independence.
+
+Services (bulleted, ultra-short)
+Heading: “What We Help With”
+
+Companionship & conversation
+
+Transportation & errands
+
+Medication reminders
+
+Light housekeeping & laundry
+
+Meal planning & preparation
+(Optional/secondary list item: Observation & family updates)
+CTA button below: “Get a Free Care Plan”
+
+Service area
+Short line with map pin icon: “Proudly serving Sarasota, Bradenton, Lakewood Ranch, Siesta Key, Longboat Key, and Venice.”
+
+Social proof (optional if room)
+1–2 short client quotes in large, readable cards. No carousel.
+
+FAQ (accordion of 5)
+
+How fast can we start?
+
+What does it cost?
+
+Minimum hours?
+
+Can we change caregivers?
+
+How are caregivers screened?
+Keep answers to 1–2 sentences each. Link: “More FAQs”.
+
+Footer (compact)
+
+Contact: (941) 200-0848 • Info@BestHomeCare.net
+
+Address: 5265 University Pkwy, STE 101-177, Sarasota, FL 34201
+
+Hours: Mon–Fri 9–5
+
+Links: About • Services • FAQs • Careers • Privacy
+
+Line: “Licensed and insured.”
+
+Copy updates (use exactly)
+
+H1: “Compassionate In-Home Care, Close to Home”
+
+Subhead: “Trusted non-medical help for seniors in Sarasota, Bradenton, and Lakewood Ranch—on your schedule, in the comfort of home.”
+
+CTA buttons: “Request My Free Care Assessment” and “Call (941) 200-0848”
+
+Micro-benefits bullets as listed above; remove long paragraphs and duplicate benefit sections.
+
+Remove the AI Companionship section from the homepage (keep it as a subpage if needed).
+
+Technical
+
+Convert large image banners to a single lightweight hero image or soft gradient.
+
+Ship HTML/CSS/JS in one page (Tailwind OK). Keep CLS low, no auto-playing media.
+
+Add tel: and mailto: links; add basic SEO <title> and meta description:
+
+Title: “Home Sweet Home Care | In-Home Senior Care in Sarasota & Bradenton”
+
+Meta: “Compassionate non-medical in-home care—companionship, transportation, meals, housekeeping. Free care assessment. Call (941) 200-0848.”
+
+Success criteria
+
+The hero form is visible without scrolling on mobile and desktop.
+
+All copy fits on one page with minimal scrolling; no redundant sections.
+
+Lighthouse scores: Performance ≥ 85, Accessibility ≥ 95, Best Practices ≥ 90.

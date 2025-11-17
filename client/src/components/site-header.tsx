@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Phone, Mail, MapPin } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
 import Logo from "@/components/ui/logo";
-import { COMPANY_INFO } from "@/lib/constants";
 
 const SiteHeader = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -22,161 +20,125 @@ const SiteHeader = () => {
   };
 
   return (
-    <header className="bg-white shadow-sm">
-      {/* Top Bar with Contact Info */}
-      <div className="bg-accent text-white py-2 hidden md:block">
-        <div className="container-fluid px-4 flex flex-col md:flex-row justify-between items-center">
-          <div className="flex items-center mb-2 md:mb-0">
-            <a href="tel:(941) 200-0848" className="mr-6 hover:underline text-sm">
-              <Phone className="inline-block w-4 h-4 mr-2" />
-              (941) 200-0848
-            </a>
-            <a href={`mailto:${COMPANY_INFO.email}`} className="hover:underline text-sm">
-              <Mail className="inline-block w-4 h-4 mr-2" />
-              {COMPANY_INFO.email}
-            </a>
-          </div>
-          <div>
-            <span className="text-sm flex items-center">
-              <MapPin className="inline-block w-4 h-4 mr-2" />
-              Serving Sarasota, Manatee County, & Lakewood Ranch
-            </span>
-          </div>
-        </div>
-      </div>
-      
+    <header className="bg-white shadow-sm sticky top-0 z-50">
       {/* Main Navigation */}
-      <nav className="container-fluid px-4 py-4 md:py-6 flex flex-col md:flex-row items-center">
-        <div className="flex justify-between w-full md:w-auto md:mr-10">
-          <Link href="/" onClick={closeMobileMenu}>
-            <div className="flex items-center mb-0 md:mb-0 cursor-pointer">
-              <Logo variant="full" />
-            </div>
-          </Link>
-          
-          {/* Mobile Menu Toggle */}
-          <button 
-            className="md:hidden text-primary text-2xl"
-            onClick={toggleMobileMenu}
-            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+      <nav className="container-fluid px-4 md:px-6 py-4 md:py-6 flex items-center justify-between">
+        {/* Logo */}
+        <Link href="/" onClick={closeMobileMenu}>
+          <div className="flex items-center cursor-pointer">
+            <Logo variant="full" />
+          </div>
+        </Link>
+        
+        {/* Desktop CTAs */}
+        <div className="hidden md:flex items-center gap-3">
+          <a 
+            href="tel:+19412000848"
+            className="font-semibold text-lg text-white px-8 py-3 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg whitespace-nowrap bg-primary hover:bg-primary/90"
+            data-testid="button-call-now-desktop"
           >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+            (941) 200-0848
+          </a>
+          <a 
+            href="https://calendar.google.com/appointments/schedules/AcZssZ1HmfJNob7zkiWgHb1185gbsl_v8EOAfqEP5Lili91nLoHV5brvq7oFCxGoVdsFDXoKjhaRsPYY"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-lg text-white px-8 py-3 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg whitespace-nowrap bg-accent hover:bg-accent/90"
+            data-testid="button-book-consultation"
+          >
+            Book Free Consult
+          </a>
         </div>
         
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center justify-between flex-1 space-x-6 px-4">
-          <div className="flex items-center space-x-6">
-            <Link href="/">
-              <span className={`font-medium text-base ${isActive('/') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer text-center flex flex-col`}>
-                <span>Home</span>
-              </span>
-            </Link>
-            <Link href="/about">
-              <span className={`font-medium text-base ${isActive('/about') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer text-center flex flex-col`}>
-                <span>About</span>
-                <span>Us</span>
-              </span>
-            </Link>
-            <Link href="/services">
-              <span className={`font-medium text-base ${isActive('/services') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer text-center flex flex-col`}>
-                <span>Services</span>
-              </span>
-            </Link>
-
-            <Link href="/faq">
-              <span className={`font-medium text-base ${isActive('/faq') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer text-center flex flex-col`}>
-                <span>FAQs</span>
-              </span>
-            </Link>
-            <Link href="/careers">
-              <span className={`font-medium text-base ${isActive('/careers') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer text-center flex flex-col`}>
-                <span>Careers</span>
-              </span>
-            </Link>
-            <Link href="/contact">
-              <span className={`font-medium text-base ${isActive('/contact') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer text-center flex flex-col`}>
-                <span>Contact</span>
-              </span>
-            </Link>
-          </div>
-          <div className="flex items-center gap-2">
-            <a 
-              href="tel:+19412000848"
-              className="font-medium text-sm lg:text-base text-white px-4 lg:px-6 py-2.5 lg:py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg whitespace-nowrap bg-primary hover:bg-primary/90"
-              data-testid="button-call-now-desktop"
-            >
-              Call Now
-            </a>
-            <a 
-              href="https://calendar.google.com/appointments/schedules/AcZssZ1HmfJNob7zkiWgHb1185gbsl_v8EOAfqEP5Lili91nLoHV5brvq7oFCxGoVdsFDXoKjhaRsPYY"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-sm lg:text-base text-white px-4 lg:px-6 py-2.5 lg:py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg whitespace-nowrap bg-accent hover:bg-accent/90"
-              data-testid="button-book-consultation"
-            >
-              <span className="hidden xl:inline">Book Your Free In-Home Consultation</span>
-              <span className="xl:hidden">Book Free Consultation</span>
-            </a>
-          </div>
-        </div>
+        {/* Mobile Menu Toggle */}
+        <button 
+          className="md:hidden text-primary text-2xl"
+          onClick={toggleMobileMenu}
+          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+          data-testid="button-mobile-menu-toggle"
+        >
+          {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
         
-        {/* Mobile Navigation Menu */}
-        <div className={`md:hidden w-full mt-4 px-4 ${mobileMenuOpen ? 'block' : 'hidden'}`}>
-          <div className="flex flex-col space-y-1">
-            <Link href="/">
-              <span 
-                className={`font-medium text-base ${isActive('/') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors py-2 border-b border-gray-100 block cursor-pointer text-center flex flex-col`}
-                onClick={closeMobileMenu}
-              >
-                <span>Home</span>
-              </span>
-            </Link>
-            <Link href="/about">
-              <span 
-                className={`font-medium text-base ${isActive('/about') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors py-2 border-b border-gray-100 block cursor-pointer text-center flex flex-col`}
-                onClick={closeMobileMenu}
-              >
-                <span>About</span>
-                <span>Us</span>
-              </span>
-            </Link>
-            <Link href="/services">
-              <span 
-                className={`font-medium text-base ${isActive('/services') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors py-2 border-b border-gray-100 block cursor-pointer text-center flex flex-col`}
-                onClick={closeMobileMenu}
-              >
-                <span>Services</span>
-              </span>
-            </Link>
-
-            <Link href="/faq">
-              <span 
-                className={`font-medium text-base ${isActive('/faq') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors py-2 border-b border-gray-100 block cursor-pointer text-center flex flex-col`}
-                onClick={closeMobileMenu}
-              >
-                <span>FAQs</span>
-              </span>
-            </Link>
-            <Link href="/careers">
-              <span 
-                className={`font-medium text-base ${isActive('/careers') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors py-2 border-b border-gray-100 block cursor-pointer text-center flex flex-col`}
-                onClick={closeMobileMenu}
-              >
-                <span>Careers</span>
-              </span>
-            </Link>
-            <Link href="/contact">
-              <span 
-                className={`font-medium text-base ${isActive('/contact') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors py-2 border-b border-gray-100 block cursor-pointer text-center flex flex-col`}
-                onClick={closeMobileMenu}
-              >
-                <span>Contact</span>
-              </span>
-            </Link>
-          </div>
-        </div>
       </nav>
+      
+      {/* Mobile Full-Screen Menu */}
+      {mobileMenuOpen && (
+        <div className="md:hidden fixed inset-0 top-[72px] bg-white z-40 overflow-y-auto">
+          <div className="flex flex-col p-6 space-y-4">
+            <Link href="/" onClick={closeMobileMenu}>
+              <span 
+                className={`font-medium text-lg ${isActive('/') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors py-3 block cursor-pointer`}
+                data-testid="link-home-mobile"
+              >
+                Home
+              </span>
+            </Link>
+            <Link href="/about" onClick={closeMobileMenu}>
+              <span 
+                className={`font-medium text-lg ${isActive('/about') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors py-3 block cursor-pointer`}
+                data-testid="link-about-mobile"
+              >
+                About Us
+              </span>
+            </Link>
+            <Link href="/services" onClick={closeMobileMenu}>
+              <span 
+                className={`font-medium text-lg ${isActive('/services') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors py-3 block cursor-pointer`}
+                data-testid="link-services-mobile"
+              >
+                Services
+              </span>
+            </Link>
+            <Link href="/faq" onClick={closeMobileMenu}>
+              <span 
+                className={`font-medium text-lg ${isActive('/faq') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors py-3 block cursor-pointer`}
+                data-testid="link-faq-mobile"
+              >
+                FAQs
+              </span>
+            </Link>
+            <Link href="/careers" onClick={closeMobileMenu}>
+              <span 
+                className={`font-medium text-lg ${isActive('/careers') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors py-3 block cursor-pointer`}
+                data-testid="link-careers-mobile"
+              >
+                Careers
+              </span>
+            </Link>
+            <Link href="/contact" onClick={closeMobileMenu}>
+              <span 
+                className={`font-medium text-lg ${isActive('/contact') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors py-3 block cursor-pointer`}
+                data-testid="link-contact-mobile"
+              >
+                Contact
+              </span>
+            </Link>
+            
+            {/* Mobile CTAs */}
+            <div className="pt-6 space-y-3 border-t border-gray-200">
+              <a 
+                href="tel:+19412000848"
+                className="block text-center font-semibold text-lg text-white px-6 py-4 rounded-lg bg-primary hover:bg-primary/90 transition-colors"
+                data-testid="button-call-now-mobile"
+                onClick={closeMobileMenu}
+              >
+                Call (941) 200-0848
+              </a>
+              <a 
+                href="https://calendar.google.com/appointments/schedules/AcZssZ1HmfJNob7zkiWgHb1185gbsl_v8EOAfqEP5Lili91nLoHV5brvq7oFCxGoVdsFDXoKjhaRsPYY"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-center font-semibold text-lg text-white px-6 py-4 rounded-lg bg-accent hover:bg-accent/90 transition-colors"
+                data-testid="button-book-consultation-mobile"
+                onClick={closeMobileMenu}
+              >
+                Book Free Consult
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 };

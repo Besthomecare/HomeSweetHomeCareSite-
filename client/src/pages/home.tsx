@@ -1,29 +1,25 @@
-import HeroVideo from "@/components/hero-video";
-import TrustBadges from "@/components/trust-badges";
-import AboutSection from "@/components/about-section";
-import ServicesSection from "@/components/services-section";
-import FaqSection from "@/components/faq-section";
-import CtaSection from "@/components/cta-section";
-import ContactSection from "@/components/contact-section";
+import HeroRedesign from "@/components/hero-redesign";
+import CoreValues from "@/components/core-values";
+import ServicesList from "@/components/services-list";
+import ServiceArea from "@/components/service-area";
+import FaqAccordion from "@/components/faq-accordion";
 import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Home Sweet Home Care | In-Home Care Services in Sarasota & Manatee County</title>
+        <title>Home Sweet Home Care | In-Home Senior Care in Sarasota & Bradenton</title>
         <meta 
           name="description" 
-          content="Professional, non-medical in-home care services for seniors in Sarasota, Manatee County, and Lakewood Ranch. Compassionate care that helps seniors maintain independence and dignity."
+          content="Compassionate non-medical in-home care—companionship, transportation, meals, housekeeping. Free care assessment. Call (941) 200-0848."
         />
       </Helmet>
-      <HeroVideo />
-      <TrustBadges />
-      <AboutSection />
-      <ServicesSection />
-      <FaqSection />
-      <CtaSection />
-      <ContactSection />
+      <HeroRedesign />
+      <CoreValues />
+      <ServicesList />
+      <ServiceArea />
+      <FaqAccordion />
     </>
   );
 };

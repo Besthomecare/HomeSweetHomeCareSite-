@@ -233,7 +233,8 @@ img, iframe {
     @apply bg-background text-foreground;
     font-family: 'Source Sans Pro', sans-serif;
     color: #333333;
-    font-size: 16px;
+    font-size: 18px;
+    line-height: 1.6;
   }
   
   h1, h2, h3, h4, h5, h6 {
