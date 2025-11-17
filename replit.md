@@ -35,7 +35,7 @@ This is a full-stack web application for Home Sweet Home Care, a compassionate i
 - `GET /api/contact`: Retrieve contact form submissions (admin endpoint)
 
 #### Frontend Pages
-- **Home**: Hero carousel, services overview, testimonials, FAQ
+- **Home**: Senior-friendly redesign with video background hero, above-the-fold lead form, trust badges, core values, services list, service area, and FAQ accordion
 - **Services**: Detailed service descriptions with AI companionship feature
 - **About**: Company mission, values, caregiver information
 - **Contact**: Contact form with HubSpot integration
@@ -80,13 +80,18 @@ This is a full-stack web application for Home Sweet Home Care, a compassionate i
 - **Environment**: Requires `DATABASE_URL` environment variable
 
 ### Key Features
-- **Call-to-Action Button**: Always-visible tap-to-call functionality for mobile and desktop
+- **Senior-Friendly Design**: 18px base font size, high contrast, large buttons, generous spacing
+- **Video Background Hero**: Autoplaying background video with lead form above the fold
+- **Lead Form**: Comprehensive free care assessment form with all required fields
+- **Simplified Navigation**: Sticky header with prominent call and booking CTAs
+- **Compact Footer**: Essential contact info and links in streamlined layout
 - **Responsive Design**: Mobile-first approach with breakpoint-specific behaviors
-- **SEO Optimization**: Helmet integration for meta tags and structured data
-- **Accessibility**: ARIA labels and semantic HTML throughout
+- **SEO Optimization**: Updated meta tags targeting "In-Home Senior Care in Sarasota & Bradenton"
+- **Accessibility**: WCAG AA compliant with ARIA labels and semantic HTML throughout
 
 ## Changelog
 
+- November 17, 2025. Complete homepage redesign: Implemented senior-friendly design with video background hero, above-the-fold lead form, trust badges, core values section, bulleted services list, service area display, FAQ accordion, and compact footer. Removed testimonials and AI companionship from homepage. Updated header to simplified sticky design with prominent CTAs. Increased base font to 18px for better readability.
 - June 30, 2025. Initial setup
 
 ## User Preferences
