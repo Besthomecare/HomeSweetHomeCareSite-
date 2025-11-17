@@ -10,38 +10,42 @@ const HeroRedesign = () => {
   ];
 
   return (
-    <section className="relative min-h-[600px] md:min-h-[700px] overflow-hidden bg-black">
-      {/* Video Background */}
-      <video 
-        className="absolute inset-0 w-full h-full object-contain"
-        autoPlay 
-        muted 
-        loop
-        playsInline
-        poster="/api/placeholder/1920/1080"
-        aria-label="Home Sweet Home Care B-roll video"
-      >
-        <source src="/website-broll.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      
-      {/* Multi-layer overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70"></div>
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60"></div>
-      
-      {/* Content Overlay */}
-      <div className="relative py-12 md:py-16">
-        <div className="container-fluid px-4 md:px-6 max-w-7xl mx-auto">
-          {/* Title and Subhead */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-2xl">
+    <>
+      {/* Video Banner */}
+      <section className="relative h-[300px] md:h-[400px] overflow-hidden">
+        <video 
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay 
+          muted 
+          loop
+          playsInline
+          poster="/api/placeholder/1920/1080"
+          aria-label="Home Sweet Home Care B-roll video"
+        >
+          <source src="/website-broll.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50"></div>
+        
+        {/* Title and Subhead */}
+        <div className="relative h-full flex items-center justify-center">
+          <div className="container-fluid px-4 md:px-6 max-w-7xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight drop-shadow-2xl">
               Compassionate In-Home Care, Close to Home
             </h1>
             <p className="text-xl md:text-2xl text-white max-w-4xl mx-auto leading-relaxed drop-shadow-lg">
               Trusted non-medical help for seniors in Sarasota, Bradenton, and Lakewood Ranch—on your schedule, in the comfort of home.
             </p>
           </div>
+        </div>
+      </section>
 
+      {/* Content Section Below Video */}
+      <section className="bg-gradient-to-b from-secondary/30 to-white py-12 md:py-16">
+        <div className="container-fluid px-4 md:px-6 max-w-7xl mx-auto">
           {/* Two Column Layout */}
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
             {/* Left Column: Trust Badges */}
@@ -51,7 +55,7 @@ const HeroRedesign = () => {
                 return (
                   <div
                     key={index}
-                    className="flex items-center space-x-4 bg-white/95 backdrop-blur-sm p-6 rounded-lg shadow-xl hover:shadow-2xl transition-shadow"
+                    className="flex items-center space-x-4 bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
                     data-testid={`trust-badge-${index}`}
                   >
                     <div className="flex-shrink-0 w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center">
@@ -71,8 +75,8 @@ const HeroRedesign = () => {
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
