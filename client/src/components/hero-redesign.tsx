@@ -10,10 +10,10 @@ const HeroRedesign = () => {
   ];
 
   return (
-    <section className="relative min-h-[600px] md:min-h-[700px] overflow-hidden">
+    <section className="relative min-h-[600px] md:min-h-[700px] overflow-hidden bg-black">
       {/* Video Background */}
       <video 
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-contain"
         autoPlay 
         muted 
         loop
