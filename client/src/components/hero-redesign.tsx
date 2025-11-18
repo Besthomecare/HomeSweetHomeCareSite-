@@ -34,7 +34,7 @@ const HeroRedesign = () => {
         <div className="relative h-full flex items-center justify-center">
           <div className="container-fluid px-4 md:px-6 max-w-7xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight drop-shadow-2xl">
-              Compassionate In-Home Care, Close to Home
+              Compassionate care in your own home.
             </h1>
             <p className="text-xl md:text-2xl text-white max-w-4xl mx-auto leading-relaxed drop-shadow-lg">
               Trusted non-medical help for seniors in Sarasota, Bradenton, and Lakewood Ranch—on your schedule, in the comfort of home.
