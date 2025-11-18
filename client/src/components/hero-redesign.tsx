@@ -37,7 +37,7 @@ const HeroRedesign = () => {
               Compassionate care in your own home.
             </h1>
             <p className="text-xl md:text-2xl text-white max-w-4xl mx-auto leading-relaxed drop-shadow-lg">
-              Trusted help and companionship services for seniors in Sarasota, Bradenton, and Lakewood Ranch—on your schedule, in the comfort of home.
+              Trusted help and companionship services for seniors in Sarasota, Bradenton, Venice, and Lakewood Ranch—on your schedule, in the comfort of home.
             </p>
           </div>
         </div>
