@@ -25,8 +25,11 @@ const SiteHeader = () => {
       <nav className="container-fluid px-4 md:px-6 py-4 md:py-6 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" onClick={closeMobileMenu}>
-          <div className="flex items-center cursor-pointer">
+          <div className="flex flex-col cursor-pointer">
             <Logo variant="full" />
+            <p className="text-sm md:text-base text-primary font-medium mt-1">
+              Stay independent, stay home.
+            </p>
           </div>
         </Link>
         
