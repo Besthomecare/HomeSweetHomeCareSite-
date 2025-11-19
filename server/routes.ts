@@ -10,6 +10,7 @@ import path from "path";
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form submission
   app.post("/api/contact", async (req: Request, res: Response) => {
+    console.log("Contact form submission received", { formData: req.body, env: process.env.NODE_ENV });
     try {
       const { recaptchaToken, ...formData } = req.body;
 
@@ -106,11 +107,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
         });
       } else {
         console.error("Error processing contact form:", error);
+        console.error("Error stack:", error instanceof Error ? error.stack : 'No stack trace');
         const errorMessage = error instanceof Error ? error.message : "An error occurred while processing your request";
         res.status(500).json({ 
           success: false, 
           message: errorMessage,
-          details: process.env.NODE_ENV === 'development' ? String(error) : undefined
+          errorType: error instanceof Error ? error.constructor.name : typeof error
         });
       }
     }
