@@ -39,7 +39,7 @@ export class DatabaseStorage implements IStorage {
 
   async createContactForm(insertForm: InsertContactForm): Promise<ContactForm> {
     const result = await db.insert(contactForms).values(insertForm).returning();
-    console.log(`Contact form submitted: ${result[0].firstName} ${result[0].lastName} (${result[0].email})`);
+    console.log(`Contact form submitted: ${result[0].name} (${result[0].email})`);
     return result[0];
   }
 
