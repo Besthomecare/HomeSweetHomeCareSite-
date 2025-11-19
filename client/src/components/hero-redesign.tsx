@@ -3,10 +3,26 @@ import LeadForm from "./lead-form";
 
 const HeroRedesign = () => {
   const trustBadges = [
-    { icon: Clock, title: "Flexible Hours", text: "Care when you need it, tailored to your schedule" },
-    { icon: Home, title: "In-Home Service", text: "Comfort and care in familiar surroundings" },
-    { icon: Heart, title: "Compassionate Care", text: "Personalized attention delivered with dignity" },
-    { icon: ClipboardList, title: "Customized Care Plan", text: "Support designed around your loved one's unique needs" },
+    { 
+      icon: Clock, 
+      title: "Flexible Hours", 
+      text: "We work around your schedule, not the other way around. Whether you need a few hours a week or full-time support, our caregivers are available when you need them most. From morning routines to overnight care, we adapt to fit your family's lifestyle and budget."
+    },
+    { 
+      icon: Home, 
+      title: "In-Home Service", 
+      text: "Your loved one stays safe, comfortable, and independent in the place they know best. Our caregivers come to you, eliminating stressful transitions to unfamiliar facilities. From familiar bedrooms to cherished gardens, care happens where memories live."
+    },
+    { 
+      icon: Heart, 
+      title: "Compassionate Care", 
+      text: "Every caregiver is carefully selected, background-checked, and trained to treat your loved one with the respect and kindness they deserve. We focus on building genuine relationships, not just completing tasks. Our team understands that quality care means honoring each person's dignity, preferences, and life story."
+    },
+    { 
+      icon: ClipboardList, 
+      title: "Customized Care Plan", 
+      text: "No two people are alike, and neither are our care plans. After a thorough in-home assessment, we create a personalized plan that addresses your loved one's specific health needs, daily routines, and personal preferences. As needs change, we adjust the plan to ensure continuous, appropriate support."
+    },
   ];
 
   return (
