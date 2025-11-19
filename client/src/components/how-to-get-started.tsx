@@ -30,40 +30,42 @@ const HowToGetStarted = () => {
     <section className="py-16 md:py-20 bg-white">
       <div className="container-fluid px-4 md:px-6 max-w-6xl mx-auto">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6" data-testid="heading-how-to-get-started">
             How to Get Started With Home Sweet Home Care
           </h2>
         </div>
 
-        <div className="space-y-8 md:space-y-12">
+        <ol className="space-y-8 md:space-y-12 list-none">
           {steps.map((step, index) => (
-            <div 
+            <li 
               key={index}
               className="bg-gradient-to-br from-secondary/20 to-white p-8 md:p-10 rounded-lg shadow-md hover:shadow-lg transition-shadow"
-              data-testid={`step-${index}`}
+              data-testid={`step-${index + 1}`}
             >
               <div className="flex items-start gap-6">
                 <div className="flex-shrink-0">
                   <div className="w-16 h-16 md:w-20 md:h-20 bg-accent text-white rounded-full flex items-center justify-center">
-                    <span className="text-2xl md:text-3xl font-bold">{step.number}</span>
+                    <span className="text-2xl md:text-3xl font-bold" data-testid={`step-number-${index + 1}`}>
+                      {step.number}
+                    </span>
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-2xl md:text-3xl font-bold text-primary mb-4">
+                  <h3 className="text-2xl md:text-3xl font-bold text-primary mb-4" data-testid={`step-title-${index + 1}`}>
                     {step.title}
                   </h3>
                   <div className="space-y-3">
                     {step.description.map((paragraph, pIndex) => (
-                      <p key={pIndex} className="text-lg md:text-xl text-gray-700 leading-relaxed">
+                      <p key={pIndex} className="text-lg md:text-xl text-gray-700 leading-relaxed" data-testid={`step-${index + 1}-description-${pIndex + 1}`}>
                         {paragraph}
                       </p>
                     ))}
                   </div>
                 </div>
               </div>
-            </div>
+            </li>
           ))}
-        </div>
+        </ol>
 
         <div className="text-center mt-12">
           <a 
