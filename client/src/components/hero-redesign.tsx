@@ -6,22 +6,22 @@ const HeroRedesign = () => {
     { 
       icon: Clock, 
       title: "Flexible Hours", 
-      text: "We work around your schedule, not the other way around. Whether you need a few hours a week or full-time support, our caregivers are available when you need them most. From morning routines to overnight care, we adapt to fit your family's lifestyle and budget."
+      text: "We work around your schedule. From a few hours a week to full-time support, our caregivers are available when you need them most."
     },
     { 
       icon: Home, 
       title: "In-Home Service", 
-      text: "Your loved one stays safe, comfortable, and independent in the place they know best. Our caregivers come to you, eliminating stressful transitions to unfamiliar facilities. From familiar bedrooms to cherished gardens, care happens where memories live."
+      text: "Your loved one stays safe and comfortable in the place they know best. Our caregivers come to you, eliminating stressful transitions to unfamiliar facilities."
     },
     { 
       icon: Heart, 
       title: "Compassionate Care", 
-      text: "Every caregiver is carefully selected, background-checked, and trained to treat your loved one with the respect and kindness they deserve. We focus on building genuine relationships, not just completing tasks. Our team understands that quality care means honoring each person's dignity, preferences, and life story."
+      text: "Every caregiver is carefully selected, background-checked, and trained to treat your loved one with respect and kindness. We build genuine relationships, not just complete tasks."
     },
     { 
       icon: ClipboardList, 
       title: "Customized Care Plan", 
-      text: "No two people are alike, and neither are our care plans. After a thorough in-home assessment, we create a personalized plan that addresses your loved one's specific health needs, daily routines, and personal preferences. As needs change, we adjust the plan to ensure continuous, appropriate support."
+      text: "After a thorough in-home assessment, we create a personalized plan that addresses your loved one's specific needs, routines, and preferences."
     },
   ];
 
