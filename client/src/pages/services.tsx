@@ -21,8 +21,8 @@ const Services = () => {
       <section className="bg-secondary bg-opacity-30 py-16">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="font-heading text-4xl md:text-5xl font-bold text-primary mb-6">Our Services</h1>
-            <p className="text-lg mb-6">
+            <h1 className="font-heading text-5xl md:text-6xl font-bold text-primary mb-6">Our Services</h1>
+            <p className="text-xl mb-6">
               We offer a comprehensive range of non-medical in-home care services, 
               all tailored to meet the unique needs of each client. Our focus is on 
               helping seniors maintain their independence while providing families 
@@ -43,8 +43,8 @@ const Services = () => {
       <section className="py-12 bg-[#F8F5F2]">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="font-heading text-3xl font-bold text-primary mb-6">Personalized Care Plans</h2>
-            <p className="text-lg">
+            <h2 className="font-heading text-4xl md:text-5xl font-bold text-primary mb-6">Personalized Care Plans</h2>
+            <p className="text-xl">
               Every client receives a personalized care plan developed after a thorough assessment 
               of their needs, preferences, and lifestyle. Whether you need a few hours of assistance 
               each week or round-the-clock care, we'll create a solution that works for you.
@@ -52,18 +52,18 @@ const Services = () => {
             
             <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="bg-[#F8F5F2] p-6 rounded-lg">
-                <h3 className="font-heading text-xl font-semibold text-primary mb-3">Assessment</h3>
-                <p>We conduct a thorough evaluation of care needs and preferences</p>
+                <h3 className="font-heading text-2xl md:text-3xl font-semibold text-primary mb-3">Assessment</h3>
+                <p className="text-xl">We conduct a thorough evaluation of care needs and preferences</p>
               </div>
               
               <div className="bg-[#F8F5F2] p-6 rounded-lg">
-                <h3 className="font-heading text-xl font-semibold text-primary mb-3">Planning</h3>
-                <p>We develop a customized care plan tailored to specific requirements</p>
+                <h3 className="font-heading text-2xl md:text-3xl font-semibold text-primary mb-3">Planning</h3>
+                <p className="text-xl">We develop a customized care plan tailored to specific requirements</p>
               </div>
               
               <div className="bg-[#F8F5F2] p-6 rounded-lg">
-                <h3 className="font-heading text-xl font-semibold text-primary mb-3">Matching</h3>
-                <p>We carefully match caregivers based on needs and compatibility</p>
+                <h3 className="font-heading text-2xl md:text-3xl font-semibold text-primary mb-3">Matching</h3>
+                <p className="text-xl">We carefully match caregivers based on needs and compatibility</p>
               </div>
             </div>
           </div>
@@ -77,26 +77,26 @@ const Services = () => {
       <section className="py-16 bg-[#F8F5F2]">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="font-heading text-3xl font-bold text-primary mb-6">Flexible Care Scheduling</h2>
-            <p className="text-lg mb-8">
+            <h2 className="font-heading text-4xl md:text-5xl font-bold text-primary mb-6">Flexible Care Scheduling</h2>
+            <p className="text-xl mb-8">
               We understand that care needs can change and vary. That's why we offer flexible 
               scheduling options to ensure you receive care exactly when you need it.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
               <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="font-heading text-xl font-semibold text-primary mb-3">Hourly Care</h3>
-                <p>For those who need assistance for a few hours a day or week</p>
+                <h3 className="font-heading text-2xl md:text-3xl font-semibold text-primary mb-3">Hourly Care</h3>
+                <p className="text-xl">For those who need assistance for a few hours a day or week</p>
               </div>
               
               <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="font-heading text-xl font-semibold text-primary mb-3">Daily Care</h3>
-                <p>Regular daily visits to assist with routine activities and tasks</p>
+                <h3 className="font-heading text-2xl md:text-3xl font-semibold text-primary mb-3">Daily Care</h3>
+                <p className="text-xl">Regular daily visits to assist with routine activities and tasks</p>
               </div>
               
               <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="font-heading text-xl font-semibold text-primary mb-3">24/7 Care</h3>
-                <p>Round-the-clock support for those requiring continuous assistance</p>
+                <h3 className="font-heading text-2xl md:text-3xl font-semibold text-primary mb-3">24/7 Care</h3>
+                <p className="text-xl">Round-the-clock support for those requiring continuous assistance</p>
               </div>
             </div>
             

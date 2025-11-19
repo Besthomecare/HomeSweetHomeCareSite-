@@ -33,7 +33,7 @@ const FaqAccordion = () => {
   return (
     <section className="py-16 md:py-20 bg-white border-t-4 border-accent/20">
       <div className="container-fluid px-4 md:px-6 max-w-4xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12 text-center">
+        <h2 className="text-4xl md:text-5xl font-bold text-primary mb-12 text-center">
           Frequently Asked Questions
         </h2>
         
@@ -45,10 +45,10 @@ const FaqAccordion = () => {
               className="bg-gray-50 rounded-lg px-6"
               data-testid={`faq-item-${index}`}
             >
-              <AccordionTrigger className="text-lg md:text-xl font-semibold text-primary hover:text-accent">
+              <AccordionTrigger className="text-xl font-semibold text-primary hover:text-accent">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-lg text-gray-700">
+              <AccordionContent className="text-xl text-gray-700">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>

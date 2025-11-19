@@ -12,7 +12,7 @@ const ServicesList = () => {
   return (
     <section className="py-16 md:py-20 bg-gradient-to-b from-white to-secondary/20 border-t-4 border-accent/20">
       <div className="container-fluid px-4 md:px-6 max-w-5xl mx-auto text-center">
-        <h2 className="text-5xl md:text-6xl font-bold text-primary mb-16">
+        <h2 className="text-4xl md:text-5xl font-bold text-primary mb-16">
           What We Help With
         </h2>
         
@@ -25,7 +25,7 @@ const ServicesList = () => {
                 data-testid={`service-item-${index}`}
               >
                 <CheckCircle className="w-10 h-10 text-accent flex-shrink-0 mt-1" />
-                <span className="text-3xl md:text-4xl font-semibold text-gray-800">{service}</span>
+                <span className="text-2xl md:text-3xl font-semibold text-gray-800">{service}</span>
               </li>
             ))}
           </ul>

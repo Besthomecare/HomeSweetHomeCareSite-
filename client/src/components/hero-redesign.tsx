@@ -49,10 +49,10 @@ const HeroRedesign = () => {
         {/* Title and Subhead */}
         <div className="relative h-full flex items-center justify-center">
           <div className="container-fluid px-4 md:px-6 max-w-7xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight drop-shadow-2xl">
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 leading-tight drop-shadow-2xl">
               Compassionate care in your own home.
             </h1>
-            <p className="text-xl md:text-2xl text-white max-w-4xl mx-auto leading-relaxed drop-shadow-lg">
+            <p className="text-xl text-white max-w-4xl mx-auto leading-relaxed drop-shadow-lg">
               Trusted help and companionship services for seniors in Sarasota, Bradenton, Venice, and Lakewood Ranch on your schedule, in the comfort of your own home.
             </p>
           </div>
@@ -81,7 +81,7 @@ const HeroRedesign = () => {
                       <h3 className="text-2xl md:text-3xl font-semibold text-primary mb-2">
                         {badge.title}
                       </h3>
-                      <p className="text-lg md:text-xl text-gray-700">
+                      <p className="text-xl text-gray-700">
                         {badge.text}
                       </p>
                     </div>

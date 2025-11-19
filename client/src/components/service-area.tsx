@@ -6,7 +6,7 @@ const ServiceArea = () => {
       <div className="container-fluid px-4 md:px-6 max-w-4xl mx-auto text-center">
         <div className="flex items-center justify-center space-x-3">
           <MapPin className="w-8 h-8 text-accent flex-shrink-0" />
-          <p className="text-xl md:text-2xl text-gray-700">
+          <p className="text-xl text-gray-700">
             Proudly serving <span className="font-semibold text-primary">Sarasota, Bradenton, Lakewood Ranch, Siesta Key, Longboat Key, and Venice</span>
           </p>
         </div>

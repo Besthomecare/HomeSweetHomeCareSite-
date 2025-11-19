@@ -31,16 +31,16 @@ const HowToGetStarted = () => {
       <div className="container-fluid px-4 md:px-6 max-w-7xl mx-auto">
         {/* Intro Section */}
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-8" data-testid="heading-new-to-home-care">
+          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-8" data-testid="heading-new-to-home-care">
             New to In-Home Care?
           </h2>
-          <p className="text-2xl md:text-3xl text-gray-700 leading-relaxed mb-6 max-w-5xl mx-auto" data-testid="text-new-to-home-care-intro">
+          <p className="text-xl text-gray-700 leading-relaxed mb-6 max-w-5xl mx-auto" data-testid="text-new-to-home-care-intro">
             Choosing home care for a loved one can feel overwhelming, but Home Sweet Home Care makes the process simple, clear, and stress-free. We guide you every step of the way with compassion, clarity, and flexibility.
           </p>
-          <p className="text-2xl md:text-3xl text-gray-700 leading-relaxed mb-12 max-w-5xl mx-auto" data-testid="text-new-to-home-care-benefit">
+          <p className="text-xl text-gray-700 leading-relaxed mb-12 max-w-5xl mx-auto" data-testid="text-new-to-home-care-benefit">
             Learn how easy it is to get started with professional home care, and discover how our tailored support promotes comfort, safety, and peace of mind at home.
           </p>
-          <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mt-16 mb-8" data-testid="heading-how-to-get-started">
+          <h3 className="text-4xl md:text-5xl font-bold text-primary mt-16 mb-8" data-testid="heading-how-to-get-started">
             How to Get Started With Home Sweet Home Care
           </h3>
         </div>
@@ -63,7 +63,7 @@ const HowToGetStarted = () => {
                 </h3>
                 <div className="space-y-4">
                   {step.description.map((paragraph, pIndex) => (
-                    <p key={pIndex} className="text-xl md:text-2xl text-gray-700 leading-relaxed" data-testid={`step-${index + 1}-description-${pIndex + 1}`}>
+                    <p key={pIndex} className="text-xl text-gray-700 leading-relaxed" data-testid={`step-${index + 1}-description-${pIndex + 1}`}>
                       {paragraph}
                     </p>
                   ))}
