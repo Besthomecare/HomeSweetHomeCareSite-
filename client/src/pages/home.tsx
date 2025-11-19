@@ -1,6 +1,5 @@
 import HeroRedesign from "@/components/hero-redesign";
 import AboutSection from "@/components/about-section";
-import NewToHomeCare from "@/components/new-to-home-care";
 import HowToGetStarted from "@/components/how-to-get-started";
 import CoreValues from "@/components/core-values";
 import ServicesList from "@/components/services-list";
@@ -20,7 +19,6 @@ const Home = () => {
       </Helmet>
       <HeroRedesign />
       <AboutSection />
-      <NewToHomeCare />
       <HowToGetStarted />
       <CoreValues />
       <ServicesList />

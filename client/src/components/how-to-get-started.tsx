@@ -27,33 +27,43 @@ const HowToGetStarted = () => {
   ];
 
   return (
-    <section className="py-16 md:py-20 bg-gradient-to-b from-secondary/20 to-white border-t-4 border-accent/20">
+    <section className="py-16 md:py-20 bg-white border-t-4 border-accent/20">
       <div className="container-fluid px-4 md:px-6 max-w-7xl mx-auto">
+        {/* Intro Section */}
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6" data-testid="heading-how-to-get-started">
-            How to Get Started With Home Sweet Home Care
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-8" data-testid="heading-new-to-home-care">
+            New to In-Home Care?
           </h2>
+          <p className="text-2xl md:text-3xl text-gray-700 leading-relaxed mb-6 max-w-5xl mx-auto" data-testid="text-new-to-home-care-intro">
+            Choosing home care for a loved one can feel overwhelming, but Home Sweet Home Care makes the process simple, clear, and stress-free. We guide you every step of the way with compassion, clarity, and flexibility.
+          </p>
+          <p className="text-2xl md:text-3xl text-gray-700 leading-relaxed mb-12 max-w-5xl mx-auto" data-testid="text-new-to-home-care-benefit">
+            Learn how easy it is to get started with professional home care, and discover how our tailored support promotes comfort, safety, and peace of mind at home.
+          </p>
+          <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mt-16 mb-8" data-testid="heading-how-to-get-started">
+            How to Get Started With Home Sweet Home Care
+          </h3>
         </div>
 
         <ol className="grid md:grid-cols-3 gap-6 md:gap-8 list-none">
           {steps.map((step, index) => (
             <li 
               key={index}
-              className="bg-white p-6 md:p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow flex flex-col"
+              className="bg-gradient-to-br from-secondary/10 to-white p-8 md:p-10 rounded-lg shadow-md hover:shadow-lg transition-shadow flex flex-col"
               data-testid={`step-${index + 1}`}
             >
               <div className="flex flex-col items-center text-center">
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-accent text-white rounded-full flex items-center justify-center mb-4">
-                  <span className="text-2xl md:text-3xl font-bold" data-testid={`step-number-${index + 1}`}>
+                <div className="w-20 h-20 md:w-24 md:h-24 bg-accent text-white rounded-full flex items-center justify-center mb-6">
+                  <span className="text-3xl md:text-4xl font-bold" data-testid={`step-number-${index + 1}`}>
                     {step.number}
                   </span>
                 </div>
-                <h3 className="text-xl md:text-2xl font-bold text-primary mb-4" data-testid={`step-title-${index + 1}`}>
+                <h3 className="text-2xl md:text-3xl font-bold text-primary mb-6" data-testid={`step-title-${index + 1}`}>
                   {step.title}
                 </h3>
-                <div className="space-y-3">
+                <div className="space-y-4">
                   {step.description.map((paragraph, pIndex) => (
-                    <p key={pIndex} className="text-base md:text-lg text-gray-700 leading-relaxed" data-testid={`step-${index + 1}-description-${pIndex + 1}`}>
+                    <p key={pIndex} className="text-xl md:text-2xl text-gray-700 leading-relaxed" data-testid={`step-${index + 1}-description-${pIndex + 1}`}>
                       {paragraph}
                     </p>
                   ))}
