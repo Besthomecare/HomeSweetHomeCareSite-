@@ -1,70 +1,38 @@
-import { Check } from "lucide-react";
-import cardGamesImage from "@assets/ChatGPT Image Apr 17, 2025, 01_54_46 PM.png";
-
 const AboutSection = () => {
   return (
-    <section id="about" className="py-16 bg-secondary bg-opacity-30">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="mb-12 text-center">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-4">
+    <section id="about" className="py-16 md:py-20 bg-white">
+      <div className="container-fluid px-4 md:px-6 max-w-6xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
             About Home Sweet Home Care
           </h2>
-          <p className="max-w-3xl mx-auto text-lg">
-            We're dedicated to providing exceptional care that enhances the quality of life 
-            for seniors in Sarasota, Manatee County, and Lakewood Ranch.
+          <p className="text-xl md:text-2xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
+            We're dedicated to providing exceptional in-home care that enhances the quality of life for seniors in Sarasota, Manatee County, and Lakewood Ranch.
           </p>
         </div>
-        
-        <div className="mb-16 max-w-3xl mx-auto">
-          <h3 className="font-heading text-2xl font-semibold text-primary mb-4 text-center">Our Mission</h3>
-          <p className="mb-4 text-center">
-            To provide compassionate, personalized care that enables seniors to maintain their 
-            independence and dignity while remaining in the comfort of their own homes.
-          </p>
-          <p className="mb-6 text-center">
-            We believe that everyone deserves to age with dignity, surrounded by comfort, 
-            care, and respect.
-          </p>
-          <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-accent text-center">
-            <p className="italic">
-              "Our approach is built on creating meaningful relationships with each client 
-              and their families to ensure personalized care that truly makes a difference."
+
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start mt-12">
+          {/* Our Mission */}
+          <div className="bg-gradient-to-br from-secondary/30 to-white p-8 rounded-lg shadow-md">
+            <h3 className="text-2xl md:text-3xl font-bold text-primary mb-4">
+              Our Mission
+            </h3>
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-4">
+              To provide compassionate, personalized care that allows seniors to maintain independence, dignity, and comfort — safely at home and surrounded by the people and memories they love.
             </p>
-            <p className="font-semibold mt-2">- Devin Rexford, CEO</p>
-          </div>
-        </div>
-        
-        <div className="flex flex-col md:flex-row-reverse items-center">
-          <div className="md:w-1/2 mb-8 md:mb-0 md:pl-10">
-            <h3 className="font-heading text-2xl font-semibold text-primary mb-4 text-center">Our Caregivers</h3>
-            <p className="mb-4 text-center">
-              Our caregivers are the heart of our service. Each team member undergoes rigorous 
-              screening, including:
-            </p>
-            <ul className="mb-6 space-y-2 mx-auto max-w-md">
-              {[
-                "Comprehensive background checks",
-                "Professional references verification",
-                "Skills assessment and certification verification",
-                "Ongoing training and professional development"
-              ].map((item, index) => (
-                <li key={index} className="flex items-start">
-                  <Check className="text-accent mt-1 mr-2 flex-shrink-0" size={18} />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="text-center">
-              We carefully match caregivers with clients based on needs, personality, and 
-              preferences to ensure the perfect fit.
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+              We believe that every person deserves to age with dignity, supported by caregivers who genuinely care.
             </p>
           </div>
-          <div className="md:w-1/2">
-            <img 
-              src={cardGamesImage} 
-              alt="Caregiver playing card games with elderly client" 
-              className="rounded-lg shadow-lg w-full h-auto object-cover"
-            />
+
+          {/* CEO Quote */}
+          <div className="bg-accent/5 p-8 rounded-lg shadow-md border-l-4 border-accent">
+            <blockquote className="text-lg md:text-xl text-gray-700 leading-relaxed italic mb-6">
+              "Our approach is built on meaningful relationships with each client and their family to ensure personalized care that truly makes a difference."
+            </blockquote>
+            <p className="text-lg md:text-xl font-semibold text-primary">
+              – Devin Rexford, CEO
+            </p>
           </div>
         </div>
       </div>
