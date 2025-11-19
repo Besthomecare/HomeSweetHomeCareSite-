@@ -48,16 +48,15 @@ const LeadForm = () => {
   const onSubmit = async (data: LeadFormData) => {
     setIsSubmitting(true);
     try {
-      if (!executeRecaptcha) {
-        toast({
-          title: "Error",
-          description: "reCAPTCHA not loaded. Please refresh the page.",
-          variant: "destructive",
-        });
-        return;
+      // Get reCAPTCHA token if available (optional)
+      let recaptchaToken = "";
+      if (executeRecaptcha) {
+        try {
+          recaptchaToken = await executeRecaptcha("contact_form");
+        } catch (error) {
+          console.warn("reCAPTCHA token generation failed:", error);
+        }
       }
-
-      const recaptchaToken = await executeRecaptcha("contact_form");
 
       const response = await fetch("/api/contact", {
         method: "POST",
