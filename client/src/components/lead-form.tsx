@@ -77,12 +77,15 @@ const LeadForm = () => {
         });
         form.reset();
       } else {
-        throw new Error("Failed to submit");
+        const errorData = await response.json().catch(() => ({}));
+        const errorMessage = errorData.message || "Failed to submit";
+        throw new Error(errorMessage);
       }
     } catch (error) {
+      const errorMessage = error instanceof Error ? error.message : "Something went wrong";
       toast({
         title: "Error",
-        description: "Something went wrong. Please call us at (941) 200-0848.",
+        description: `${errorMessage}. Please call us at (941) 200-0848.`,
         variant: "destructive",
       });
     } finally {

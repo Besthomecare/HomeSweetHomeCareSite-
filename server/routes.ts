@@ -106,9 +106,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
         });
       } else {
         console.error("Error processing contact form:", error);
+        const errorMessage = error instanceof Error ? error.message : "An error occurred while processing your request";
         res.status(500).json({ 
           success: false, 
-          message: "An error occurred while processing your request" 
+          message: errorMessage,
+          details: process.env.NODE_ENV === 'development' ? String(error) : undefined
         });
       }
     }
