@@ -210,11 +210,10 @@ const LeadForm = () => {
             )}
           />
 
-          <div className="flex-1"></div>
           <Button
             type="submit"
             disabled={isSubmitting}
-            className="w-full text-lg py-6 bg-accent hover:bg-accent/90 text-white font-semibold rounded-lg mt-auto"
+            className="w-full text-lg py-6 bg-accent hover:bg-accent/90 text-white font-semibold rounded-lg mt-6"
             data-testid="button-submit-lead-form"
           >
             {isSubmitting ? (
