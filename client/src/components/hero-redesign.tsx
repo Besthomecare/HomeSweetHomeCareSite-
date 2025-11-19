@@ -78,10 +78,10 @@ const HeroRedesign = () => {
                       <Icon className="w-6 h-6 text-accent" />
                     </div>
                     <div>
-                      <h3 className="text-xl md:text-2xl font-semibold text-primary mb-1">
+                      <h3 className="text-2xl md:text-3xl font-bold text-primary mb-2">
                         {badge.title}
                       </h3>
-                      <p className="text-base text-gray-700">
+                      <p className="text-lg md:text-xl text-gray-700 font-medium">
                         {badge.text}
                       </p>
                     </div>
