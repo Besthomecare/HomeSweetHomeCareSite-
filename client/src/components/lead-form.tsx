@@ -13,50 +13,33 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
 
 const leadFormSchema = z.object({
   fullName: z.string().min(2, "Please enter your full name"),
+  email: z.string().email("Please enter a valid email address"),
   phone: z.string().min(10, "Please enter a valid phone number"),
-  preferredContactTime: z.string().min(1, "Please select a preferred time"),
-  city: z.string().min(1, "Please select your city/area"),
-  helpNeeded: z.array(z.string()).min(1, "Please select at least one service"),
-  otherHelp: z.string().optional(),
+  zipCode: z.string().min(5, "Please enter a valid zip code").max(10),
+  consent: z.boolean().refine((val) => val === true, {
+    message: "You must agree to be contacted",
+  }),
 });
 
 type LeadFormData = z.infer<typeof leadFormSchema>;
 
-const helpOptions = [
-  { id: "companionship", label: "Companionship" },
-  { id: "transportation", label: "Transportation" },
-  { id: "medication", label: "Medication Reminders" },
-  { id: "housekeeping", label: "Light Housekeeping" },
-  { id: "meals", label: "Meal Prep" },
-  { id: "other", label: "Other" },
-];
-
 const LeadForm = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showOtherField, setShowOtherField] = useState(false);
 
   const form = useForm<LeadFormData>({
     resolver: zodResolver(leadFormSchema),
     defaultValues: {
       fullName: "",
+      email: "",
       phone: "",
-      preferredContactTime: "",
-      city: "",
-      helpNeeded: [],
-      otherHelp: "",
+      zipCode: "",
+      consent: false,
     },
   });
 
@@ -68,9 +51,9 @@ const LeadForm = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: data.fullName,
-          email: "",
+          email: data.email,
           phone: data.phone,
-          message: `Preferred Contact Time: ${data.preferredContactTime}\nCity/Area: ${data.city}\nHelp Needed: ${data.helpNeeded.join(", ")}${data.otherHelp ? `\nOther: ${data.otherHelp}` : ""}`,
+          zipCode: data.zipCode,
         }),
       });
 
@@ -80,7 +63,6 @@ const LeadForm = () => {
           description: "We'll contact you within 24 hours. Thank you!",
         });
         form.reset();
-        setShowOtherField(false);
       } else {
         throw new Error("Failed to submit");
       }
@@ -127,6 +109,26 @@ const LeadForm = () => {
 
           <FormField
             control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-base font-semibold">Email *</FormLabel>
+                <FormControl>
+                  <Input
+                    {...field}
+                    type="email"
+                    placeholder="your@email.com"
+                    className="text-lg py-6"
+                    data-testid="input-email"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
             name="phone"
             render={({ field }) => (
               <FormItem>
@@ -147,22 +149,18 @@ const LeadForm = () => {
 
           <FormField
             control={form.control}
-            name="preferredContactTime"
+            name="zipCode"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-base font-semibold">Preferred Contact Time *</FormLabel>
-                <Select onValueChange={field.onChange} value={field.value}>
-                  <FormControl>
-                    <SelectTrigger className="text-lg py-6" data-testid="select-contact-time">
-                      <SelectValue placeholder="Select a time" />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    <SelectItem value="morning">Morning</SelectItem>
-                    <SelectItem value="afternoon">Afternoon</SelectItem>
-                    <SelectItem value="evening">Evening</SelectItem>
-                  </SelectContent>
-                </Select>
+                <FormLabel className="text-base font-semibold">Zip Code Where Care Is Needed *</FormLabel>
+                <FormControl>
+                  <Input
+                    {...field}
+                    placeholder="34231"
+                    className="text-lg py-6"
+                    data-testid="input-zip-code"
+                  />
+                </FormControl>
                 <FormMessage />
               </FormItem>
             )}
@@ -170,94 +168,34 @@ const LeadForm = () => {
 
           <FormField
             control={form.control}
-            name="city"
+            name="consent"
             render={({ field }) => (
-              <FormItem>
-                <FormLabel className="text-base font-semibold">City/Area *</FormLabel>
-                <Select onValueChange={field.onChange} value={field.value}>
-                  <FormControl>
-                    <SelectTrigger className="text-lg py-6" data-testid="select-city">
-                      <SelectValue placeholder="Select your area" />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    <SelectItem value="sarasota">Sarasota</SelectItem>
-                    <SelectItem value="bradenton">Bradenton</SelectItem>
-                    <SelectItem value="lakewood-ranch">Lakewood Ranch</SelectItem>
-                    <SelectItem value="siesta-key">Siesta Key</SelectItem>
-                    <SelectItem value="longboat-key">Longboat Key</SelectItem>
-                    <SelectItem value="venice">Venice</SelectItem>
-                  </SelectContent>
-                </Select>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <FormField
-            control={form.control}
-            name="helpNeeded"
-            render={() => (
-              <FormItem>
-                <FormLabel className="text-base font-semibold mb-3 block">
-                  Help Needed *
-                </FormLabel>
-                <div className="space-y-3">
-                  {helpOptions.map((option) => (
-                    <FormField
-                      key={option.id}
-                      control={form.control}
-                      name="helpNeeded"
-                      render={({ field }) => (
-                        <FormItem className="flex items-center space-x-3 space-y-0">
-                          <FormControl>
-                            <Checkbox
-                              checked={field.value?.includes(option.id)}
-                              onCheckedChange={(checked) => {
-                                const newValue = checked
-                                  ? [...field.value, option.id]
-                                  : field.value.filter((val) => val !== option.id);
-                                field.onChange(newValue);
-                                if (option.id === "other") {
-                                  setShowOtherField(checked as boolean);
-                                }
-                              }}
-                              data-testid={`checkbox-${option.id}`}
-                            />
-                          </FormControl>
-                          <FormLabel className="font-normal text-base cursor-pointer">
-                            {option.label}
-                          </FormLabel>
-                        </FormItem>
-                      )}
-                    />
-                  ))}
-                </div>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          {showOtherField && (
-            <FormField
-              control={form.control}
-              name="otherHelp"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-base font-semibold">Please specify</FormLabel>
-                  <FormControl>
-                    <Input
-                      {...field}
-                      placeholder="Tell us what you need"
-                      className="text-lg py-6"
-                      data-testid="input-other-help"
-                    />
-                  </FormControl>
+              <FormItem className="flex flex-row items-start space-x-3 space-y-0">
+                <FormControl>
+                  <Checkbox
+                    checked={field.value}
+                    onCheckedChange={field.onChange}
+                    data-testid="checkbox-consent"
+                  />
+                </FormControl>
+                <div className="space-y-1 leading-none">
+                  <FormLabel className="text-sm font-normal">
+                    I agree to be contacted by Home Sweet Home Care regarding my inquiry. View our{" "}
+                    <a
+                      href="/privacy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-accent underline hover:text-accent/80"
+                    >
+                      Privacy Policy
+                    </a>
+                    .
+                  </FormLabel>
                   <FormMessage />
-                </FormItem>
-              )}
-            />
-          )}
+                </div>
+              </FormItem>
+            )}
+          />
 
           <Button
             type="submit"
