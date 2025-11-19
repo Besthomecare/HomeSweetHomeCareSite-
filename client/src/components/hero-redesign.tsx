@@ -1,12 +1,12 @@
-import { Shield, Clock, Home, CheckCircle } from "lucide-react";
+import { Clock, Home, Heart, ClipboardList } from "lucide-react";
 import LeadForm from "./lead-form";
 
 const HeroRedesign = () => {
   const trustBadges = [
-    { icon: Shield, text: "Screened Caregivers" },
-    { icon: Clock, text: "Flexible Hours" },
-    { icon: Home, text: "In-Home Service" },
-    { icon: CheckCircle, text: "Licensed & Insured" },
+    { icon: Clock, title: "Flexible Hours", text: "Care when you need it, tailored to your schedule" },
+    { icon: Home, title: "In-Home Service", text: "Comfort and care in familiar surroundings" },
+    { icon: Heart, title: "Compassionate Care", text: "Personalized attention delivered with dignity" },
+    { icon: ClipboardList, title: "Customized Care Plan", text: "Support designed around your loved one's unique needs" },
   ];
 
   return (
@@ -55,15 +55,20 @@ const HeroRedesign = () => {
                 return (
                   <div
                     key={index}
-                    className="flex items-center space-x-4 bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+                    className="flex items-start space-x-4 bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
                     data-testid={`trust-badge-${index}`}
                   >
-                    <div className="flex-shrink-0 w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center">
+                    <div className="flex-shrink-0 w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center mt-1">
                       <Icon className="w-7 h-7 text-accent" />
                     </div>
-                    <span className="text-xl md:text-2xl font-semibold text-primary">
-                      {badge.text}
-                    </span>
+                    <div>
+                      <h3 className="text-xl md:text-2xl font-semibold text-primary mb-1">
+                        {badge.title}
+                      </h3>
+                      <p className="text-base md:text-lg text-gray-700">
+                        {badge.text}
+                      </p>
+                    </div>
                   </div>
                 );
               })}
