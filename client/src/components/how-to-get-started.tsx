@@ -27,7 +27,7 @@ const HowToGetStarted = () => {
   ];
 
   return (
-    <section className="py-16 md:py-20 bg-white border-t-2 border-gray-300">
+    <section className="py-16 md:py-20 bg-secondary border-t-2 border-gray-300">
       <div className="container-fluid px-4 md:px-6 max-w-7xl mx-auto">
         {/* Intro Section */}
         <div className="text-center mb-12 md:mb-16">

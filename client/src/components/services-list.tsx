@@ -10,7 +10,7 @@ const ServicesList = () => {
   ];
 
   return (
-    <section className="py-16 md:py-20 bg-secondary border-t-2 border-gray-300">
+    <section className="py-16 md:py-20 bg-white border-t-2 border-gray-300">
       <div className="container-fluid px-4 md:px-6 max-w-5xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">
           What We Help With
