@@ -90,6 +90,9 @@ const HeroRedesign = () => {
               })}
             </div>
 
+            {/* Separator for mobile view */}
+            <div className="md:hidden border-t-2 border-gray-300 my-8"></div>
+
             {/* Right Column: Lead Form */}
             <div className="h-full flex items-stretch">
               <LeadForm />
