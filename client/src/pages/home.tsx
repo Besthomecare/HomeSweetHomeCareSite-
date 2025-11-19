@@ -20,8 +20,8 @@ const Home = () => {
       <HowToGetStarted />
       <ServicesList />
       <ServiceArea />
-      <FaqAccordion />
       <AboutSection />
+      <FaqAccordion />
     </>
   );
 };
