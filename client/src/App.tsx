@@ -38,6 +38,11 @@ function Router() {
 function App() {
   const recaptchaSiteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY || "";
 
+  // Log for debugging (remove in production)
+  if (!recaptchaSiteKey) {
+    console.error("VITE_RECAPTCHA_SITE_KEY is not set");
+  }
+
   return (
     <QueryClientProvider client={queryClient}>
       <HelmetProvider>
