@@ -17,22 +17,27 @@ export async function registerRoutes(app: Express): Promise<Server> {
       if (recaptchaToken) {
         const recaptchaSecret = process.env.RECAPTCHA_SECRET_KEY;
         if (recaptchaSecret) {
-          const recaptchaResponse = await fetch(
-            `https://www.google.com/recaptcha/api/siteverify`,
-            {
-              method: "POST",
-              headers: { "Content-Type": "application/x-www-form-urlencoded" },
-              body: `secret=${recaptchaSecret}&response=${recaptchaToken}`,
-            }
-          );
+          try {
+            const recaptchaResponse = await fetch(
+              `https://www.google.com/recaptcha/api/siteverify`,
+              {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: `secret=${recaptchaSecret}&response=${recaptchaToken}`,
+              }
+            );
 
-          const recaptchaData = await recaptchaResponse.json();
-          
-          if (!recaptchaData.success || recaptchaData.score < 0.5) {
-            return res.status(400).json({
-              success: false,
-              message: "reCAPTCHA verification failed. Please try again.",
-            });
+            const recaptchaData = await recaptchaResponse.json();
+            
+            if (!recaptchaData.success || recaptchaData.score < 0.5) {
+              console.error("reCAPTCHA verification failed:", recaptchaData);
+              return res.status(400).json({
+                success: false,
+                message: "reCAPTCHA verification failed. Please try again.",
+              });
+            }
+          } catch (recaptchaError) {
+            console.error("reCAPTCHA verification error:", recaptchaError);
           }
         }
       }
