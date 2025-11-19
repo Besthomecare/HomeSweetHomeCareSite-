@@ -13,7 +13,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const { recaptchaToken, ...formData } = req.body;
 
-      // Verify reCAPTCHA
+      // Verify reCAPTCHA (optional - gracefully degrade if it fails)
       if (recaptchaToken) {
         const recaptchaSecret = process.env.RECAPTCHA_SECRET_KEY;
         if (recaptchaSecret) {
@@ -29,8 +29,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
             const recaptchaData = await recaptchaResponse.json();
             
-            if (!recaptchaData.success || recaptchaData.score < 0.5) {
-              console.error("reCAPTCHA verification failed:", recaptchaData);
+            if (!recaptchaData.success) {
+              console.warn("reCAPTCHA verification failed:", recaptchaData);
+              // Don't block submission - just log it for monitoring
+            } else if (recaptchaData.score < 0.3) {
+              // Only block very low scores (likely bots)
+              console.error("Blocking low reCAPTCHA score:", recaptchaData.score);
               return res.status(400).json({
                 success: false,
                 message: "reCAPTCHA verification failed. Please try again.",
@@ -38,6 +42,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
             }
           } catch (recaptchaError) {
             console.error("reCAPTCHA verification error:", recaptchaError);
+            // Don't block submission on error - allow form to work
           }
         }
       }
