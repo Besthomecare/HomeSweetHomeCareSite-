@@ -49,20 +49,20 @@ const HeroRedesign = () => {
           {/* Two Column Layout */}
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
             {/* Left Column: Trust Badges */}
-            <div className="flex flex-col justify-center space-y-6">
+            <div className="flex flex-col justify-between space-y-8 h-full">
               {trustBadges.map((badge, index) => {
                 const Icon = badge.icon;
                 return (
                   <div
                     key={index}
-                    className="flex items-start space-x-4 bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+                    className="flex items-start space-x-4 bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow flex-1"
                     data-testid={`trust-badge-${index}`}
                   >
                     <div className="flex-shrink-0 w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center mt-1">
                       <Icon className="w-7 h-7 text-accent" />
                     </div>
                     <div>
-                      <h3 className="text-xl md:text-2xl font-semibold text-primary mb-1">
+                      <h3 className="text-xl md:text-2xl font-semibold text-primary mb-2">
                         {badge.title}
                       </h3>
                       <p className="text-base md:text-lg text-gray-700">

@@ -1,6 +1,6 @@
 const NewToHomeCare = () => {
   return (
-    <section className="py-16 md:py-20 bg-gradient-to-b from-secondary/20 to-white">
+    <section className="py-16 md:py-20 bg-white border-t-4 border-accent/20">
       <div className="container-fluid px-4 md:px-6 max-w-5xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6" data-testid="heading-new-to-home-care">
           New to In-Home Care?
