@@ -1,7 +1,6 @@
 import HeroRedesign from "@/components/hero-redesign";
 import AboutSection from "@/components/about-section";
 import HowToGetStarted from "@/components/how-to-get-started";
-import CoreValues from "@/components/core-values";
 import ServicesList from "@/components/services-list";
 import ServiceArea from "@/components/service-area";
 import FaqAccordion from "@/components/faq-accordion";
@@ -20,7 +19,6 @@ const Home = () => {
       <HeroRedesign />
       <AboutSection />
       <HowToGetStarted />
-      <CoreValues />
       <ServicesList />
       <ServiceArea />
       <FaqAccordion />
