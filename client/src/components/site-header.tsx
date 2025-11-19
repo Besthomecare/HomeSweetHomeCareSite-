@@ -22,52 +22,87 @@ const SiteHeader = () => {
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       {/* Main Navigation */}
-      <nav className="container-fluid px-4 md:px-6 py-4 md:py-6 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" onClick={closeMobileMenu}>
-          <div className="flex flex-col cursor-pointer">
-            <Logo variant="full" />
-            <p className="text-sm md:text-base text-primary font-medium mt-1">
-              Stay independent, stay home.
-            </p>
+      <nav className="container-fluid px-4 md:px-6 py-4 md:py-6">
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <Link href="/" onClick={closeMobileMenu}>
+            <div className="flex flex-col cursor-pointer">
+              <Logo variant="full" />
+              <p className="text-sm md:text-base text-primary font-medium mt-1">
+                Stay independent, stay home.
+              </p>
+            </div>
+          </Link>
+          
+          {/* Desktop Navigation Links */}
+          <div className="hidden lg:flex items-center gap-6">
+            <Link href="/">
+              <span className={`font-medium text-base ${isActive('/') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer`}>
+                Home
+              </span>
+            </Link>
+            <Link href="/about">
+              <span className={`font-medium text-base ${isActive('/about') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer`}>
+                About
+              </span>
+            </Link>
+            <Link href="/services">
+              <span className={`font-medium text-base ${isActive('/services') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer`}>
+                Services
+              </span>
+            </Link>
+            <Link href="/faq">
+              <span className={`font-medium text-base ${isActive('/faq') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer`}>
+                FAQs
+              </span>
+            </Link>
+            <Link href="/careers">
+              <span className={`font-medium text-base ${isActive('/careers') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer`}>
+                Careers
+              </span>
+            </Link>
+            <Link href="/contact">
+              <span className={`font-medium text-base ${isActive('/contact') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer`}>
+                Contact
+              </span>
+            </Link>
           </div>
-        </Link>
-        
-        {/* Desktop CTAs */}
-        <div className="hidden md:flex items-center gap-3">
-          <a 
-            href="tel:+19412000848"
-            className="font-semibold text-lg text-white px-8 py-3 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg whitespace-nowrap bg-primary hover:bg-primary/90"
-            data-testid="button-call-now-desktop"
+          
+          {/* Desktop CTAs */}
+          <div className="hidden lg:flex items-center gap-3">
+            <a 
+              href="tel:+19412000848"
+              className="font-semibold text-lg text-white px-8 py-3 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg whitespace-nowrap bg-primary hover:bg-primary/90"
+              data-testid="button-call-now-desktop"
+            >
+              (941) 200-0848
+            </a>
+            <a 
+              href="https://calendar.google.com/appointments/schedules/AcZssZ1HmfJNob7zkiWgHb1185gbsl_v8EOAfqEP5Lili91nLoHV5brvq7oFCxGoVdsFDXoKjhaRsPYY"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-lg text-white px-8 py-3 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg whitespace-nowrap bg-accent hover:bg-accent/90"
+              data-testid="button-book-consultation"
+            >
+              Book Free Consult
+            </a>
+          </div>
+          
+          {/* Mobile Menu Toggle */}
+          <button 
+            className="lg:hidden text-primary text-2xl"
+            onClick={toggleMobileMenu}
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            data-testid="button-mobile-menu-toggle"
           >
-            (941) 200-0848
-          </a>
-          <a 
-            href="https://calendar.google.com/appointments/schedules/AcZssZ1HmfJNob7zkiWgHb1185gbsl_v8EOAfqEP5Lili91nLoHV5brvq7oFCxGoVdsFDXoKjhaRsPYY"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-semibold text-lg text-white px-8 py-3 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg whitespace-nowrap bg-accent hover:bg-accent/90"
-            data-testid="button-book-consultation"
-          >
-            Book Free Consult
-          </a>
+            {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
-        
-        {/* Mobile Menu Toggle */}
-        <button 
-          className="md:hidden text-primary text-2xl"
-          onClick={toggleMobileMenu}
-          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-          data-testid="button-mobile-menu-toggle"
-        >
-          {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
-        
       </nav>
       
       {/* Mobile Full-Screen Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 top-[72px] bg-white z-40 overflow-y-auto">
+        <div className="lg:hidden fixed inset-0 top-[72px] bg-white z-40 overflow-y-auto">
           <div className="flex flex-col p-6 space-y-4">
             <Link href="/" onClick={closeMobileMenu}>
               <span 
