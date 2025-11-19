@@ -18,7 +18,7 @@ const AboutSection = () => {
               Our Mission
             </h3>
             <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-4" data-testid="text-mission-statement">
-              To provide compassionate, personalized care that allows seniors to maintain independence, dignity, and comfort — safely at home and surrounded by the people and memories they love.
+              To provide compassionate, personalized care that allows seniors to maintain independence, dignity, and comfort safely at home and surrounded by the people and memories they love.
             </p>
             <p className="text-lg md:text-xl text-gray-700 leading-relaxed" data-testid="text-mission-belief">
               We believe that every person deserves to age with dignity, supported by caregivers who genuinely care.

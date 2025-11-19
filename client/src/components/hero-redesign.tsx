@@ -37,7 +37,7 @@ const HeroRedesign = () => {
               Compassionate care in your own home.
             </h1>
             <p className="text-xl md:text-2xl text-white max-w-4xl mx-auto leading-relaxed drop-shadow-lg">
-              Trusted help and companionship services for seniors in Sarasota, Bradenton, Venice, and Lakewood Ranch—on your schedule, in the comfort of your own home.
+              Trusted help and companionship services for seniors in Sarasota, Bradenton, Venice, and Lakewood Ranch on your schedule, in the comfort of your own home.
             </p>
           </div>
         </div>
@@ -62,10 +62,10 @@ const HeroRedesign = () => {
                       <Icon className="w-7 h-7 text-accent" />
                     </div>
                     <div>
-                      <h3 className="text-xl md:text-2xl font-semibold text-primary mb-2">
+                      <h3 className="text-2xl md:text-3xl font-semibold text-primary mb-2">
                         {badge.title}
                       </h3>
-                      <p className="text-base md:text-lg text-gray-700">
+                      <p className="text-lg md:text-xl text-gray-700">
                         {badge.text}
                       </p>
                     </div>

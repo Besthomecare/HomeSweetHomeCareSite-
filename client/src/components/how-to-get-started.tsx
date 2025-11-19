@@ -12,7 +12,7 @@ const HowToGetStarted = () => {
       number: "02",
       title: "Receive a Customized Care Plan",
       description: [
-        "If you decide to move forward, we'll complete a full in-home assessment — including a safety, fall-risk, and home-environment review.",
+        "If you decide to move forward, we'll complete a full in-home assessment including a safety, fall-risk, and home-environment review.",
         "From there, we create a personalized care plan and recommended schedule based on your goals, lifestyle, and budget."
       ]
     },

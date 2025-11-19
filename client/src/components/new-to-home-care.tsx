@@ -6,7 +6,7 @@ const NewToHomeCare = () => {
           New to In-Home Care?
         </h2>
         <p className="text-xl md:text-2xl text-gray-700 leading-relaxed mb-4" data-testid="text-new-to-home-care-intro">
-          Choosing home care for a loved one can feel overwhelming — but Home Sweet Home Care makes the process simple, clear, and stress-free. We guide you every step of the way with compassion, clarity, and flexibility.
+          Choosing home care for a loved one can feel overwhelming, but Home Sweet Home Care makes the process simple, clear, and stress-free. We guide you every step of the way with compassion, clarity, and flexibility.
         </p>
         <p className="text-xl md:text-2xl text-gray-700 leading-relaxed" data-testid="text-new-to-home-care-benefit">
           Learn how easy it is to get started with professional home care, and discover how our tailored support promotes comfort, safety, and peace of mind at home.
