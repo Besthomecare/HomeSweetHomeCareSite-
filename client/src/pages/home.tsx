@@ -19,9 +19,9 @@ const Home = () => {
       <HeroRedesign />
       <HowToGetStarted />
       <ServicesList />
-      <ServiceArea />
       <AboutSection />
       <FaqAccordion />
+      <ServiceArea />
     </>
   );
 };

@@ -31,7 +31,7 @@ const FaqAccordion = () => {
   ];
 
   return (
-    <section className="py-16 md:py-20 bg-secondary border-t-2 border-gray-300">
+    <section className="py-16 md:py-20 bg-white border-t-2 border-gray-300">
       <div className="container-fluid px-4 md:px-6 max-w-4xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-primary mb-12 text-center">
           Frequently Asked Questions
