@@ -91,16 +91,16 @@ const LeadForm = () => {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-2xl p-6 md:p-8">
+    <div className="bg-white rounded-xl shadow-2xl p-8 md:p-10 max-w-md mx-auto">
       <h3 className="text-2xl font-bold text-primary mb-2 text-center">
         Get Your Free Care Assessment
       </h3>
-      <p className="text-gray-600 text-center mb-6 text-base">
+      <p className="text-gray-600 text-center mb-8 text-base">
         We respond within 24 hours. No obligation.
       </p>
 
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <FormField
             control={form.control}
             name="fullName"
