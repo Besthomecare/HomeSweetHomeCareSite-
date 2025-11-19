@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 const leadFormSchema = z.object({
   fullName: z.string().min(2, "Please enter your full name"),
@@ -31,6 +32,7 @@ type LeadFormData = z.infer<typeof leadFormSchema>;
 const LeadForm = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   const form = useForm<LeadFormData>({
     resolver: zodResolver(leadFormSchema),
@@ -46,6 +48,17 @@ const LeadForm = () => {
   const onSubmit = async (data: LeadFormData) => {
     setIsSubmitting(true);
     try {
+      if (!executeRecaptcha) {
+        toast({
+          title: "Error",
+          description: "reCAPTCHA not loaded. Please refresh the page.",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      const recaptchaToken = await executeRecaptcha("contact_form");
+
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -54,6 +67,7 @@ const LeadForm = () => {
           email: data.email,
           phone: data.phone,
           zipCode: data.zipCode,
+          recaptchaToken,
         }),
       });
 

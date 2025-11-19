@@ -3,6 +3,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./lib/queryClient";
 import { Toaster } from "@/components/ui/toaster";
 import { HelmetProvider } from "react-helmet-async";
+import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 import { useScrollToTop } from "@/hooks/use-scroll-to-top";
 
 import SiteHeader from "@/components/site-header";
@@ -35,17 +36,28 @@ function Router() {
 }
 
 function App() {
+  const recaptchaSiteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY || "";
+
   return (
     <QueryClientProvider client={queryClient}>
       <HelmetProvider>
-        <div className="flex flex-col min-h-screen">
-          <SiteHeader />
-          <main className="flex-grow">
-            <Router />
-          </main>
-          <SiteFooter />
-        </div>
-        <Toaster />
+        <GoogleReCaptchaProvider
+          reCaptchaKey={recaptchaSiteKey}
+          scriptProps={{
+            async: true,
+            defer: true,
+            appendTo: "head",
+          }}
+        >
+          <div className="flex flex-col min-h-screen">
+            <SiteHeader />
+            <main className="flex-grow">
+              <Router />
+            </main>
+            <SiteFooter />
+          </div>
+          <Toaster />
+        </GoogleReCaptchaProvider>
       </HelmetProvider>
     </QueryClientProvider>
   );

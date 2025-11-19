@@ -10,13 +10,10 @@ export const users = pgTable("users", {
 
 export const contactForms = pgTable("contact_forms", {
   id: serial("id").primaryKey(),
-  firstName: text("first_name").notNull(),
-  lastName: text("last_name").notNull(),
+  name: text("name").notNull(),
   email: text("email").notNull(),
   phone: text("phone").notNull(),
-  careFor: text("care_for"),
-  services: text("services").array(),
-  message: text("message"),
+  zipCode: text("zip_code").notNull(),
   createdAt: timestamp("created_at").defaultNow().notNull(),
   isRead: boolean("is_read").default(false).notNull(),
 });
