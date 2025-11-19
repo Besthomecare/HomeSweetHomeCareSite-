@@ -60,7 +60,7 @@ const HeroRedesign = () => {
       </section>
 
       {/* Content Section Below Video */}
-      <section className="bg-gradient-to-b from-secondary/30 to-white py-12 md:py-16">
+      <section className="bg-secondary/10 py-16 md:py-20">
         <div className="container-fluid px-4 md:px-6 max-w-7xl mx-auto">
           {/* Two Column Layout */}
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
