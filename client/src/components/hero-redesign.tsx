@@ -91,7 +91,7 @@ const HeroRedesign = () => {
             </div>
 
             {/* Right Column: Lead Form */}
-            <div>
+            <div className="h-full flex items-stretch">
               <LeadForm />
             </div>
           </div>
