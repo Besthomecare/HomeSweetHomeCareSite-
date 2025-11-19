@@ -1,5 +1,6 @@
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { COMPANY_INFO, SERVICE_AREAS } from "@/lib/constants";
+import LeadForm from "./lead-form";
 
 const ContactSection = () => {
 
@@ -94,13 +95,8 @@ const ContactSection = () => {
             </div>
           </div>
           
-          <div className="lg:w-1/2 bg-[#F8F5F2] p-8 rounded-lg">
-            <h2 className="font-heading text-2xl font-bold text-primary mb-6">
-              Request a Free Care Assessment
-            </h2>
-            
-            {/* HubSpot form embed */}
-            <div id="hs-contact-form" className="hubspot-form" style={{maxWidth: "600px", margin: "2rem auto"}}></div>
+          <div className="lg:w-1/2">
+            <LeadForm />
           </div>
         </div>
       </div>
