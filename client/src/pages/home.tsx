@@ -17,11 +17,11 @@ const Home = () => {
         />
       </Helmet>
       <HeroRedesign />
-      <AboutSection />
       <HowToGetStarted />
       <ServicesList />
       <ServiceArea />
       <FaqAccordion />
+      <AboutSection />
     </>
   );
 };
