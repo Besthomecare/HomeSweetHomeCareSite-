@@ -1,0 +1,55 @@
+index-BzWvvY8u.js:206 <GoogleReCaptchaProvider /> recaptcha key not provided
+Explanation
+
+Understanding the problem
+The error message <GoogleReCaptchaProvider /> recaptcha key not provided indicates that the GoogleReCaptchaProvider component in your web application is being used without a reCAPTCHA site key being supplied. The GoogleReCaptchaProvider component requires a reCAPTCHA site key to function correctly, as it's essential for identifying your website with Google's reCAPTCHA service. The provided code snippet typeof process < "u" && HC && !1 || console.warn(e) is likely part of the internal logic of the reCAPTCHA library that triggers this specific warning or error (e in this context would be the "recaptcha key not provided" message) when the key is absent.
+
+Suggested fix
+To resolve this issue, you need to provide your reCAPTCHA site key as a prop to the GoogleReCaptchaProvider component. You can obtain a reCAPTCHA site key by registering your domain with Google reCAPTCHA. Once you have the key, pass it to the component using the reCaptchaKey prop.
+
+css
+
+import React from 'react';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+
+function App() {
+  // Replace 'YOUR_RECAPTCHA_SITE_KEY' with your actual reCAPTCHA site key
+  const recaptchaKey = 'YOUR_RECAPTCHA_SITE_KEY'; 
+
+  return (
+    <GoogleReCaptchaProvider reCaptchaKey={recaptchaKey}>
+      {/* Your application components */}
+    </GoogleReCaptchaProvider>
+  );
+}
+
+export default App;
+
+Use code snippets with caution
+
+If you are using environment variables, which is a recommended practice for sensitive keys, you would access the key like this:
+
+css
+
+import React from 'react';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+
+function App() {
+  // Access the key from environment variables (e.g., process.env.REACT_APP_RECAPTCHA_KEY for Create React App)
+  const recaptchaKey = process.env.REACT_APP_RECAPTCHA_KEY; 
+
+  return (
+    <GoogleReCaptchaProvider reCaptchaKey={recaptchaKey}>
+      {/* Your application components */}
+    </GoogleReCaptchaProvider>
+  );
+}
+
+export default App;
+
+Use code snippets with caution
+
+Remember to replace process.env.REACT_APP_RECAPTCHA_KEY with the correct way to access environment variables in your specific build setup (e.g., import.meta.env.VITE_RECAPTCHA_KEY for Vite).
+
+Summary
+The error "recaptcha key not provided" occurs because the GoogleReCaptchaProvider component requires a reCaptchaKey prop. To fix this, provide your valid reCAPTCHA site key to the reCaptchaKey prop of the GoogleReCaptchaProvider component.
