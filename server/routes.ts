@@ -49,16 +49,24 @@ export async function registerRoutes(app: Express): Promise<Server> {
       }
 
       // Validate form data
+      console.log("Step 1: Validating form data...");
       const validatedData = insertContactFormSchema.parse(formData);
+      console.log("Step 1 complete: Validation successful");
       
       // Store form data
+      console.log("Step 2: Storing form data in database...");
       const contactForm = await storage.createContactForm(validatedData);
+      console.log("Step 2 complete: Data stored, ID:", contactForm.id);
 
       // Send notification email to business
+      console.log("Step 3: Preparing to send emails...");
       try {
+        console.log("Step 3a: Getting Resend client...");
         const { client, fromEmail } = await getUncachableResendClient();
+        console.log("Step 3a complete: Resend client ready, from:", fromEmail);
         
-        await client.emails.send({
+        console.log("Step 3b: Sending business notification email...");
+        const businessEmailResult = await client.emails.send({
           from: fromEmail,
           to: "info@besthomecare.net",
           subject: "New Care Assessment Request",
@@ -71,9 +79,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
             <p><strong>Submitted:</strong> ${new Date().toLocaleString()}</p>
           `,
         });
+        console.log("Step 3b complete: Business email sent, result:", businessEmailResult);
 
         // Send auto-reply to customer
-        await client.emails.send({
+        console.log("Step 3c: Sending customer auto-reply...");
+        const customerEmailResult = await client.emails.send({
           from: fromEmail,
           to: validatedData.email,
           subject: "Thank You for Contacting Home Sweet Home Care",
@@ -87,8 +97,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
             <p>Best regards,<br>Home Sweet Home Care Team</p>
           `,
         });
+        console.log("Step 3c complete: Customer email sent, result:", customerEmailResult);
       } catch (emailError) {
         console.error("Error sending emails:", emailError);
+        console.error("Email error details:", JSON.stringify(emailError, null, 2));
       }
       
       // Send response
