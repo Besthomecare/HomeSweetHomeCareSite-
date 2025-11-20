@@ -38,9 +38,9 @@ function Router() {
 function App() {
   const recaptchaSiteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY || "";
 
-  // Log for debugging (remove in production)
+  // Log for debugging
   if (!recaptchaSiteKey) {
-    console.error("VITE_RECAPTCHA_SITE_KEY is not set");
+    console.warn("VITE_RECAPTCHA_SITE_KEY is not set - reCAPTCHA will be disabled");
   }
 
   return (
