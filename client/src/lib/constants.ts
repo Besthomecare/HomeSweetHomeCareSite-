@@ -9,7 +9,6 @@ import {
 import { ServiceType, TestimonialType, FaqType, CompanyInfoType } from "@/types";
 
 // Import service images
-import aiCompanionship from "@assets/ai-companionship-alt.jpg";
 import companionship from "@assets/companionship-social-support.jpg";
 import medicationReminders from "@assets/medication-reminders.jpg";
 import lightHousekeeping from "@assets/light-housekeeping.jpg";
@@ -114,19 +113,6 @@ export const SERVICES: ServiceType[] = [
       "Meal planning with careful dietary considerations",
       "Preparation of fresh, appealing meals",
       "Peace of mind for families regarding nutrition and diet"
-    ]
-  },
-  {
-    id: "ai-companionship",
-    title: "AI Companionship",
-    description: "Our innovative AI Companionship provides flexible engagement through voice or tablet-based technology. It offers conversation, memory support, and personalized interaction that grows more meaningful over time. This service provides peace of mind for families knowing their loved one has reliable companionship.",
-    icon: Users,
-    image: aiCompanionship,
-    benefits: [
-      "Provides reliable and trustworthy support at any time of day",
-      "Grows more personalized with every interaction",
-      "Helps maintain dignity and independence in the home",
-      "Offers peace of mind for families with flexible companionship"
     ]
   },
   {
