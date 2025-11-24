@@ -40,33 +40,24 @@ const ServiceCard = ({ service }: { service: ServiceType }) => {
       
       {/* Content */}
       <div className="p-6 pt-8 pb-8 flex-grow flex flex-col">
-        <h2 className="font-heading text-2xl font-semibold text-primary mb-4">{service.title}</h2>
+        <h2 className="font-heading text-2xl font-semibold text-[#2C5F2D] mb-4">{service.title}</h2>
         
         <div className="mb-5 text-gray-700 space-y-3">
           {service.description.split('. ').map((sentence: string, idx: number) => (
-            sentence && <p key={idx} className="leading-relaxed">{sentence}{sentence.endsWith('.') ? '' : '.'}</p>
+            sentence && <p key={idx} className="leading-relaxed text-base md:text-lg">{sentence}{sentence.endsWith('.') ? '' : '.'}</p>
           ))}
         </div>
         
         <div className="flex-grow">
-          <h3 className="font-heading text-lg font-semibold text-primary mb-3">Benefits:</h3>
-          <ul className="mb-6 space-y-3">
+          <h3 className="font-heading text-lg font-semibold text-[#2C5F2D] mb-3">Benefits:</h3>
+          <ul className="space-y-3">
             {service.benefits.map((benefit: string, index: number) => (
               <li key={index} className="flex items-start">
-                <Check className="text-accent flex-shrink-0 mt-1 mr-2" size={18} />
-                <span className="text-gray-800">{benefit}</span>
+                <Check className="text-[#2C5F2D] flex-shrink-0 mt-1 mr-2" size={18} />
+                <span className="text-gray-800 text-base md:text-lg">{benefit}</span>
               </li>
             ))}
           </ul>
-        </div>
-        
-        {/* Button */}
-        <div className="mt-auto">
-          <Link href="/contact">
-            <div className="w-full bg-[#047857] hover:bg-[#03543f] text-white py-3 rounded-lg text-center font-bold transition-colors">
-              Request a Free Care Assessment
-            </div>
-          </Link>
         </div>
       </div>
     </div>
@@ -78,10 +69,10 @@ const ServicesSection = () => {
     <section id="services" className="py-16 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mb-12 text-center">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-[#2C5F2D] mb-4">
             Our Care Services
           </h2>
-          <p className="max-w-3xl mx-auto text-lg">
+          <p className="max-w-3xl mx-auto text-lg md:text-xl text-gray-700 leading-relaxed">
             We offer a comprehensive range of non-medical care services tailored 
             to meet the unique needs of each client.
           </p>
@@ -91,16 +82,6 @@ const ServicesSection = () => {
           {SERVICES.map((service) => (
             <ServiceCard key={service.id} service={service} />
           ))}
-        </div>
-        
-        <div className="mt-12 text-center">
-          <div className="inline-block">
-            <Link href="/contact">
-              <div className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-md transition-colors inline-block font-semibold cursor-pointer">
-                Schedule a Free Care Assessment
-              </div>
-            </Link>
-          </div>
         </div>
       </div>
     </section>
