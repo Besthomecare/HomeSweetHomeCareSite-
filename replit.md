@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a full-stack web application for Home Sweet Home Care, a compassionate in-home care service provider serving seniors in Sarasota, Manatee County, and Lakewood Ranch, Florida. The application combines a modern React frontend with an Express.js backend, utilizing PostgreSQL for data storage and featuring innovative AI companionship services alongside traditional care offerings.
+This is a full-stack web application for Home Sweet Home Care, a compassionate in-home care service provider serving seniors in Sarasota, Manatee County, and Lakewood Ranch, Florida. The application combines a modern React frontend with an Express.js backend, utilizing PostgreSQL for data storage and featuring traditional in-home care services with a focus on senior-friendly design and accessibility.
 
 ## System Architecture
 
@@ -36,7 +36,7 @@ This is a full-stack web application for Home Sweet Home Care, a compassionate i
 
 #### Frontend Pages
 - **Home**: Senior-friendly redesign with video background hero, above-the-fold lead form, trust badges, core values, services list, service area, and FAQ accordion
-- **Services**: Detailed service descriptions with AI companionship feature
+- **Services**: Simplified senior-friendly design showcasing six traditional care services with personalized care plans and flexible scheduling options
 - **About**: Company mission, values, caregiver information
 - **Contact**: Contact form with HubSpot integration
 - **Careers**: Employment opportunities and application process
@@ -91,6 +91,7 @@ This is a full-stack web application for Home Sweet Home Care, a compassionate i
 
 ## Changelog
 
+- November 24, 2025. Simplified services page: Removed all AI companionship content and streamlined services page to match homepage's senior-friendly design. Fixed nested anchor tag accessibility issue in Link component. Services now feature six traditional care offerings: Companionship, Transportation & Errands, Medication Reminders, Light Housekeeping, Meal Preparation, and Observation & Reporting.
 - November 17, 2025. Complete homepage redesign: Implemented senior-friendly design with video background hero, above-the-fold lead form, trust badges, core values section, bulleted services list, service area display, FAQ accordion, and compact footer. Removed testimonials and AI companionship from homepage. Updated header to simplified sticky design with prominent CTAs. Increased base font to 18px for better readability.
 - June 30, 2025. Initial setup
 

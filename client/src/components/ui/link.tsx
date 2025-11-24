@@ -22,10 +22,8 @@ const Link: React.FC<LinkProps> = ({ href, children, className, onClick }) => {
   };
 
   return (
-    <WouterLink href={href}>
-      <a className={className} onClick={handleClick}>
-        {children}
-      </a>
+    <WouterLink href={href} className={className} onClick={handleClick}>
+      {children}
     </WouterLink>
   );
 };
