@@ -93,9 +93,41 @@ const HeroRedesign = () => {
             {/* Separator for mobile view */}
             <div className="md:hidden border-t-2 border-gray-300 my-8"></div>
 
-            {/* Right Column: Lead Form */}
-            <div className="h-full flex items-stretch">
-              <LeadForm />
+            {/* Right Column: What We Help With + Lead Form */}
+            <div className="h-full flex flex-col">
+              {/* What We Help With Section */}
+              <div className="bg-[#F8F5F2] p-6 rounded-lg mb-6">
+                <h2 className="text-2xl md:text-3xl font-bold text-[#2C5F2D] mb-4">
+                  What We Help With
+                </h2>
+                <ul className="space-y-3">
+                  <li className="flex items-center text-lg md:text-xl text-gray-700">
+                    <span className="w-2 h-2 bg-[#2C5F2D] rounded-full mr-3 flex-shrink-0"></span>
+                    Companionship & conversation
+                  </li>
+                  <li className="flex items-center text-lg md:text-xl text-gray-700">
+                    <span className="w-2 h-2 bg-[#2C5F2D] rounded-full mr-3 flex-shrink-0"></span>
+                    Transportation & errands
+                  </li>
+                  <li className="flex items-center text-lg md:text-xl text-gray-700">
+                    <span className="w-2 h-2 bg-[#2C5F2D] rounded-full mr-3 flex-shrink-0"></span>
+                    Medication reminders
+                  </li>
+                  <li className="flex items-center text-lg md:text-xl text-gray-700">
+                    <span className="w-2 h-2 bg-[#2C5F2D] rounded-full mr-3 flex-shrink-0"></span>
+                    Light housekeeping & laundry
+                  </li>
+                  <li className="flex items-center text-lg md:text-xl text-gray-700">
+                    <span className="w-2 h-2 bg-[#2C5F2D] rounded-full mr-3 flex-shrink-0"></span>
+                    Meal planning & preparation
+                  </li>
+                </ul>
+              </div>
+              
+              {/* Lead Form */}
+              <div className="flex-grow flex items-stretch">
+                <LeadForm />
+              </div>
             </div>
           </div>
         </div>
