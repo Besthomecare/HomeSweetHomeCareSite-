@@ -64,11 +64,11 @@ const HeroRedesign = () => {
         <div className="container-fluid px-4 md:px-6 max-w-7xl mx-auto">
           
           {/* What We Help With - Full Width Bar */}
-          <div className="bg-[#F8F5F2] p-6 md:p-8 rounded-lg mb-10">
+          <div className="bg-white p-6 md:p-8 rounded-lg shadow-md mb-10">
             <h2 className="text-2xl md:text-3xl font-bold text-[#2C5F2D] mb-5 text-center">
               What We Help With
             </h2>
-            <ul className="flex flex-wrap justify-center gap-x-8 gap-y-3">
+            <ul className="flex flex-col md:flex-row md:flex-wrap md:justify-center gap-y-3 md:gap-x-8 md:gap-y-3 max-w-md md:max-w-none mx-auto">
               <li className="flex items-center text-lg md:text-xl text-gray-700">
                 <span className="w-2 h-2 bg-[#2C5F2D] rounded-full mr-3 flex-shrink-0"></span>
                 Companionship & conversation
