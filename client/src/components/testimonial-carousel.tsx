@@ -12,7 +12,7 @@ const TestimonialCarousel = () => {
       name: "Dominic"
     },
     {
-      quote: "Mom LOVES Alyssa — when I get home, she is so happy.",
+      quote: "Mom LOVES Alyssa. When I get home, she is so happy.",
       name: "Kim"
     },
     {
@@ -20,7 +20,7 @@ const TestimonialCarousel = () => {
       name: "Dominic"
     },
     {
-      quote: "A perfect evening with mom — made possible through compassionate care.",
+      quote: "A perfect evening with mom, made possible through compassionate care.",
       name: "Deb"
     },
     {
@@ -34,21 +34,47 @@ const TestimonialCarousel = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isSliding, setIsSliding] = useState(false);
+  const [slideDirection, setSlideDirection] = useState<'left' | 'right'>('left');
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
+      setSlideDirection('left');
+      setIsSliding(true);
+      setTimeout(() => {
+        setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+        setIsSliding(false);
+      }, 500);
+    }, 7000);
 
     return () => clearInterval(timer);
   }, [testimonials.length]);
 
   const goToPrevious = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setSlideDirection('right');
+    setIsSliding(true);
+    setTimeout(() => {
+      setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+      setIsSliding(false);
+    }, 500);
   };
 
   const goToNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    setSlideDirection('left');
+    setIsSliding(true);
+    setTimeout(() => {
+      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+      setIsSliding(false);
+    }, 500);
+  };
+
+  const goToSlide = (index: number) => {
+    setSlideDirection(index > currentIndex ? 'left' : 'right');
+    setIsSliding(true);
+    setTimeout(() => {
+      setCurrentIndex(index);
+      setIsSliding(false);
+    }, 500);
   };
 
   return (
@@ -58,7 +84,7 @@ const TestimonialCarousel = () => {
           What Our Families Say
         </h2>
         
-        <div className="relative">
+        <div className="relative overflow-hidden">
           <div className="flex items-center justify-center">
             <button
               onClick={goToPrevious}
@@ -69,13 +95,21 @@ const TestimonialCarousel = () => {
               <ChevronLeft className="w-6 h-6 text-primary" />
             </button>
             
-            <div className="px-12 md:px-20 text-center">
+            <div 
+              className={`px-12 md:px-20 text-center transition-all duration-500 ease-in-out ${
+                isSliding 
+                  ? slideDirection === 'left' 
+                    ? 'opacity-0 -translate-x-8' 
+                    : 'opacity-0 translate-x-8'
+                  : 'opacity-100 translate-x-0'
+              }`}
+            >
               <Quote className="w-10 h-10 md:w-12 md:h-12 text-primary/30 mx-auto mb-4" />
               <p className="text-xl md:text-2xl lg:text-3xl text-gray-800 italic leading-relaxed mb-6 min-h-[100px] md:min-h-[80px] flex items-center justify-center">
                 "{testimonials[currentIndex].quote}"
               </p>
               <p className="text-xl md:text-2xl font-semibold text-primary">
-                — {testimonials[currentIndex].name}
+                {testimonials[currentIndex].name}
               </p>
             </div>
             
@@ -93,7 +127,7 @@ const TestimonialCarousel = () => {
             {testimonials.map((_, index) => (
               <button
                 key={index}
-                onClick={() => setCurrentIndex(index)}
+                onClick={() => goToSlide(index)}
                 className={`w-3 h-3 rounded-full transition-colors ${
                   index === currentIndex ? "bg-primary" : "bg-gray-300 hover:bg-gray-400"
                 }`}
