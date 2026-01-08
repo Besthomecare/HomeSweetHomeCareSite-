@@ -33,12 +33,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
             if (!recaptchaData.success) {
               console.warn("reCAPTCHA verification failed:", recaptchaData);
               // Don't block submission - just log it for monitoring
-            } else if (recaptchaData.score < 0.3) {
-              // Only block very low scores (likely bots)
+            } else if (recaptchaData.score < 0.5) {
+              // Block scores below Google's recommended threshold
               console.error("Blocking low reCAPTCHA score:", recaptchaData.score);
               return res.status(400).json({
                 success: false,
-                message: "reCAPTCHA verification failed. Please try again.",
+                message: "Security verification failed. Please try again or call us at (941) 200-0848.",
               });
             }
           } catch (recaptchaError) {

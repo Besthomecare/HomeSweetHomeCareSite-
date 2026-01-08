@@ -1,3 +1,5 @@
+import { getConsentStatus } from "@/lib/consent";
+
 // Define the gtag function globally
 declare global {
   interface Window {
@@ -6,8 +8,21 @@ declare global {
   }
 }
 
-// Initialize Google Analytics
+let gaInitialized = false;
+
+// Initialize Google Analytics (only if consent is given)
 export const initGA = () => {
+  const consent = getConsentStatus();
+  
+  if (consent !== "accepted") {
+    console.log('Google Analytics not loaded - user consent not given');
+    return;
+  }
+
+  if (gaInitialized) {
+    return;
+  }
+
   const measurementId = import.meta.env.VITE_GA_MEASUREMENT_ID;
 
   if (!measurementId) {
@@ -30,6 +45,22 @@ export const initGA = () => {
     gtag('config', '${measurementId}');
   `;
   document.head.appendChild(script2);
+  
+  gaInitialized = true;
+  console.log('Google Analytics initialized with consent');
+};
+
+// Listen for consent changes and initialize GA if accepted
+export const setupConsentListener = () => {
+  window.addEventListener('cookieConsentChanged', (event: Event) => {
+    const customEvent = event as CustomEvent;
+    if (customEvent.detail === 'accepted') {
+      initGA();
+    }
+  });
+  
+  // Also try to initialize on load if consent was already given
+  initGA();
 };
 
 // Track page views - useful for single-page applications
