@@ -12,13 +12,13 @@ const Privacy = () => {
         />
       </Helmet>
       
-      <section className="bg-secondary bg-opacity-30 py-16">
+      <section className="bg-secondary py-12 md:py-16">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="font-heading text-4xl md:text-5xl font-bold text-primary mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
               Privacy Policy
             </h1>
-            <p className="text-lg">
+            <p className="text-lg md:text-xl leading-relaxed">
               At Home Sweet Home Care, we are committed to protecting your privacy and ensuring 
               the security of your personal information. This policy explains how we collect, 
               use, and safeguard your data.
@@ -121,7 +121,7 @@ const Privacy = () => {
             <div className="mt-8 text-center">
               <div className="inline-block">
                 <Link href="/contact">
-                  <div className="bg-accent hover:bg-accent/90 text-white px-6 py-2 rounded-md transition-colors inline-block font-semibold cursor-pointer">
+                  <div className="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-md transition-colors inline-block font-semibold cursor-pointer text-lg">
                     Contact Us With Questions
                   </div>
                 </Link>

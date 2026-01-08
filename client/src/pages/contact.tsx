@@ -12,13 +12,13 @@ const Contact = () => {
         />
       </Helmet>
       
-      <section className="bg-secondary bg-opacity-30 py-16">
+      <section className="bg-secondary py-12 md:py-16">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="font-heading text-4xl md:text-5xl font-bold text-primary mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
               Contact Us
             </h1>
-            <p className="text-lg">
+            <p className="text-lg md:text-xl leading-relaxed">
               Have questions about our services or ready to discuss care options for your loved one? 
               We're here to help. Reach out to us using the form below or contact us directly by phone or email.
             </p>

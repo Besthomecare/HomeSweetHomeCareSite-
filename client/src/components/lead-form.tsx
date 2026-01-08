@@ -201,7 +201,7 @@ const LeadForm = () => {
                       href="/privacy"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-accent underline hover:text-accent/80"
+                      className="text-primary underline hover:text-primary/80"
                     >
                       Privacy Policy
                     </a>
@@ -216,7 +216,7 @@ const LeadForm = () => {
           <Button
             type="submit"
             disabled={isSubmitting}
-            className="w-full text-lg py-6 bg-accent hover:bg-accent/90 text-white font-semibold rounded-lg mt-6"
+            className="w-full text-lg py-6 bg-primary hover:bg-primary/90 text-white font-semibold rounded-lg mt-6"
             data-testid="button-submit-lead-form"
           >
             {isSubmitting ? (

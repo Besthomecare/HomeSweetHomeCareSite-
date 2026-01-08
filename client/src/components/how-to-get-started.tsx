@@ -27,20 +27,20 @@ const HowToGetStarted = () => {
   ];
 
   return (
-    <section className="py-16 md:py-20 bg-secondary border-t-2 border-gray-300">
+    <section className="py-12 md:py-16 bg-secondary">
       <div className="container-fluid px-4 md:px-6 max-w-7xl mx-auto">
         {/* Intro Section */}
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-8" data-testid="heading-new-to-home-care">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-8" data-testid="heading-new-to-home-care">
             New to In-Home Care?
           </h2>
-          <p className="text-xl text-gray-700 leading-relaxed mb-6 max-w-5xl mx-auto" data-testid="text-new-to-home-care-intro">
+          <p className="text-lg md:text-xl leading-relaxed mb-6 max-w-5xl mx-auto" data-testid="text-new-to-home-care-intro">
             Choosing home care for a loved one can feel overwhelming, but Home Sweet Home Care makes the process simple, clear, and stress-free. We guide you every step of the way with compassion, clarity, and flexibility.
           </p>
-          <p className="text-xl text-gray-700 leading-relaxed mb-12 max-w-5xl mx-auto" data-testid="text-new-to-home-care-benefit">
+          <p className="text-lg md:text-xl leading-relaxed mb-12 max-w-5xl mx-auto" data-testid="text-new-to-home-care-benefit">
             Learn how easy it is to get started with professional home care, and discover how our tailored support promotes comfort, safety, and peace of mind at home.
           </p>
-          <h3 className="text-4xl md:text-5xl font-bold text-primary mt-16 mb-8" data-testid="heading-how-to-get-started">
+          <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mt-16 mb-8" data-testid="heading-how-to-get-started">
             How to Get Started With Home Sweet Home Care
           </h3>
         </div>
@@ -49,21 +49,21 @@ const HowToGetStarted = () => {
           {steps.map((step, index) => (
             <li 
               key={index}
-              className="bg-gradient-to-br from-secondary/10 to-white p-8 md:p-10 rounded-lg shadow-md hover:shadow-lg transition-shadow flex flex-col"
+              className="bg-white p-8 md:p-10 rounded-lg shadow-md hover:shadow-lg transition-shadow flex flex-col"
               data-testid={`step-${index + 1}`}
             >
               <div className="flex flex-col items-center text-center">
-                <div className="w-20 h-20 md:w-24 md:h-24 bg-accent text-white rounded-full flex items-center justify-center mb-6">
+                <div className="w-20 h-20 md:w-24 md:h-24 bg-primary text-white rounded-full flex items-center justify-center mb-6">
                   <span className="text-3xl md:text-4xl font-bold" data-testid={`step-number-${index + 1}`}>
                     {step.number}
                   </span>
                 </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-primary mb-6" data-testid={`step-title-${index + 1}`}>
+                <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-primary mb-6" data-testid={`step-title-${index + 1}`}>
                   {step.title}
                 </h3>
                 <div className="space-y-4">
                   {step.description.map((paragraph, pIndex) => (
-                    <p key={pIndex} className="text-xl text-gray-700 leading-relaxed" data-testid={`step-${index + 1}-description-${pIndex + 1}`}>
+                    <p key={pIndex} className="text-lg md:text-xl leading-relaxed" data-testid={`step-${index + 1}-description-${pIndex + 1}`}>
                       {paragraph}
                     </p>
                   ))}
@@ -78,7 +78,7 @@ const HowToGetStarted = () => {
             href="https://calendar.google.com/appointments/schedules/AcZssZ1HmfJNob7zkiWgHb1185gbsl_v8EOAfqEP5Lili91nLoHV5brvq7oFCxGoVdsFDXoKjhaRsPYY"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block font-semibold text-xl text-white px-10 py-4 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg bg-accent hover:bg-accent/90"
+            className="inline-block font-semibold text-lg md:text-xl text-white px-10 py-4 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg bg-primary hover:bg-primary/90"
             data-testid="button-schedule-consultation"
           >
             Schedule Your Free Consultation

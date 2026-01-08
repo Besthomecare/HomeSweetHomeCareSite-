@@ -104,8 +104,8 @@ const HeroRedesign = () => {
                     className="flex items-start space-x-4 bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
                     data-testid={`trust-badge-${index}`}
                   >
-                    <div className="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mt-1">
-                      <Icon className="w-6 h-6 text-accent" />
+                    <div className="flex-shrink-0 w-12 h-12 bg-secondary rounded-full flex items-center justify-center mt-1">
+                      <Icon className="w-6 h-6 text-primary" />
                     </div>
                     <div>
                       <h3 className="text-2xl md:text-3xl font-bold text-primary mb-2">

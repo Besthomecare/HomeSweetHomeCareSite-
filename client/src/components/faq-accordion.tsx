@@ -31,9 +31,9 @@ const FaqAccordion = () => {
   ];
 
   return (
-    <section className="py-16 md:py-20 bg-white border-t-2 border-gray-300">
+    <section className="py-12 md:py-16 bg-white">
       <div className="container-fluid px-4 md:px-6 max-w-4xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-primary mb-12 text-center">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-12 text-center">
           Frequently Asked Questions
         </h2>
         
@@ -42,13 +42,13 @@ const FaqAccordion = () => {
             <AccordionItem
               key={index}
               value={`item-${index}`}
-              className="bg-gray-50 rounded-lg px-6"
+              className="bg-secondary rounded-lg px-6"
               data-testid={`faq-item-${index}`}
             >
-              <AccordionTrigger className="text-xl font-semibold text-primary hover:text-accent">
+              <AccordionTrigger className="text-lg md:text-xl font-semibold text-primary hover:text-primary/80">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-xl text-gray-700">
+              <AccordionContent className="text-lg md:text-xl leading-relaxed">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>
@@ -57,7 +57,7 @@ const FaqAccordion = () => {
 
         <div className="text-center mt-10">
           <Link href="/faq">
-            <span className="text-lg text-accent hover:text-accent/80 font-semibold underline cursor-pointer" data-testid="link-more-faqs">
+            <span className="text-lg text-primary hover:text-primary/80 font-semibold underline cursor-pointer" data-testid="link-more-faqs">
               More FAQs
             </span>
           </Link>
