@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { SiFacebook, SiInstagram, SiLinkedin } from "react-icons/si";
+import { SiFacebook, SiLinkedin } from "react-icons/si";
 import { COMPANY_INFO } from "@/lib/constants";
 
 const SiteFooter = () => {
@@ -81,16 +81,6 @@ const SiteFooter = () => {
             data-testid="footer-social-facebook"
           >
             <SiFacebook className="w-6 h-6" />
-          </a>
-          <a
-            href={COMPANY_INFO.socialMedia.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white/80 hover:text-white transition-colors"
-            aria-label="Instagram"
-            data-testid="footer-social-instagram"
-          >
-            <SiInstagram className="w-6 h-6" />
           </a>
           <a
             href={COMPANY_INFO.socialMedia.linkedin}
