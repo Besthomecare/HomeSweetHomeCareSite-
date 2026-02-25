@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import AboutSection from "@/components/about-section";
 import TrustBadges from "@/components/trust-badges";
 import CtaSection from "@/components/cta-section";

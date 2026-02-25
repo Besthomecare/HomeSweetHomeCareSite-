@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { Mail, Heart, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 

@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import FaqSection from "@/components/faq-section";
 import CtaSection from "@/components/cta-section";
 import { Link } from "wouter";
@@ -72,7 +72,7 @@ const Faq = () => {
                 <p className="text-lg leading-relaxed mb-4">
                   Call us directly to speak with a care advisor who can answer your questions.
                 </p>
-                <a href="tel:(941) 200-0848">
+                <a href="tel:+19412000848">
                   <Button className="bg-primary hover:bg-primary/90 text-white px-6 py-3 text-lg h-auto">
                     Call (941) 200-0848
                   </Button>
