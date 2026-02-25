@@ -132,7 +132,7 @@ const ChatWidget = () => {
     <>
       {isOpen && (
         <div
-          className={`fixed ${panelBottomOffset} right-4 md:right-6 w-[calc(100vw-2rem)] max-w-sm z-[60] shadow-2xl rounded-xl border border-gray-200 bg-white flex flex-col overflow-hidden`}
+          className={`fixed ${panelBottomOffset} right-4 md:right-6 w-[calc(100vw-2rem)] max-w-sm z-[9999] shadow-2xl rounded-xl border border-gray-200 bg-white flex flex-col overflow-hidden`}
           style={{ height: "min(500px, calc(100vh - 120px))" }}
         >
           <div className="bg-primary text-white px-4 py-3 flex items-center justify-between flex-shrink-0">
@@ -224,7 +224,7 @@ const ChatWidget = () => {
 
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`fixed ${bottomOffset} right-4 md:right-6 z-[60] w-14 h-14 rounded-full bg-primary hover:bg-primary/90 text-white shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center`}
+        className={`fixed ${bottomOffset} right-4 md:right-6 z-[9999] w-14 h-14 rounded-full bg-primary hover:bg-primary/90 text-white shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center`}
         aria-label={isOpen ? "Close chat" : "Open chat"}
       >
         {isOpen ? (
