@@ -4,10 +4,19 @@ import { storage } from "./storage";
 import { getUncachableResendClient } from "./resend-client";
 import { getAvailableSlots, createAppointment } from "./calendar";
 
-const openai = new OpenAI({
-  apiKey: process.env.AI_INTEGRATIONS_OPENAI_API_KEY,
-  baseURL: process.env.AI_INTEGRATIONS_OPENAI_BASE_URL,
-});
+function getOpenAIClient(): OpenAI {
+  const apiKey = process.env.AI_INTEGRATIONS_OPENAI_API_KEY || process.env.OPENAI_API_KEY;
+  const baseURL = process.env.AI_INTEGRATIONS_OPENAI_BASE_URL;
+
+  if (!apiKey) {
+    throw new Error("OpenAI API key not configured. Chat is unavailable.");
+  }
+
+  return new OpenAI({
+    apiKey,
+    ...(baseURL ? { baseURL } : {}),
+  });
+}
 
 const SYSTEM_PROMPT = `You are a friendly, helpful assistant for Home Sweet Home Care, a non-medical in-home care agency serving seniors in Florida. Your job is to answer questions about the company and its services clearly and warmly.
 
@@ -288,6 +297,8 @@ export async function getChatResponse(
     { role: "system", content: SYSTEM_PROMPT },
     ...messages,
   ];
+
+  const openai = getOpenAIClient();
 
   let response = await openai.chat.completions.create({
     model: "gpt-5-mini",
