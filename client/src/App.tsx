@@ -11,6 +11,7 @@ import { setupConsentListener } from "@/lib/analytics";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import CookieConsent from "@/components/cookie-consent";
+import ChatWidget from "@/components/chat-widget";
 import Home from "@/pages/home";
 import About from "@/pages/about";
 import Services from "@/pages/services";
@@ -70,6 +71,7 @@ function App() {
           </div>
           <Toaster />
           <CookieConsent />
+          <ChatWidget />
         </GoogleReCaptchaProvider>
       </HelmetProvider>
     </QueryClientProvider>

@@ -5,7 +5,22 @@ import { insertContactFormSchema, type InsertContactForm } from "@shared/schema"
 import { fromZodError } from "zod-validation-error";
 import { ZodError } from "zod";
 import { getUncachableResendClient } from "./resend-client";
+import { getChatResponse } from "./chatbot";
 import path from "path";
+
+const chatRateLimit = new Map<string, number[]>();
+const CHAT_RATE_LIMIT = 20;
+const CHAT_RATE_WINDOW = 60 * 1000;
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const timestamps = chatRateLimit.get(ip) || [];
+  const recent = timestamps.filter((t) => now - t < CHAT_RATE_WINDOW);
+  chatRateLimit.set(ip, recent);
+  if (recent.length >= CHAT_RATE_LIMIT) return true;
+  recent.push(now);
+  return false;
+}
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form submission
@@ -140,6 +155,66 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.status(500).json({ 
         success: false, 
         message: "An error occurred while fetching contact forms" 
+      });
+    }
+  });
+
+  app.post("/api/chat", async (req: Request, res: Response) => {
+    try {
+      const clientIp = req.ip || req.socket.remoteAddress || "unknown";
+      if (isRateLimited(clientIp)) {
+        return res.status(429).json({
+          success: false,
+          message: "Too many messages. Please wait a moment or call us at (941) 200-0848.",
+        });
+      }
+
+      const { messages } = req.body;
+
+      if (!Array.isArray(messages) || messages.length === 0) {
+        return res.status(400).json({
+          success: false,
+          message: "Messages array is required",
+        });
+      }
+
+      if (messages.length > 50) {
+        return res.status(400).json({
+          success: false,
+          message: "Conversation too long. Please start a new chat.",
+        });
+      }
+
+      const validMessages = messages
+        .filter(
+          (m: any) =>
+            (m.role === "user" || m.role === "assistant") &&
+            typeof m.content === "string" &&
+            m.content.trim().length > 0
+        )
+        .map((m: any) => ({
+          role: m.role as "user" | "assistant",
+          content: m.content.trim().slice(0, 1000),
+        }));
+
+      if (validMessages.length === 0) {
+        return res.status(400).json({
+          success: false,
+          message: "No valid messages provided",
+        });
+      }
+
+      const reply = await getChatResponse(validMessages);
+
+      res.status(200).json({
+        success: true,
+        message: reply,
+      });
+    } catch (error) {
+      console.error("Error in chat endpoint:", error);
+      res.status(500).json({
+        success: false,
+        message: "Something went wrong. Please call us at (941) 200-0848 for assistance.",
       });
     }
   });

@@ -34,3 +34,5 @@ export type User = typeof users.$inferSelect;
 
 export type InsertContactForm = z.infer<typeof insertContactFormSchema>;
 export type ContactForm = typeof contactForms.$inferSelect;
+
+export * from "./models/chat";
