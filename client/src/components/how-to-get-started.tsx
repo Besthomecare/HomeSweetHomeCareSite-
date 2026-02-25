@@ -1,3 +1,5 @@
+import { Link } from "wouter";
+
 const HowToGetStarted = () => {
   const steps = [
     {
@@ -74,15 +76,14 @@ const HowToGetStarted = () => {
         </ol>
 
         <div className="text-center mt-12">
-          <a 
-            href="https://calendar.google.com/appointments/schedules/AcZssZ1HmfJNob7zkiWgHb1185gbsl_v8EOAfqEP5Lili91nLoHV5brvq7oFCxGoVdsFDXoKjhaRsPYY"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block font-semibold text-lg md:text-xl text-white px-10 py-4 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg bg-primary hover:bg-primary/90"
-            data-testid="button-schedule-consultation"
-          >
-            Schedule Your Free Consultation
-          </a>
+          <Link href="/contact">
+            <span
+              className="inline-block font-semibold text-lg md:text-xl text-white px-10 py-4 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg bg-primary hover:bg-primary/90 cursor-pointer"
+              data-testid="button-schedule-consultation"
+            >
+              Request Your Free Care Assessment
+            </span>
+          </Link>
         </div>
       </div>
     </section>

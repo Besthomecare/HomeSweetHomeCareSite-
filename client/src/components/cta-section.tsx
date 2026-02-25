@@ -23,7 +23,7 @@ const CtaSection = () => {
               Schedule an Assessment
             </Button>
           </Link>
-          <a href={`tel:${COMPANY_INFO.phone}`} className="w-full sm:w-auto">
+          <a href="tel:+19412000848" className="w-full sm:w-auto">
             <Button 
               className="bg-white hover:bg-gray-100 text-primary px-6 md:px-8 py-4 text-lg h-auto flex items-center justify-center font-semibold w-full"
             >

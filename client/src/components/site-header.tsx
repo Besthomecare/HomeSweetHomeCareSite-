@@ -77,15 +77,6 @@ const SiteHeader = () => {
             >
               (941) 200-0848
             </a>
-            <a 
-              href="https://calendar.google.com/appointments/schedules/AcZssZ1HmfJNob7zkiWgHb1185gbsl_v8EOAfqEP5Lili91nLoHV5brvq7oFCxGoVdsFDXoKjhaRsPYY"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-semibold text-lg text-white px-8 py-3 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg whitespace-nowrap bg-accent hover:bg-accent/90"
-              data-testid="button-book-consultation"
-            >
-              Book Free Consult
-            </a>
           </div>
           
           {/* Mobile Menu Toggle */}
@@ -162,16 +153,6 @@ const SiteHeader = () => {
                 onClick={closeMobileMenu}
               >
                 Call (941) 200-0848
-              </a>
-              <a 
-                href="https://calendar.google.com/appointments/schedules/AcZssZ1HmfJNob7zkiWgHb1185gbsl_v8EOAfqEP5Lili91nLoHV5brvq7oFCxGoVdsFDXoKjhaRsPYY"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-center font-semibold text-lg text-white px-6 py-4 rounded-lg bg-accent hover:bg-accent/90 transition-colors"
-                data-testid="button-book-consultation-mobile"
-                onClick={closeMobileMenu}
-              >
-                Book Free Consult
               </a>
             </div>
           </div>
