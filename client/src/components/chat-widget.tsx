@@ -11,7 +11,7 @@ interface ChatMessage {
 const WELCOME_MESSAGE: ChatMessage = {
   role: "assistant",
   content:
-    "Hi! I'm here to help answer questions about Home Sweet Home Care. Ask me about our services, service areas, how to get started, or anything else!",
+    "Hi, I'm Alex! I'm here to help answer questions about Home Sweet Home Care. Ask me about our services, service areas, how to get started, or anything else!",
 };
 
 const ChatWidget = () => {
@@ -137,8 +137,14 @@ const ChatWidget = () => {
         >
           <div className="bg-primary text-white px-4 py-3 flex items-center justify-between flex-shrink-0">
             <div className="flex items-center gap-2">
-              <MessageCircle className="w-5 h-5" />
-              <span className="font-semibold text-base">Chat With Us</span>
+              <div className="relative">
+                <MessageCircle className="w-5 h-5" />
+                <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-green-400 rounded-full border-2 border-primary"></span>
+              </div>
+              <div className="flex flex-col">
+                <span className="font-semibold text-base leading-tight">Alex</span>
+                <span className="text-xs text-white/70 leading-tight">Online now</span>
+              </div>
             </div>
             <button
               onClick={() => setIsOpen(false)}
@@ -183,7 +189,7 @@ const ChatWidget = () => {
               <div className="flex justify-start">
                 <div className="bg-secondary text-gray-500 rounded-lg px-3 py-2 text-sm flex items-center gap-2">
                   <Loader2 className="w-4 h-4 animate-spin" />
-                  Typing...
+                  Alex is typing...
                 </div>
               </div>
             )}
