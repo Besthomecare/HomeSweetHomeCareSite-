@@ -1,15 +1,17 @@
 import { 
   users, 
-  contactForms, 
+  contactForms,
+  consultations,
   type User, 
   type InsertUser, 
   type ContactForm, 
-  type InsertContactForm 
+  type InsertContactForm,
+  type Consultation,
+  type InsertConsultation
 } from "@shared/schema";
 import { db } from "./db";
 import { eq, desc } from "drizzle-orm";
 
-// Database storage interface
 export interface IStorage {
   getUser(id: number): Promise<User | undefined>;
   getUserByUsername(username: string): Promise<User | undefined>;
@@ -18,6 +20,7 @@ export interface IStorage {
   getContactForm(id: number): Promise<ContactForm | undefined>;
   getAllContactForms(): Promise<ContactForm[]>;
   markContactFormAsRead(id: number): Promise<boolean>;
+  createConsultation(consultation: InsertConsultation): Promise<Consultation>;
 }
 
 // Database storage implementation
@@ -60,6 +63,12 @@ export class DatabaseStorage implements IStorage {
       .returning({ id: contactForms.id });
     
     return result.length > 0;
+  }
+
+  async createConsultation(insertConsultation: InsertConsultation): Promise<Consultation> {
+    const result = await db.insert(consultations).values(insertConsultation).returning();
+    console.log(`Consultation created: ${result[0].name} (${result[0].phone}) - status: ${result[0].status}`);
+    return result[0];
   }
 }
 

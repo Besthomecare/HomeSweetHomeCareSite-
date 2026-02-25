@@ -20,7 +20,8 @@ This is a full-stack web application for Home Sweet Home Care, a compassionate i
 - **Framework**: Express.js with TypeScript
 - **Database ORM**: Drizzle ORM with PostgreSQL dialect
 - **Database Provider**: Neon serverless PostgreSQL
-- **AI Integration**: OpenAI via Replit AI Integrations (gpt-5-mini model)
+- **AI Integration**: OpenAI via Replit AI Integrations (gpt-5-mini model) with function calling for appointment scheduling
+- **Calendar**: Google Calendar API via Replit connector (OAuth) for booking consultations
 - **Email**: Resend for transactional emails
 - **API Design**: RESTful endpoints with JSON responses
 - **Validation**: Zod schemas for request/response validation
@@ -31,6 +32,7 @@ This is a full-stack web application for Home Sweet Home Care, a compassionate i
 #### Database Schema
 - **Users Table**: Basic user authentication structure
 - **Contact Forms Table**: Lead capture and inquiry management
+- **Consultations Table**: Chatbot-submitted callback requests and scheduled appointments (name, phone, address, notes, calendar event ID, appointment time, status)
 - **Conversations Table**: Chat conversation tracking (for AI chatbot)
 - **Messages Table**: Chat message history (for AI chatbot)
 - **Schema Location**: `shared/schema.ts` for type safety across frontend/backend
@@ -38,7 +40,7 @@ This is a full-stack web application for Home Sweet Home Care, a compassionate i
 #### API Endpoints
 - `POST /api/contact`: Contact form submission with validation, reCAPTCHA, and email notifications
 - `GET /api/contact`: Retrieve contact form submissions (admin endpoint)
-- `POST /api/chat`: AI chatbot endpoint — accepts conversation messages, returns company Q&A responses (rate-limited: 20 requests/minute per IP)
+- `POST /api/chat`: AI chatbot endpoint with function calling — handles Q&A, callback requests, and appointment booking (rate-limited: 20 requests/minute per IP)
 
 #### Frontend Pages
 - **Home**: Senior-friendly design with video background hero, above-the-fold lead form, trust badges, services list, service area, and FAQ accordion
@@ -50,11 +52,16 @@ This is a full-stack web application for Home Sweet Home Care, a compassionate i
 - **Privacy**: Privacy policy and data handling
 
 #### AI Chatbot
-- **Backend**: `server/chatbot.ts` — OpenAI client with comprehensive system prompt containing all company info
+- **Backend**: `server/chatbot.ts` — OpenAI client with function calling (3 tools: request_callback, check_availability, schedule_appointment)
+- **Calendar**: `server/calendar.ts` — Google Calendar integration for checking availability and creating appointments
+- **Calendar Client**: `server/google-calendar-client.ts` — OAuth token management for Google Calendar API
 - **Frontend**: `client/src/components/chat-widget.tsx` — Floating chat bubble (bottom-right corner) on all pages
 - **Model**: gpt-5-mini via Replit AI Integrations (no API key required, billed to Replit credits)
 - **Rate Limiting**: 20 messages per minute per IP address
-- **Knowledge**: Company info, services, service areas, FAQs, how to get started, caregiver qualifications
+- **Capabilities**:
+  - Company Q&A (services, areas, hours, FAQs, pricing info)
+  - Callback requests (collects info, saves to DB, emails team)
+  - Appointment booking (checks Google Calendar availability, creates event, saves to DB, emails team)
 
 ## Data Flow
 
@@ -63,13 +70,15 @@ This is a full-stack web application for Home Sweet Home Care, a compassionate i
 3. **API Processing**: Backend validates and stores form data in PostgreSQL
 4. **Email Notification**: Resend sends business notification and customer auto-reply
 5. **Response Handling**: Success/error states are managed with toast notifications
-6. **Chatbot**: Users can ask questions via the floating chat widget; responses come from OpenAI with company knowledge
+6. **Chatbot Q&A**: Users ask questions via floating chat widget; AI responds with company knowledge
+7. **Chatbot Scheduling**: AI collects customer info conversationally, checks Google Calendar for availability, books appointments, saves to consultations table, and notifies business via email
 
 ## External Dependencies
 
 ### Core Dependencies
 - **Database**: Neon serverless PostgreSQL with connection pooling
 - **AI**: OpenAI via Replit AI Integrations (env vars: AI_INTEGRATIONS_OPENAI_BASE_URL, AI_INTEGRATIONS_OPENAI_API_KEY)
+- **Calendar**: Google Calendar via Replit connector (OAuth, env vars: REPLIT_CONNECTORS_HOSTNAME, REPL_IDENTITY)
 - **Email**: Resend for transactional emails (env var: RESEND_API_KEY)
 - **UI Framework**: Radix UI for accessible component primitives
 - **Styling**: Tailwind CSS with custom theme implementation
@@ -98,7 +107,7 @@ This is a full-stack web application for Home Sweet Home Care, a compassionate i
 - **Senior-Friendly Design**: 18px base font size, high contrast, large buttons, generous spacing
 - **Video Background Hero**: Autoplaying background video with lead form above the fold
 - **Lead Form**: Comprehensive free care assessment form with all required fields
-- **AI Chatbot**: Floating chat widget answering company questions on every page
+- **AI Chatbot**: Floating chat widget with Q&A, callback requests, and Google Calendar appointment booking
 - **Simplified Navigation**: Sticky header with prominent call CTA
 - **Compact Footer**: Essential contact info and links in streamlined layout
 - **Responsive Design**: Mobile-first approach with breakpoint-specific behaviors
@@ -107,6 +116,7 @@ This is a full-stack web application for Home Sweet Home Care, a compassionate i
 
 ## Changelog
 
+- February 25, 2026 (session 2). Added appointment scheduling to chatbot, fixed layout conflicts: Chat widget z-index bumped to z-[60] so header never overlaps it. Chat bubble now shifts up when cookie consent banner is visible to avoid crowding. Added consultations table to DB for callback requests and scheduled appointments. Integrated Google Calendar via Replit connector — chatbot can check availability and book consultation appointments. Chatbot now uses OpenAI function calling with 3 tools: request_callback, check_availability, schedule_appointment. Business notification emails sent for both callback requests and booked appointments.
 - February 25, 2026. Removed Google Calendar booking feature, added AI chatbot: Removed "Book Free Consult" buttons from header and how-to-get-started section. Replaced calendar links with contact page navigation. Fixed remaining broken tel: link in CTA section. Added AI-powered chat widget (gpt-5-mini via Replit AI Integrations) with comprehensive company knowledge, floating on all pages. Added rate limiting (20 req/min per IP) on chat endpoint. Cleaned up 17 orphaned dead code files. Fixed react-helmet imports across 6 pages to use react-helmet-async.
 - January 8, 2026. Standardized all pages and components for consistent design: Updated all pages (About, Services, Contact, Careers, FAQ, Privacy) and shared components (ServicesSection, FaqSection, ContactSection, CtaSection, AboutSection, TrustBadges, HowToGetStarted, FaqAccordion, ServiceArea, LeadForm, HeroRedesign) to use consistent styling. All hardcoded colors (#2C5F2D, #F8F5F2) replaced with theme classes (text-primary, bg-secondary). Accent colors replaced with primary color throughout. Standardized typography scale (text-lg, text-xl, text-2xl, text-3xl, text-4xl with responsive variants). Consistent section spacing (py-12 md:py-16). Uniform button styling with bg-primary.
 - November 24, 2025. Simplified services page: Removed all AI companionship content and streamlined services page to match homepage's senior-friendly design. Fixed nested anchor tag accessibility issue in Link component. Services now feature six traditional care offerings: Companionship, Transportation & Errands, Medication Reminders, Light Housekeeping, Meal Preparation, and Observation & Reporting.
@@ -116,3 +126,4 @@ This is a full-stack web application for Home Sweet Home Care, a compassionate i
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
+Plan before acting — explicit approval required before making changes.

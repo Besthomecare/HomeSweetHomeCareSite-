@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
-import { MessageCircle, X, Send, Loader2 } from "lucide-react";
+import { MessageCircle, X, Send, Loader2, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { getConsentStatus } from "@/lib/consent";
 
 interface ChatMessage {
   role: "user" | "assistant";
@@ -18,6 +19,9 @@ const ChatWidget = () => {
   const [messages, setMessages] = useState<ChatMessage[]>([WELCOME_MESSAGE]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [cookieBannerVisible, setCookieBannerVisible] = useState(
+    getConsentStatus() === null
+  );
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -30,6 +34,15 @@ const ChatWidget = () => {
       setTimeout(() => inputRef.current?.focus(), 100);
     }
   }, [isOpen]);
+
+  useEffect(() => {
+    const handleConsentChange = () => {
+      setCookieBannerVisible(false);
+    };
+    window.addEventListener("cookieConsentChanged", handleConsentChange);
+    return () =>
+      window.removeEventListener("cookieConsentChanged", handleConsentChange);
+  }, []);
 
   const sendMessage = async () => {
     const trimmed = input.trim();
@@ -90,10 +103,36 @@ const ChatWidget = () => {
     }
   };
 
+  const isConfirmationMessage = (content: string) => {
+    const confirmPhrases = [
+      "appointment has been scheduled",
+      "appointment is booked",
+      "booked your appointment",
+      "successfully scheduled",
+      "consultation has been scheduled",
+      "consultation is booked",
+      "we'll give you a call",
+      "we will give you a call",
+      "we'll call you",
+      "we will call you",
+      "someone will reach out",
+      "request has been submitted",
+      "information has been saved",
+    ];
+    const lower = content.toLowerCase();
+    return confirmPhrases.some((phrase) => lower.includes(phrase));
+  };
+
+  const bottomOffset = cookieBannerVisible ? "bottom-[100px]" : "bottom-4";
+  const panelBottomOffset = cookieBannerVisible
+    ? "bottom-[116px]"
+    : "bottom-20";
+
   return (
     <>
       {isOpen && (
-        <div className="fixed bottom-20 right-4 md:right-6 w-[calc(100vw-2rem)] max-w-sm z-[55] shadow-2xl rounded-xl border border-gray-200 bg-white flex flex-col overflow-hidden"
+        <div
+          className={`fixed ${panelBottomOffset} right-4 md:right-6 w-[calc(100vw-2rem)] max-w-sm z-[60] shadow-2xl rounded-xl border border-gray-200 bg-white flex flex-col overflow-hidden`}
           style={{ height: "min(500px, calc(100vh - 120px))" }}
         >
           <div className="bg-primary text-white px-4 py-3 flex items-center justify-between flex-shrink-0">
@@ -120,9 +159,21 @@ const ChatWidget = () => {
                   className={`max-w-[85%] rounded-lg px-3 py-2 text-sm leading-relaxed ${
                     msg.role === "user"
                       ? "bg-primary text-white"
-                      : "bg-secondary text-gray-800"
+                      : msg.role === "assistant" &&
+                          isConfirmationMessage(msg.content)
+                        ? "bg-green-50 text-gray-800 border border-green-200"
+                        : "bg-secondary text-gray-800"
                   }`}
                 >
+                  {msg.role === "assistant" &&
+                    isConfirmationMessage(msg.content) && (
+                      <div className="flex items-center gap-1.5 mb-1">
+                        <CheckCircle2 className="w-4 h-4 text-green-600" />
+                        <span className="text-xs font-medium text-green-600">
+                          Confirmed
+                        </span>
+                      </div>
+                    )}
                   {msg.content}
                 </div>
               </div>
@@ -167,7 +218,7 @@ const ChatWidget = () => {
 
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-4 right-4 md:right-6 z-[55] w-14 h-14 rounded-full bg-primary hover:bg-primary/90 text-white shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center"
+        className={`fixed ${bottomOffset} right-4 md:right-6 z-[60] w-14 h-14 rounded-full bg-primary hover:bg-primary/90 text-white shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center`}
         aria-label={isOpen ? "Close chat" : "Open chat"}
       >
         {isOpen ? (
