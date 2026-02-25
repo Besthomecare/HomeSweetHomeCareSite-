@@ -35,7 +35,6 @@ const HeroRedesign = () => {
           muted 
           loop
           playsInline
-          poster="/api/placeholder/1920/1080"
           aria-label="Home Sweet Home Care B-roll video"
         >
           <source src="/website-broll.mp4" type="video/mp4" />

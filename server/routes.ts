@@ -12,6 +12,18 @@ const chatRateLimit = new Map<string, number[]>();
 const CHAT_RATE_LIMIT = 20;
 const CHAT_RATE_WINDOW = 60 * 1000;
 
+setInterval(() => {
+  const now = Date.now();
+  for (const [ip, timestamps] of chatRateLimit) {
+    const recent = timestamps.filter((t) => now - t < CHAT_RATE_WINDOW);
+    if (recent.length === 0) {
+      chatRateLimit.delete(ip);
+    } else {
+      chatRateLimit.set(ip, recent);
+    }
+  }
+}, 5 * 60 * 1000);
+
 function isRateLimited(ip: string): boolean {
   const now = Date.now();
   const timestamps = chatRateLimit.get(ip) || [];
