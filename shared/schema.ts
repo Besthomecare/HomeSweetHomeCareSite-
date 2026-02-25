@@ -41,8 +41,6 @@ export const consultations = pgTable("consultations", {
   phone: text("phone").notNull(),
   address: text("address").notNull(),
   notes: text("notes"),
-  calendarEventId: text("calendar_event_id"),
-  appointmentTime: timestamp("appointment_time"),
   createdAt: timestamp("created_at").defaultNow().notNull(),
   status: text("status").default("pending").notNull(),
 });
