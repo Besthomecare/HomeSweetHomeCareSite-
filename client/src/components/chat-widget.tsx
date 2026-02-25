@@ -11,7 +11,7 @@ interface ChatMessage {
 const WELCOME_MESSAGE: ChatMessage = {
   role: "assistant",
   content:
-    "Hi, I'm Alex! I'm here to help answer questions about Home Sweet Home Care. Ask me about our services, service areas, how to get started, or anything else!",
+    "Hi, I'm Alex, your Senior Care Advisor! I'm here to help answer questions about Home Sweet Home Care. Ask me about our services, service areas, how to get started, or anything else!",
 };
 
 const ChatWidget = () => {
@@ -143,7 +143,7 @@ const ChatWidget = () => {
               </div>
               <div className="flex flex-col">
                 <span className="font-semibold text-base leading-tight">Alex</span>
-                <span className="text-xs text-white/70 leading-tight">Online now</span>
+                <span className="text-xs text-white/70 leading-tight">Senior Care Advisor - Online</span>
               </div>
             </div>
             <button
