@@ -35,34 +35,34 @@ const SiteHeader = () => {
           </Link>
           
           {/* Desktop Navigation Links */}
-          <div className="hidden lg:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-8">
             <Link href="/">
-              <span className={`font-medium text-base ${isActive('/') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer`}>
+              <span className={`font-medium text-xl ${isActive('/') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer`}>
                 Home
               </span>
             </Link>
             <Link href="/about">
-              <span className={`font-medium text-base ${isActive('/about') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer`}>
+              <span className={`font-medium text-xl ${isActive('/about') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer`}>
                 About
               </span>
             </Link>
             <Link href="/services">
-              <span className={`font-medium text-base ${isActive('/services') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer`}>
+              <span className={`font-medium text-xl ${isActive('/services') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer`}>
                 Services
               </span>
             </Link>
             <Link href="/faq">
-              <span className={`font-medium text-base ${isActive('/faq') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer`}>
+              <span className={`font-medium text-xl ${isActive('/faq') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer`}>
                 FAQs
               </span>
             </Link>
             <Link href="/careers">
-              <span className={`font-medium text-base ${isActive('/careers') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer`}>
+              <span className={`font-medium text-xl ${isActive('/careers') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer`}>
                 Careers
               </span>
             </Link>
             <Link href="/contact">
-              <span className={`font-medium text-base ${isActive('/contact') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer`}>
+              <span className={`font-medium text-xl ${isActive('/contact') ? 'text-accent' : 'text-primary hover:text-accent'} transition-colors cursor-pointer`}>
                 Contact
               </span>
             </Link>
